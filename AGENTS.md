@@ -24,6 +24,7 @@
 ## 约定与陷阱
 
 - **双份维护**：本仓库 = source of truth；`~/.config/opencode/skills/` = OpenCode 加载点。改本地后必须跑 sync。
+- **OpenCode 加载是会话级快照**：`skill` 工具拿到的内容是**会话开始**那一刻的 SKILL.md 快照。会话中跑 sync **不会**让本会话的 `skill` 工具拿到新版。改完 sync 后必须**新开会话**才能验证。
 - **frontmatter 是触发关键**：`description` 字段直接影响 OpenCode 何时加载本 skill，改动需配合 `tests/scenarios/` 验证
 - **SKILL.md 体积控制**：保持 < 250 行。超长内容拆到 `cases/` 或 `tools/`
 - **不要 import**：skill 是纯文本文件，没有运行时
