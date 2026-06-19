@@ -1,18 +1,20 @@
 # skills
 
-OpenCode skill 工作区。本仓库为单 skill 维护源：`init-dev-agents`。
+OpenCode skill 工作区。本仓库只维护一个本地 skill：`truth-discovery`。
+
+## 目标
+
+通过一套可复用的求真方法论，结合大模型知识库、网络知识库与案例库，对历史、文化、经典文本、人物品牌、公共叙事进行辨伪与真相逼近。核心判断维度包括哲学追问、慧学式反省、证据链、知识谱系、动机链、作案链、利益归属与传播机制。大模型知识库本身也会被教材、百科、SEO、意识形态和权威叙事污染，因此本项目也训练 agent 对自身知识保持独立思考与反审能力。
 
 ## 结构
 
-- `skills/init-dev-agents/` — skill 源文件（SKILL.md + cases + tools）
-- `docs/` — 需求 / 参考 / 变更记录
+- `skills/truth-discovery/` — 真伪/托名/品牌化叙事分析 skill 源文件
+- `docs/inquiry-log.md` — 问询分类记录：提炼点 / 需求 / 参考资料
 - `tests/scenarios/` — skill 触发与产出的验收场景
-- `.trae/skills/truth-discovery/` — 历史素材，**不在**本 skill 维护范围
 
-## 与全局 skill 的关系
+## 安装
 
-`~/.config/opencode/skills/init-dev-agents/SKILL.md` 是 OpenCode 实际加载的位置。
-本仓库为 source of truth，**手动同步**（见 `tools/sync.sh`）。
+本仓库只维护 source of truth。正式发布后按发布渠道安装，本仓库不提供同步脚本。
 
 ## 快速开始
 
