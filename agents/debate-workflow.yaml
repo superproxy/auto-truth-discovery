@@ -5,8 +5,8 @@ agents_dir: "agents/roles"
 
 # 输出路径
 output:
-  process_dir: "debates/过程"      # 辩论过程记录
-  result_dir: "debates/结果"       # 裁判结论
+  process_dir: "debates/process"      # 辩论过程记录
+  result_dir: "debates/conclusions"   # 裁判结论
   case_dir: "skills/truth-discovery/cases"  # 案例沉淀
   skill_file: "skills/truth-discovery/SKILL.md"  # 方法论主文件
   inquiry_log: "docs/inquiry-log.md"  # 问询记录

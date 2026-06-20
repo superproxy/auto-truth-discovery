@@ -32,8 +32,8 @@ findings/                         # skill直接判断（非辩论产出，与 de
 
 debates/                          # 辩论场地（与 agents 平行）
 ├── topics.md                     # 600个辩题（18领域，✅=已辩论）
-├── 过程/                         # 辩论过程记录
-└── 结果/                         # 裁判结论与报告
+├── process/                      # 辩论过程记录
+└── conclusions/                  # 裁判结论与报告
 
 docs/
 ├── inquiry-log.md                # 问询分类记录（提炼点/需求/参考资料）
@@ -84,8 +84,8 @@ SKILL.md 沉淀新方法论
 | 维度 | 目录 | 内容 |
 |---|---|---|
 | 事 | `debates/topics.md` | 600个辩题（18领域）、✅=已辩论 |
-| 过程 | `debates/过程/` | 每场辩论的质疑-推理交锋记录 |
-| 结果 | `debates/结果/` | 每场辩论的裁判结论、分层判断、置信度 |
+| 过程 | `debates/process/` | 每场辩论的质疑-推理交锋记录 |
+| 结果 | `debates/conclusions/` | 每场辩论的裁判结论、分层判断、置信度 |
 
 > **经验（方法论增量）沉淀到 `skills/truth-discovery/SKILL.md`**，不单独存于 debates/。
 
