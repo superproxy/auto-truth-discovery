@@ -1,0 +1,27 @@
+{
+  "workflow": "求真辨伪：100主题全流程辩论工作流",
+  "date": "2026-06-20",
+  "total_topics": 100,
+  "batches": 7,
+  "status": "completed",
+  "steps": [
+    { "id": "collector_search", "status": "completed", "file": "steps/1-collector_search.md" },
+    { "id": "batch1_ancient_authors", "status": "completed", "file": "steps/2-batch1-ancient-authors.md", "topics": 15 },
+    { "id": "batch2_religious_texts", "status": "completed", "file": "steps/3-batch2-religious-texts.md", "topics": 15 },
+    { "id": "batch3_science_priority", "status": "completed", "file": "steps/4-batch3-science-priority.md", "topics": 15 },
+    { "id": "batch4_archaeology", "status": "completed", "file": "steps/5-batch4-archaeology.md", "topics": 15 },
+    { "id": "batch5_historical_narratives", "status": "completed", "file": "steps/6-batch5-historical-narratives.md", "topics": 15 },
+    { "id": "batch6_modern_brands", "status": "completed", "file": "steps/7-batch6-modern-brands.md", "topics": 15 },
+    { "id": "batch7_knowledge_origins", "status": "completed", "file": "steps/8-batch7-knowledge-origins.md", "topics": 10 },
+    { "id": "synthesized_methodology", "status": "completed", "file": "steps/9-synthesized-methodology.md" }
+  ],
+  "methodology_increments": {
+    "new_red_flags": 10,
+    "new_evidence_patterns": 6,
+    "new_attribution_patterns": 5,
+    "new_methodology_principles": 8,
+    "cross_domain_patterns": 4
+  },
+  "skill_updated": "skills/truth-discovery/SKILL.md",
+  "recommended_cases": 52
+}
