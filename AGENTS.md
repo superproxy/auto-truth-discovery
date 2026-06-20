@@ -27,6 +27,9 @@ agents/                           # 智能体：角色定义 + 工作流
 ├── RULES.md                      # 多角色辩论执行规则（含角色能力同步规则）
 └── debate-workflow.yaml          # 全流程辩论工作流
 
+findings/                         # skill直接判断（非辩论产出，与 debates 平行）
+├── shanhaijing.md                # 《山海经》记录可信度
+
 debates/                          # 辩论场地（与 agents 平行）
 ├── topics.md                     # 600个辩题（18领域，✅=已辩论）
 ├── 过程/                         # 辩论过程记录
@@ -50,11 +53,13 @@ tests/scenarios/                  # 触发场景测试用例
 ⚖️ 裁判者              比较证据强度 → 分层结论 → 最终报告
         │
         ▼
-🛠️ Skill优化者         审查辩论质量 → 判断是否沉淀 → 同步角色能力
+🛠️ Skill优化者         审查辩论质量 → 判断是否沉淀 → 同步角色能力 → 记录问询
         │
         ├── 方法论增量 → skills/truth-discovery/SKILL.md
         ├── 经典案例   → skills/truth-discovery/cases/
-        └── 角色同步   → agents/roles/*.md
+        ├── 角色同步   → agents/roles/*.md
+        ├── 辩题标注   → debates/topics.md ✅
+        └── 问询记录   → docs/inquiry-log.md
 ```
 
 ## 角色能力同步飞轮
