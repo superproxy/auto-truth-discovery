@@ -73,24 +73,24 @@ docs/
 ## 已结案（17场）
 
 | # | 辩题 | 结论 | 标签 |
-|---|---|---|---|
-| 1 | Aristotle 品牌语料库 | 真实人物核心+学派材料+后世品牌化 | 品牌化 |
-| 2 | Shakespeare 作者争议 | 核心剧作高度可能，全部独自完成过度宣称 | 品牌化 |
-| 3 | 戴比尔斯钻石"传统" | "古老传统"已证伪，制造习俗已确认 | 品牌化 |
-| 4 | 制糖业操纵营养科学 | 操纵已确认，科学共识品牌化 | 品牌化 |
-| 5 | 斯坦福监狱实验 | 实验已证伪，教材经典地位品牌化 | 品牌化 |
-| 6 | 老子与《道德经》 | 人物合理，个人著作过度宣称 | 品牌化 |
-| 7 | 约瑟夫斯耶稣段落 | 全段真品已证伪，篡改已确认 | 改写 |
-| 8 | 亚特兰蒂斯 | 历史事实已证伪，哲学寓言已确认 | 品牌化 |
-| 9 | 哥伦布"发现"美洲 | "发现"过度宣称，欧洲中心主义建构 | 品牌化 |
-| 10 | 苹果车库创业 | 车库创业过度宣称，硅谷品牌化 | 品牌化 |
-| 11 | "希腊奇迹"独立起源 | 独立起源已证伪，跨文明累积 | 品牌化 |
-| 12 | 爱迪生发明电灯泡 | 发明过度宣称，累积发明 | 累积发明 |
-| 13 | COVID-19起源 | 永久待证，政治化已确认 | 待证 |
-| 14 | 假新闻传播速度 | 传播更快已确认，人类心理是主因 | 已确认 |
-| 15 | 大脑10%迷思 | 已证伪，詹姆斯被误读 | 已证伪 |
-| 16 | 《山海经》记录可信度 | 山经地理高度可信，异兽过度宣称 | 品牌化 |
-| 17 | 庞贝古城与中国联系 | 直接联系极弱，间接丝绸贸易高度可能 | 未发现 |
+|---|---|---|---|---|
+| 1 | [Aristotle 品牌语料库](debates/conclusions/aristotle-brand-corpus.md) | 真实人物核心+学派材料+后世品牌化 | 品牌化 |
+| 2 | [Shakespeare 作者争议](debates/conclusions/shakespeare-authorship.md) | 核心剧作高度可能，全部独自完成过度宣称 | 品牌化 |
+| 3 | [戴比尔斯钻石"传统"](debates/conclusions/debeers-diamond-tradition.md) | "古老传统"已证伪，制造习俗已确认 | 品牌化 |
+| 4 | [制糖业操纵营养科学](debates/conclusions/sugar-industry-science-manipulation.md) | 操纵已确认，科学共识品牌化 | 品牌化 |
+| 5 | [斯坦福监狱实验](debates/conclusions/stanford-prison-experiment.md) | 实验已证伪，教材经典地位品牌化 | 品牌化 |
+| 6 | [老子与《道德经》](debates/conclusions/laozi-daodejing.md) | 人物合理，个人著作过度宣称 | 品牌化 |
+| 7 | [约瑟夫斯耶稣段落](debates/conclusions/josephus-testimonium.md) | 全段真品已证伪，篡改已确认 | 改写 |
+| 8 | [亚特兰蒂斯](debates/conclusions/atlantis.md) | 历史事实已证伪，哲学寓言已确认 | 品牌化 |
+| 9 | [哥伦布"发现"美洲](debates/conclusions/columbus-discovery.md) | "发现"过度宣称，欧洲中心主义建构 | 品牌化 |
+| 10 | [苹果车库创业](debates/conclusions/apple-garage-myth.md) | 车库创业过度宣称，硅谷品牌化 | 品牌化 |
+| 11 | ["希腊奇迹"独立起源](debates/conclusions/greek-miracle.md) | 独立起源已证伪，跨文明累积 | 品牌化 |
+| 12 | [爱迪生发明电灯泡](debates/conclusions/edison-lightbulb.md) | 发明过度宣称，累积发明 | 累积发明 |
+| 13 | [COVID-19起源](debates/conclusions/covid19-origin.md) | 永久待证，政治化已确认 | 待证 |
+| 14 | [假新闻传播速度](debates/conclusions/fake-news-speed.md) | 传播更快已确认，人类心理是主因 | 已确认 |
+| 15 | [大脑10%迷思](debates/conclusions/brain-10-percent.md) | 已证伪，詹姆斯被误读 | 已证伪 |
+| 16 | [《山海经》记录可信度](findings/shanhaijing.md) | 山经地理高度可信，异兽过度宣称 | 品牌化 |
+| 17 | [庞贝古城与中国联系](findings/pompeii-china.md) | 直接联系极弱，间接丝绸贸易高度可能 | 未发现 |
 
 ## 方法论体系
 
