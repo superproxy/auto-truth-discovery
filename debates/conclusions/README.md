@@ -1,6 +1,6 @@
 # 辩论结论
 
-## 已结案（27场）
+## 已结案（37场）
 
 | 辩论 | 核心结论 | 标签 | 可信度 |
 |---|---|---|---|
@@ -31,6 +31,16 @@
 | [《几何原本》是欧几里得的原创还是对前人成果的汇编？](elements-original-or-compilation.md) | 前人成果的系统汇编、证明重构与教材标准化 | 累积知识 | 高 |
 | [阿基米德轶事（浴缸发现浮力、撬动地球）是史实还是后世文学加工？](archimedes-anecdotes.md) | 人物和科学内核真实，具体轶事多为文学加工 | 文学加工 | 高 |
 | [毕达哥拉斯是否发现了毕达哥拉斯定理，还是巴比伦/印度更早已知？](pythagorean-theorem-origin.md) | 数学关系早于毕达哥拉斯已知，个人发现叙事过度 | 跨文明累积 | 高 |
+| [毕达哥拉斯学派是否真实存在，还是柏拉图学派的后世建构？](pythagorean-school-platonist-construction.md) | 人物与社群合理，成熟体系被后世哲学化包装 | 品牌化 | 中高 |
+| [孔子是否删订六经？](confucius-six-classics-editorship.md) | 传习关系可信，亲自删订六经过度宣称 | 经典化 | 高 |
+| [庄子内篇与外杂篇是否出自同一作者？](zhuangzi-inner-outer-misc-authorship.md) | 内篇接近庄周核心，外杂篇多为后学扩展 | 语料库 | 高 |
+| [《墨子》中哪些篇章确为墨子本人思想，哪些是后期墨家的发展？](mozi-core-and-later-mohism.md) | 早期核心可信，名辩与城守体现后期墨家发展 | 学派语料库 | 高 |
+| [《孙子兵法》是否确为孙武所作？](sunzi-bingfa-sunwu-attribution.md) | 早期兵学核心可信，完整亲著归属过度 | 兵家语料库 | 中高 |
+| [孙武与孙膑是否为同一人？](sunwu-sunbin-yinqueshan.md) | 银雀山出土证明两种兵书传统汉初已分立 | 文本独立 | 高 |
+| [《管子》是否与管仲有关，还是稷下学宫的集体编纂？](guanzi-guan-zhong-jixia-corpus.md) | 与管仲传统有关，现存文本是齐地多源汇编 | 托名语料库 | 高 |
+| [屈原是否真实存在？《离骚》是否为屈原所作？](qu-yuan-lisao-authorship.md) | 人物与《离骚》核心关联较强，忠臣包装需剥离 | 忠臣包装 | 中高 |
+| [宋玉的作品现存是否可靠？](song-yu-jiubian-pseudepigrapha.md) | 《九辩》相对较稳，外围赋作多为弱归属 | 弱归属 | 中 |
+| [《左传》作者是否为左丘明？](zuozhuan-zuoqiuming-authorship.md) | 左丘明亲作过度宣称，文本为多源编纂但史料价值高 | 经学包装 | 中高 |
 
 ## 判断标签说明
 
