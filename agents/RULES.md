@@ -28,16 +28,6 @@ SKILL.md 沉淀新方法论
 
 每场辩论结束后，辩论记录保存到 `debates/` 目录，与 `agents/` 平行。
 
-### 用户会话记录
-
-**每次用户与 agent 的交互，都必须追加记录到 `docs/session-log.md`。** 记录内容包括：
-- 用户指令（精炼表述）
-- agent 执行的行动摘要
-- 产生的产出（文件、方法论、案例）
-- 关键决策和修正
-
-此记录用于追踪 skill 的进化轨迹，确保每次迭代都有据可查。
-
 ## 2. 解析工作流
 
 读取 `agents/debate-workflow.yaml`。提取名称、输入、步骤、依赖关系（depends_on）、条件（conditions）和循环（loops）。
@@ -104,5 +94,5 @@ debates/{工作流名称}-{日期}/
 - 如果角色文件缺失，告知用户安装 agents/roles
 - 如果条件不满足，将该步骤标记为"已跳过"并继续
 - 对于 `depends_on_mode: "any_completed"`，当任意一个上游步骤完成时即可继续（而非等待全部）
-- **每次辩论结束后，必须记录到 `docs/session-log.md`**
+- **每次辩论结束后，必须记录到 `docs/inquiry-log.md`**
 - **每次 SKILL.md 更新后，检查是否需要同步更新角色文件**

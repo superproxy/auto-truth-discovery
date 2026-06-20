@@ -28,12 +28,11 @@ agents/                           # 智能体：角色定义 + 工作流
 └── debate-workflow.yaml          # 全流程辩论工作流
 
 debates/                          # 辩论场地（与 agents 平行）
-├── 事/                           # 辩题库 + 辩论记录
+├── topics.md                     # 600个辩题（18领域，✅=已辩论）
 └── 结果/                         # 裁判结论与报告
 
 docs/
 ├── inquiry-log.md                # 问询分类记录（提炼点/需求/参考资料）
-└── session-log.md                # 用户会话记录（追踪skill进化轨迹）
 
 tests/scenarios/                  # 触发场景测试用例
 ```
@@ -78,7 +77,7 @@ SKILL.md 沉淀新方法论
 
 | 维度 | 目录 | 内容 |
 |---|---|---|
-| 事 | `debates/事/` | 600个辩题（18领域）、6场已完成辩论的完整记录 |
+| 事 | `debates/topics.md` | 600个辩题（18领域）、✅=已辩论 |
 | 结果 | `debates/结果/` | 每场辩论的裁判结论摘要、重新审查报告 |
 
 > **经验（方法论增量）沉淀到 `skills/truth-discovery/SKILL.md`**，不单独存于 debates/。
@@ -88,9 +87,9 @@ SKILL.md 沉淀新方法论
 | 任务 | 命令 |
 |---|---|
 | 查看 skill 入口 | `cat skills/truth-discovery/SKILL.md \| head -5` |
-| 查看辩论场地 | `ls debates/人/ debates/事/ debates/结果/ debates/经验/` |
+| 查看辩论场地 | `ls debates/topics.md debates/结果/` |
 | 查看角色能力 | `ls agents/roles/` |
-| 查看会话记录 | `cat docs/session-log.md` |
+| 查看问询记录 | `cat docs/inquiry-log.md` |
 
 > **没有构建/测试运行器**。skill 工程靠 prompt 触发验证，测试场景见 `tests/scenarios/`，由人工或 agent 跑通。
 
@@ -103,15 +102,13 @@ SKILL.md 沉淀新方法论
 - **不要 import**：skill 是纯文本文件，没有运行时
 - **不依赖 `.trae`**：正式素材都应在 `skills/truth-discovery/` 下；`.trae` 只可作为临时迁移来源
 - **问询分类记录**：用户每次对本工程的问询，都要记录到 `docs/inquiry-log.md`，标注为"提炼点 / 需求 / 参考资料"之一
-- **会话记录**：每次用户与 agent 的交互，都要记录到 `docs/session-log.md`
-- **角色能力同步**：每次 SKILL.md 更新后，检查并同步更新角色文件
 - **中文优先写入**：后续新增或修改的说明、案例、记录和方法论原则上尽可能使用中文
 
 ## 当前优先级
 
 1. 持续运行辩论，积累方法论增量和经典案例
 2. 维护角色能力同步飞轮——每次辩论后检查角色是否需要更新
-3. 持续维护 `docs/inquiry-log.md` 和 `docs/session-log.md`
+3. 持续维护 `docs/inquiry-log.md`
 
 ## 指令源优先级
 
