@@ -8,7 +8,8 @@ output:
   process_dir: "debates/process"      # 辩论过程记录
   result_dir: "debates/conclusions"   # 裁判结论
   case_dir: "skills/truth-discovery/cases"  # 案例沉淀
-  skill_file: "skills/truth-discovery/SKILL.md"  # 方法论主文件
+  skill_file: "skills/truth-discovery/SKILL.md"  # 辩证法主干
+  reference_dir: "skills/truth-discovery/references"  # 专题长参考
   inquiry_log: "docs/inquiry-log.md"  # 问询记录
 
 llm:
@@ -331,6 +332,6 @@ steps:
       - 角色能力同步（如适用）
       - 不入库说明（如适用）
 
-      要求：严格把关，宁缺毋滥。SKILL.md 单次新增不超过现有内容的 20%。角色同步必须在 24 小时内完成。
+      要求：严格把关，宁缺毋滥。先判断沉淀位置：通用原则进 SKILL.md，专题长参考进 references/，可复用样本进 cases/。SKILL.md 只保留辩证法主干。角色同步必须在 24 小时内完成。
     output: optimizer_report
     depends_on: [judge_summary]

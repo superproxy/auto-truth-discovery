@@ -17,11 +17,11 @@
 ## 工程结构
 
 ```
-skills/truth-discovery/           # skill：方法论 + 经典案例
-├── SKILL.md                      # 方法论主文件（33个章节）
-├── cases/                        # 经典案例（18个）
+skills/truth-discovery/           # skill：辩证法主干 + 经典案例 + 长参考
+├── SKILL.md                      # 辩证法主干（通用入口）
+├── cases/                        # 经典案例
 ├── tools/checklist.md
-└── references/legacy-framework.md
+└── references/                   # 专题长参考与旧版框架
 
 agents/                           # 辩论 agent：角色 + 工作流
 ├── roles/                        # 5个角色
@@ -51,7 +51,8 @@ docs/inquiry-log.md               # 问询分类记录
         ▼
 🛠️ Optimizer      审查辩论 → 沉淀方法论/案例 → 同步角色能力 → 记录问询
         │
-        ├── 方法论增量 → skills/truth-discovery/SKILL.md
+        ├── 通用原则   → skills/truth-discovery/SKILL.md
+        ├── 专题参考   → skills/truth-discovery/references/
         ├── 经典案例   → skills/truth-discovery/cases/
         ├── 角色同步   → agents/roles/*.md
         ├── 辩题标注   → debates/topics.md ✅
@@ -61,13 +62,13 @@ docs/inquiry-log.md               # 问询分类记录
 ## 角色能力同步飞轮
 
 ```
-辩论产生方法论增量 → SKILL.md沉淀 → 角色文件同步注入 → 下一场辩论能力更强
+辩论产生方法论增量 → 主干/参考/案例分流沉淀 → 角色文件同步注入 → 下一场辩论能力更强
 ```
 
 ## 已结案（17场）
 
 | # | 辩题 | 结论 | 标签 |
-|---|---|---|---|---|
+|---|---|---|---|
 | 1 | [Aristotle 品牌语料库](debates/conclusions/aristotle-brand-corpus.md) | 真实人物核心+学派材料+后世品牌化 | 品牌化 |
 | 2 | [Shakespeare 作者争议](debates/conclusions/shakespeare-authorship.md) | 核心剧作高度可能，全部独自完成过度宣称 | 品牌化 |
 | 3 | [戴比尔斯钻石"传统"](debates/conclusions/debeers-diamond-tradition.md) | "古老传统"已证伪，制造习俗已确认 | 品牌化 |
@@ -90,13 +91,12 @@ docs/inquiry-log.md               # 问询分类记录
 
 | 工具 | 说明 |
 |---|---|
-| 命题拆分 | 人物/事件/文本/归属/学派/传承/包装 七层 |
-| 证据分级 | S/S⁻/A/B/C/D/E 七级 |
-| 八步核查 | 传承链/利益关联/独立验证/硬约束/谱系验证/文本层次/反事实倒推/隐匿核查 |
-| 归属阶梯 | 人物/学派/编订/语料库/协作生态/品牌/改写/神话 八层 |
-| 红旗信号 | 28条 |
-| 判断标签 | 已确认/高度可能/合理/待证/永久待证/过度宣称/归属错误/品牌化/已证伪/累积发明 |
-| 专项方法论 | 证据不对称、隐匿模式、完美犯罪、异常聚类、制造传统、科学共识污染、防御模式识别 |
+| 辩证法主干 | 矛盾、发展、联系、层次、条件、转化 |
+| 三道闸门 | 常识优先、信源优先、推理优先 |
+| 分层裁判 | 人物/事件/文本/归属/传承/包装分别判断 |
+| 证据分级 | S/A/B/C/D/E 六级，先追来源再谈内容 |
+| 专题参考 | 证据不对称、隐匿模式、异常聚类、发明优先权、地图工程、商业制造传统等放入 `references/` |
+| 案例库 | 经典案例放入 `cases/`，直接判断放入 `findings/` |
 
 ## 关键命令
 
@@ -112,7 +112,7 @@ docs/inquiry-log.md               # 问询分类记录
 
 - **单源维护**：本仓库 = source of truth
 - **问询分类记录**：每次问询记录到 inquiry-log.md，标注"提炼点/需求/参考资料"
-- **角色能力同步**：SKILL.md 更新后 24h 内同步角色文件
+- **角色能力同步**：`SKILL.md`、`references/` 或核心案例更新后 24h 内同步角色文件
 - **中文优先**：说明、案例、记录、方法论使用中文
 - **没有构建/测试运行器**：靠 prompt 触发验证
 

@@ -9,11 +9,11 @@
 ## 工程结构
 
 ```
-skills/truth-discovery/           # skill：方法论 + 经典案例
-├── SKILL.md                      # 方法论主文件（552行，33个章节）
-├── cases/                        # 经典案例（18个）
+skills/truth-discovery/           # skill：辩证法主干 + 经典案例 + 长参考
+├── SKILL.md                      # 辩证法主干（通用入口）
+├── cases/                        # 经典案例
 ├── tools/checklist.md            # 操作检查清单
-└── references/legacy-framework.md
+└── references/                   # 专题长参考与旧版框架
 
 agents/                           # 智能体：角色 + 工作流
 ├── roles/                        # 5个角色（collector/challenger/reasoner/judge/optimizer）
@@ -45,7 +45,8 @@ docs/
         ▼
 🛠️ Optimizer      审查辩论 → 沉淀方法论/案例 → 同步角色能力 → 记录问询
         │
-        ├── 方法论增量 → skills/truth-discovery/SKILL.md
+        ├── 通用原则   → skills/truth-discovery/SKILL.md
+        ├── 专题参考   → skills/truth-discovery/references/
         ├── 经典案例   → skills/truth-discovery/cases/
         ├── 角色同步   → agents/roles/*.md
         ├── 辩题标注   → debates/topics.md ✅
@@ -55,10 +56,10 @@ docs/
 ## 角色能力同步飞轮
 
 ```
-辩论产生方法论增量 → SKILL.md沉淀 → 角色文件同步注入 → 下一场辩论能力更强
+辩论产生方法论增量 → 主干/参考/案例分流沉淀 → 角色文件同步注入 → 下一场辩论能力更强
 ```
 
-每次 SKILL.md 更新后，相关角色在 24 小时内同步更新。Optimizer 每场辩论结束后检查角色能力同步。
+每次 `SKILL.md`、`references/` 或核心案例更新后，相关角色在 24 小时内同步更新。Optimizer 每场辩论结束后检查角色能力同步。
 
 ## 辩论场地
 
@@ -68,12 +69,12 @@ docs/
 | 过程 | `debates/process/` | 质疑-推理交锋记录 |
 | 结果 | `debates/conclusions/` | 裁判结论、分层判断、置信度 |
 
-> 方法论增量沉淀到 SKILL.md，不单独存于 debates/。
+> 方法论增量不单独存于 debates/。通用原则进 `SKILL.md`，专题长参考进 `references/`，可复用样本进 `cases/`。
 
 ## 已结案（17场）
 
 | # | 辩题 | 结论 | 标签 |
-|---|---|---|---|---|
+|---|---|---|---|
 | 1 | [Aristotle 品牌语料库](debates/conclusions/aristotle-brand-corpus.md) | 真实人物核心+学派材料+后世品牌化 | 品牌化 |
 | 2 | [Shakespeare 作者争议](debates/conclusions/shakespeare-authorship.md) | 核心剧作高度可能，全部独自完成过度宣称 | 品牌化 |
 | 3 | [戴比尔斯钻石"传统"](debates/conclusions/debeers-diamond-tradition.md) | "古老传统"已证伪，制造习俗已确认 | 品牌化 |
@@ -94,20 +95,18 @@ docs/
 
 ## 方法论体系
 
-### 核心工具
+### 辩证法主干
 
 | 工具 | 说明 |
 |---|---|
-| 命题拆分 | 人物/事件/文本/归属/学派/传承/包装 七层 |
-| 证据分级 | S/S⁻/A/B/C/D/E 七级 |
-| 八步核查 | 传承链/利益关联/独立验证/硬约束/谱系验证/文本层次/反事实倒推/隐匿核查 |
-| 归属阶梯 | 人物/学派/编订/语料库/协作生态/品牌/改写/神话 八层 |
-| 红旗信号 | 28条 |
-| 判断标签 | 已确认/高度可能/合理/待证/永久待证/过度宣称/归属错误/品牌化/已证伪/累积发明 |
-| D值距离 | 证据时间距离量化 |
-| 概率聚合 | 独立红旗数量 + 动机/能力/机会强度 - 硬反证强度 |
+| 矛盾分析 | 看叙事内部冲突、利益冲突、身份冲突、制度冲突 |
+| 发展分析 | 看对象如何生成、变形、标准化、神圣化或商业化 |
+| 联系分析 | 放入同期制度、贸易、战争、宗教、教育和出版网络 |
+| 层次分析 | 拆开人物/事件/文本/归属/传承/包装，避免压成一个名字 |
+| 条件分析 | 查前人、工具、机构、资金、传播链是否支撑宣称 |
+| 转化分析 | 判断真实核心如何变成权威品牌，弱证据如何变成常识 |
 
-### 专项方法论
+### 专题参考
 
 | 章节 | 核心内容 |
 |---|---|
@@ -118,6 +117,7 @@ docs/
 | 制造传统 vs 商业放大 | 从零制造（渗透率<10%）vs 商业放大（>30%）、社会强制维持机制、知情≠自由 |
 | 科学共识污染 | 引用级联/基金偏向/选择性发表/Meta分析污染/旋转门 |
 | 防御模式识别 | "承认小错、坚持大结论"模式 |
+| 旧方法论全文 | `skills/truth-discovery/references/legacy-methodology.md` |
 
 ## 关键命令
 
@@ -132,9 +132,9 @@ docs/
 ## 约定
 
 - **单源维护**：本仓库 = source of truth
-- **SKILL.md 体积控制**：超长内容拆到 cases/ 或 tools/
+- **SKILL.md 体积控制**：只放通用辩证法主干；专题长参考放 `references/`，样本放 `cases/`，清单放 `tools/`
 - **问询分类记录**：每次问询记录到 inquiry-log.md，标注"提炼点/需求/参考资料"
-- **角色能力同步**：SKILL.md 更新后 24h 内同步角色文件
+- **角色能力同步**：`SKILL.md`、`references/` 或核心案例更新后 24h 内同步角色文件
 - **中文优先**：说明、案例、记录、方法论使用中文
 - **没有构建/测试运行器**：靠 prompt 触发验证
 
