@@ -1,0 +1,49 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "date": "2026-11-18",
+  "topic": "《罗摩衍那》作者蚁垤是否真实存在？",
+  "topic_slug": "valmiki-ramayana",
+  "status": "completed",
+  "concurrency": 6,
+  "steps": [
+    { "id": "collector_search", "status": "completed", "file": "steps/1-collector_search.md" },
+    { "id": "challenger_round_1", "status": "completed", "file": "steps/2-challenger_round_1.md" },
+    { "id": "reasoner_round_1", "status": "completed", "file": "steps/3-reasoner_round_1.md" },
+    { "id": "challenger_round", "status": "completed", "file": "steps/4-challenger_round.md" },
+    { "id": "reasoner_round", "status": "completed", "file": "steps/5-reasoner_round.md" },
+    { "id": "challenger_loop", "status": "completed", "file": "steps/6-challenger_loop.md" },
+    { "id": "judge_summary", "status": "completed", "file": "steps/7-judge_summary.md" },
+    { "id": "optimizer_skill_review", "status": "completed", "file": "steps/8-optimizer_skill_review.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_collector", "status": "completed", "file": "steps/9-optimizer_sync_collector.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_challenger", "status": "completed", "file": "steps/10-optimizer_sync_challenger.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_reasoner", "status": "completed", "file": "steps/11-optimizer_sync_reasoner.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_judge", "status": "completed", "file": "steps/12-optimizer_sync_judge.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_optimizer_self", "status": "completed", "file": "steps/13-optimizer_sync_optimizer_self.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_finalize", "status": "completed", "file": "steps/14-optimizer_finalize.md" }
+  ],
+  "conclusion_file": "debates/conclusions/valmiki-ramayana-authorship.md",
+  "conclusion": {
+    "labels": ["高度可能", "合理待证", "已确认方向", "过度宣称", "近证伪", "品牌化", "口传传统", "ādi-kavi", "假二分", "同构迁移"],
+    "landing": "人物合理待证；层累多手；单作者现存本近证伪；ādi-kavi品牌化；与毗耶娑同构但文本对象不同；拒二元",
+    "confidence": "中高"
+  },
+  "methodology_increment": {
+    "type": "新红旗信号 + 薄操作化（方法迁移验收）",
+    "case_score": "25/25",
+    "decision": "入库方法论（薄）+案例",
+    "primary_case": ".agents/skills/truth-discovery/cases/valmiki-ramayana-authorship.md",
+    "excluded_as_duplicate": [
+      "口传四分法／人物≠完整归属（荷马／毗耶娑）",
+      "自我归名／传说核心正份额0／近证伪钉死／CE≠原文（毗耶娑）",
+      "故事核正交（事件核已有）"
+    ]
+  },
+  "closure": {
+    "topics_marked": true,
+    "readme_updated": true,
+    "agents_updated": true,
+    "inquiry_log_appended": true,
+    "step7_body_matches_conclusion": true
+  },
+  "optimizer_finalize": true
+}

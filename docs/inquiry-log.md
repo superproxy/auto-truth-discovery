@@ -132,3 +132,4 @@
 | 2026-11-17 | 自动化执行本场辩论及落盘（普鲁塔克《希腊罗马名人传》历史 vs 道德寓言）。 | 需求 | 14步全流程；结论 `plutarch-parallel-lives.md`；入库方法论＋案例（`moralized-bios-engineering.md`＋`plutarch-parallel-lives.md`）；SKILL 薄红旗（塑形≠寓言／设计污染／跨体裁双标）；四角色同步；topics ✅；结案 44 场 |
 | 2026-11-18 | 自动化执行本场辩论及落盘（苏埃托尼乌斯《十二凯撒传》史料 vs 八卦）。约瑟夫斯行已 ✅，补标跳过。 | 需求 | 14步全流程；结论 `suetonius-twelve-caesars.md`；入库方法论＋案例（`moralized-bios-engineering.md` §十＋`suetonius-twelve-caesars.md`）；SKILL 薄红旗（职位光环≠保管链／文书(a)(b)／V0–V3／谓词隔离／禁柔化）；五角色同步；topics 苏埃托尼乌斯 ✅；结案 45 场 |
 | 2026-11-18 | 自动化执行本场辩论及落盘（毗耶娑与《摩诃婆罗多》作者归属）。 | 需求 | 14步全流程；结论 `vyasa-mahabharata-authorship.md`；入库方法论＋案例（SKILL 薄红旗：职称偷渡／自我归名／传说核心正份额0／近证伪钉死／CE≠原文／战争核正交／超级归名分权重＋`cases/vyasa-mahabharata-authorship.md`）；五角色同步；topics 毗耶娑 ✅；结案 46 场 |
+| 2026-11-18 | 自动化执行本场辩论及落盘（蚁垤与《罗摩衍那》作者归属）。 | 需求 | 14步全流程；结论 `valmiki-ramayana-authorship.md`；入库薄方法论＋案例（SKILL：ādi-kavi 荣誉品牌≠护照／同构迁移分界＋`cases/valmiki-ramayana-authorship.md`）；五角色薄同步；topics 蚁垤 ✅；结案 47 场 |
