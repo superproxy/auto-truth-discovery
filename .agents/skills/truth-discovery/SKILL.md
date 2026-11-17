@@ -88,6 +88,9 @@ description: Use when the user questions whether a historical figure, classic te
 - 批判校本／现代定本 ≠「恢复某圣作者原文」；战争核／故事核／历史事件核 ⟂ 作者归属，回流权重＝0。
 - 一人名下跨体裁超级归名（史诗＋吠陀／往世书簇等）＝品牌扩张；须与本典框架归名分权重，两端均不回赠单人全文。
 - 姊妹史诗／同构案件方法迁移：须钉死文本对象与名号主轴分界；禁匀质打假；亦禁因「无同等超级归名」而回赠单人全文。
+- 跨文明比较品牌（如「梵语莎士比亚」一类「本地＝异域X」）→ 对人物护照／全集作者升格权重＝0；启发式比较 ≠ 证据。
+- 宫廷 kāvya／戏剧语料库 vs 口传史诗圣作者：须钉机制分界；禁把史诗「单人层累近证伪」匀质扣核心戏剧簇，亦禁因非史诗回赠全集护照；核心戏剧簇一人主导 ≠ 全作品集单一作者（莎士比亚纪律迁移）；外围多人／学派语料库可能。
+- 人物判断为「高度可能但弱于护照已证」时，流通摘要须保留「弱于护照」；省略后写成「已确认」＝柔化，应退回改写。
 - 最早硬证据远晚于声称起源。
 - 现代教材把复杂链条压成一个英雄名字。
 - 一个叙事完美服务于宗教、民族、课程、市场或文明自豪。
@@ -135,7 +138,7 @@ description: Use when the user questions whether a historical figure, classic te
 
 | 问题类型 | 参考/案例 |
 |---|---|
-| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`debates/conclusions/vyasa-mahabharata-authorship.md`（对照荷马）；旧框架见 `references/legacy-methodology.md` |
+| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`cases/valmiki-ramayana-authorship.md`（对照荷马）；宫廷诗人／戏剧语料库与「梵语X」比较品牌见 `cases/kalidasa-authorship.md`；旧框架见 `references/legacy-methodology.md` |
 | 单一人物/文本记载偏见、结构性投影 | `references/attribution-pollution-gradient.md`、`cases/simaqian-qinshihuang-bias.md`；结论见 `debates/conclusions/sima-qian-qinshihuang-han-bias.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md`；相反双称号/名誉极性分裂见 `references/bipolar-reputational-branding.md`、`cases/herodotus-credibility-bipolar-branding.md` |
 | 科学发明、优先权、累积发明 | `../../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
