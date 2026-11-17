@@ -7,7 +7,7 @@
 | 项 | 结果 |
 |---|---|
 | commit | `11f1121` — `debate: 迦梨陀娑是否真实存在？其作品是否可能为多人所作？` |
-| push | 见本步随后 push 记录 |
+| push | `origin/main` 已推送（`b4e7653..91a58af`） |
 | topics | 迦梨陀娑行已 ✅ |
 | 入库 | 薄方法论＋案例（SKILL：梵语X比较品牌／宫廷诗人vs史诗划界／弱于护照流通＋`cases/kalidasa-authorship.md`） |
 
