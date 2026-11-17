@@ -31,4 +31,5 @@ external:
   cursor-loop:
     role: ide_schedule
     skill_md: "${CURSOR_LOOP_SKILL:-$HOME/.cursor/skills-cursor/loop/SKILL.md}"
-    note: "Cursor 内置 loop skill；无 /loop 时用平台 automation 或 agent 读 execution_prompt"
+    shell: ".agents/cursor-loop.sh"
+    note: "Cursor 专用：优先 .agents/cursor-loop.sh（AGENT_LOOP_TICK）；或 IDE /loop；与 WorkBuddy 互斥"

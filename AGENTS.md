@@ -52,7 +52,7 @@ tests/                             # 场景与验收
 |---|---|---|
 | 工作流引擎说明 | init-role-agents | 只读引用，无副本 |
 | 定时自动化实例 | — | `.agents/automations.yaml` |
-| Loop 能力（引用） | init-loop-agents、Cursor `loop` skill | 见「自动化」；**本仓库无内置 loop 运行时** |
+| Loop 能力 | init-loop-agents、Cursor `loop` skill、**本仓库** `.agents/cursor-loop.sh`（Cursor 专用） | 见「自动化」；与 WorkBuddy 互斥 |
 | 工作流实例 | pattern yaml | `.agents/debate-workflow.yaml` |
 | 角色 | pattern roles | `.agents/roles/*.md` |
 | 执行规则 | pattern RULES | `.agents/RULES.md` |
@@ -127,9 +127,9 @@ tests/                             # 场景与验收
 3. 辩题 = `debates/topics.md` 第一个行尾无 ✅；若全无 ✅ 则报告结束并停止
 4. 落盘、标 ✅、问询记录、L9 git（`roles/git.md`）按工作流末步完成
 
-平台定时（WorkBuddy recurring / Cursor `/loop`）唤醒时同样执行本指令；二者勿同时开（见 yaml `mutex`）。
+平台定时（WorkBuddy recurring / Cursor `cursor-loop.sh` 或 `/loop`）唤醒时同样执行本指令；WorkBuddy 与 Cursor 勿同时开（见 yaml `mutex`）。
 
-## 已结案（44 场，全表见 `debates/conclusions/README.md`）
+## 已结案（45 场，全表见 `debates/conclusions/README.md`）
 
 | # | 辩题 | 结论 | 标签 |
 |---|---|---|---|
@@ -157,6 +157,7 @@ tests/                             # 场景与验收
 | 22 | [希罗多德"历史之父"还是"谎言之父"](debates/conclusions/herodotus-credibility.md) | 两称号皆后世包装、分层兼容；骨架粗粒度高度可信；内容沿来源梯度递减 | 双极品牌化 |
 | 23 | [修昔底德演讲词（葬礼演说）实录还是文学创作？](debates/conclusions/thucydides-speeches.md) | 骨架高度可能；措辞近已证伪；论旨无弱可推断正份额；代言式拟辞＋民主圣典品牌化 | 张力元文本 / 载言分裁 |
 | 24 | [普鲁塔克《希腊罗马名人传》是历史还是道德寓言？](debates/conclusions/plutarch-parallel-lives.md) | 道德化平行列传工程；塑形已确认≠寓言；轶事零正份额；3a相容待核；Synkrisis设计污染；双重品牌 | 道德塑形 / 设计污染 |
+| 25 | [苏埃托尼乌斯《十二凯撒传》中的轶事是史料还是八卦？](debates/conclusions/suetonius-twelve-caesars.md) | 帝王轶事—类型学 bios；职位光环≠保管链；文书(a)/(b)；V0–V3；轶事零正份额；谓词隔离；双重品牌 | 零正份额 / 声誉史 / 职位光环 |
 
 ## 方法论体系
 
@@ -184,7 +185,7 @@ tests/                             # 场景与验收
 | 科学共识污染 | 引用级联/基金偏向/选择性发表/Meta分析污染/旋转门 |
 | 防御模式识别 | "承认小错、坚持大结论"模式 |
 | 作者方法元文本／载言保真 | 三层切割 (a)/(b)/(c)、软约束空转、弱可推断禁令、证据类型 0／100；见 `references/author-method-meta-text-fidelity.md` |
-| 道德化传记／bios 工程 | 塑形≠寓言、3a≠3b、比较装置设计污染、跨体裁双标、B1–B3；见 `references/moralized-bios-engineering.md` |
+| 道德化传记／bios 工程 | 塑形≠寓言、3a≠3b、比较装置设计污染、跨体裁双标、B1–B3；帝王轶事变体（职位光环≠保管链、文书(a)/(b)、V0–V3、谓词隔离、声誉史不回流）；见 `references/moralized-bios-engineering.md` |
 | 旧方法论全文 | `.agents/skills/truth-discovery/references/legacy-methodology.md` |
 
 ## 关键命令
@@ -201,6 +202,7 @@ tests/                             # 场景与验收
 | 查看 Loop 引用 | `cat .agents/skills/paths.yaml` |
 | 查看问询记录 | `cat docs/inquiry-log.md` |
 | **自动化执行** | 用户指令 → 本文件「指令：自动化执行」→ `automations.yaml` `execution_prompt` |
+| **Cursor 专用 loop** | `.agents/cursor-loop.sh`（默认 3600s；`LOOP_INTERVAL=秒`；发 `AGENT_LOOP_TICK_*`；与 WorkBuddy/`/loop` 互斥） |
 
 ## 约定
 

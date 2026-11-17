@@ -31,14 +31,19 @@ automations:
           - "执行 debate-workflow.yaml 一整轮"
 
       cursor:
-        trigger: "用户配置 /loop <间隔>（可选 Read paths.yaml 中 cursor-loop skill）"
+        trigger: "Cursor 专用 shell：.agents/cursor-loop.sh（monitored AGENT_LOOP_TICK；或 IDE /loop）"
+        shell:
+          script: ".agents/cursor-loop.sh"
+          default_interval_seconds: 3600
+          sentinel: "AGENT_LOOP_TICK_truth-discovery-debate"
+          note: "仅 Cursor；Agent 后台启动并 notify_on_output；tick 后执行本文件 execution_prompt"
         human_sync:
-          example: "/loop 3600m，每 tick 发送 bootstrap_prompt 等价消息"
+          example: ".agents/cursor-loop.sh   # 或 /loop 3600m（二者勿并开）"
         agent_on_wake:
           - "Read .agents/automations.yaml → execution_prompt"
           - "执行 debate-workflow.yaml 一整轮"
 
-    mutex: "WorkBuddy 与 Cursor /loop 定时勿同时启用"
+    mutex: "WorkBuddy recurring 与 Cursor（cursor-loop.sh 或 /loop）勿同时启用"
 
 out_of_scope:
   - name: "生成昨日 AI 重点资讯总结"
