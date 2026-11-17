@@ -118,6 +118,11 @@ description: Use when the user questions whether a historical figure, classic te
 - 单一人物叙事按「事件骨架→道德定性→政治语境→后世品牌」作归因污染梯度分层，可疑度递增；事件可信不担保评判可信，评判可疑不穿透骨架 → 防证据方向倒置与聚类外推。
 - 同一人物/机构被两个权威冠以相反称号且各自被制度化（双极品牌化）→ 判断谓词从「内容真伪」上移到「称号生产机制」；两相反品牌若各品牌不同层（方法/影响 vs 内容真实），在分层框架下并不互斥，「矛盾」是品牌化制造的假象；警惕负品牌寄生正品牌语义做二次品牌化（评价极性反转）。
 - 时间更早 ≠ 来源独立：同生态旁证（即使无引用关系、即使年代更早）不能充当独立验证线；相容 ≠ 核对——印证只证明文化生态真实、不证明具体记载属实，且印证常集中于易验证的边缘层，不得外推到难验证层；共性/体裁证据只设「排除纯胡说」的下界，不对忠实度上界贡献。
+- 双源／多源「哪一方整体更可信」题面 → 假二分；须拆书名态（今本／古本／原件／辑佚）×冲突条目×外部窄锚；禁止整书站队与「单条胜出→整书修正」幽灵句。
+- 今本伪／窜或严重改写本冒充古本／出土原件使用 → 半真半假；当古史材料校正他书＝方法已证伪（可作伪书学／版本史对象）。
+- 古本辑佚／对照残条对事件史默认零正份额；对照用途＝拆单声部／主题学，≠「更真」胜出；仅真正分叉锚可窄升格发生坐标。
+- 「更原始故更真」「正史／官史故更真」→ 双端品牌化过度宣称；出土时间故事≠内容保真；官修身份升格权重＝0。
+- 多条异文仅共享「异于权威史书」维度 → 非独立异常，禁止概率连乘偷渡「异端传统整体更可信」。
 - 移交转述会系统性柔化上游原文（把「撤回/证伪」说成「修正」）——裁决与自检以 steps 原文为准，不依赖二手摘要。
 
 ## 输出模板
@@ -138,7 +143,7 @@ description: Use when the user questions whether a historical figure, classic te
 
 | 问题类型 | 参考/案例 |
 |---|---|
-| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`cases/valmiki-ramayana-authorship.md`（对照荷马）；宫廷诗人／戏剧语料库与「梵语X」比较品牌见 `cases/kalidasa-authorship.md`；旧框架见 `references/legacy-methodology.md` |
+| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；双源上古冲突／今本≠古本见 `cases/zhushu-jinian-vs-shiji.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`cases/valmiki-ramayana-authorship.md`（对照荷马）；宫廷诗人／戏剧语料库与「梵语X」比较品牌见 `cases/kalidasa-authorship.md`；旧框架见 `references/legacy-methodology.md` |
 | 单一人物/文本记载偏见、结构性投影 | `references/attribution-pollution-gradient.md`、`cases/simaqian-qinshihuang-bias.md`；结论见 `debates/conclusions/sima-qian-qinshihuang-han-bias.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md`；相反双称号/名誉极性分裂见 `references/bipolar-reputational-branding.md`、`cases/herodotus-credibility-bipolar-branding.md` |
 | 科学发明、优先权、累积发明 | `../../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |

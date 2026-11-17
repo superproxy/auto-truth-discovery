@@ -129,7 +129,7 @@ tests/                             # 场景与验收
 
 平台定时（WorkBuddy recurring / Cursor `cursor-loop.sh` 或 `/loop`）唤醒时同样执行本指令；WorkBuddy 与 Cursor 勿同时开（见 yaml `mutex`）。
 
-## 已结案（48 场，全表见 `debates/conclusions/README.md`）
+## 已结案（49 场，全表见 `debates/conclusions/README.md`）
 
 | # | 辩题 | 结论 | 标签 |
 |---|---|---|---|
@@ -161,6 +161,7 @@ tests/                             # 场景与验收
 | 26 | [印度史诗《摩诃婆罗多》作者毗耶娑是真实人物还是传说？](debates/conclusions/vyasa-mahabharata-authorship.md) | 编排者语义高度可能；人物合理待证；层累多手已确认方向；单作者现存MB近证伪；超级归名品牌化；拒二元 | 近证伪 / 品牌化 / 超级归名 |
 | 27 | [《罗摩衍那》作者蚁垤是否真实存在？](debates/conclusions/valmiki-ramayana-authorship.md) | 人物合理待证；层累多手已确认方向；单作者现存本近证伪；ādi-kavi 品牌化；与毗耶娑同构但文本对象不同；拒二元 | 近证伪 / 品牌化 / ādi-kavi |
 | 28 | [迦梨陀娑是否真实存在？其作品是否可能为多人所作？](debates/conclusions/kalidasa-authorship.md) | 人物弱于护照；核心戏剧簇一人主导合理～高度可能；全集单一作者过度宣称；外围多人／学派可能；「梵语莎士比亚」品牌化；拒二元 | 弱于护照 / 核心簇分裁 / 品牌化 |
+| 29 | [《竹书纪年》与《史记》关于上古史的记载冲突，哪一方更可信？](debates/conclusions/zhushu-jinian-vs-shiji.md) | 拒整书站队；今本不得当古本；古本对照默认零正份额；史记上古分层；双端「更真」品牌化 | 零正份额 / 分层史料 / 品牌化 |
 
 ## 方法论体系
 
