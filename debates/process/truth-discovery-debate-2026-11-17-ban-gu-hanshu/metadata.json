@@ -1,0 +1,26 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "date": "2026-11-17",
+  "topic": "班固是否独立完成《汉书》，还是继承其父班彪的未竟之作？",
+  "topic_slug": "ban-gu-hanshu-ban-biao",
+  "status": "completed",
+  "concurrency": 6,
+  "steps": [
+    { "id": "collector_search", "status": "completed", "file": "steps/1-collector_search.md" },
+    { "id": "challenger_round_1", "status": "completed", "file": "steps/2-challenger_round_1.md" },
+    { "id": "reasoner_round_1", "status": "completed", "file": "steps/3-reasoner_round_1.md" },
+    { "id": "challenger_round", "status": "completed", "file": "steps/4-challenger_round.md" },
+    { "id": "reasoner_round", "status": "completed", "file": "steps/5-reasoner_round.md" },
+    { "id": "challenger_loop", "status": "completed", "file": "steps/6-challenger_loop.md" },
+    { "id": "judge_summary", "status": "completed", "file": "steps/7-judge_summary.md" },
+    { "id": "optimizer_skill_review", "status": "completed", "file": "steps/8-optimizer_skill_review.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_collector", "status": "completed", "file": "steps/9-optimizer_sync_collector.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_challenger", "status": "completed", "file": "steps/10-optimizer_sync_challenger.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_reasoner", "status": "completed", "file": "steps/11-optimizer_sync_reasoner.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_judge", "status": "completed", "file": "steps/12-optimizer_sync_judge.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_optimizer_self", "status": "completed", "file": "steps/13-optimizer_sync_optimizer_self.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_finalize", "status": "completed", "file": "steps/14-optimizer_finalize.md" }
+  ],
+  "conclusion_file": "debates/conclusions/ban-gu-hanshu-ban-biao.md",
+  "optimizer_finalize": true
+}

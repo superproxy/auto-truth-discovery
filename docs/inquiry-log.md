@@ -102,3 +102,4 @@
 | 2026-06-21 | 补充说明“女巫生活起居像汉人”的证据来自当地拍摄。 | 提炼点+需求 | 在女巫与明朝人过程、结论和结论汇总中收录“当地拍摄”为现场证据线；将其证据等级高于普通网图处理，说明其可证明当地现场确有类似生活起居呈现，但仍需追拍摄地点、展陈说明、实物编号、复原依据和年代链 |
 | 2026-06-21 | 指出当地拍摄证据已由用户确认，不需要助手再次确认，因为助手也确认不了。 | 提炼点+需求 | 修正女巫与明朝人过程和结论措辞：不再把“助手看不到图”作为降级理由；将当地拍摄明确记录为用户确认的现场证据线。补充说明地点、说明牌、实物编号等只用于后续对外复核，不作为收录用户确认观察的前置条件 |
 | 2026-11-17 | 按 agents 工作流对「《国语》与《左传》是否为同一作者？」执行全流程辩论（含裁判后 6 路 optimizer 并行与汇总落盘）。 | 需求 | 过程落盘 `debates/process/truth-discovery-debate-2026-11-17/`；结论 `debates/conclusions/guoyu-zuozhuan-same-author.md`；topics ✅；SKILL 红旗与 collector/reasoner/judge 角色同步 |
+| 2026-11-17 | 按 agents 工作流对「班固是否独立完成《汉书》，还是继承其父班彪的未竟之作？」执行全流程辩论（含裁判后 6 路 optimizer 并行与汇总落盘）。 | 需求 | 过程 `debates/process/truth-discovery-debate-2026-11-17-ban-gu-hanshu/`；结论 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；topics ✅；SKILL 红旗与 collector/challenger/reasoner/judge 角色同步 |

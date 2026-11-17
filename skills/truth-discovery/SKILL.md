@@ -88,6 +88,8 @@ description: Use when the user questions whether a historical figure, classic te
 - 互文或平行段落只支持「共享材料池」，不能单向升格为「同一作者」。
 - 姊妹典籍中一书已判多源编纂时，连带「同著他书」应链条二次降级，举证在主张方。
 - 制度性体裁分立（如国别记言 vs 编年附传）且无自署名时，慎断「一人一稿多体」。
+- 正史载父作底稿、受诏官修、妹/门人封笔补卷，而叙事仍称「独立完成」→ 署名声望层过度宣称。
+- 家学未竟手稿不传，却对子辈定稿主张「非继承」或高比例继承 → 底稿占有率待证，勿混层。
 
 ## 输出模板
 
@@ -107,7 +109,7 @@ description: Use when the user questions whether a historical figure, classic te
 
 | 问题类型 | 参考/案例 |
 |---|---|
-| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；旧框架见 `references/legacy-methodology.md` |
+| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；旧框架见 `references/legacy-methodology.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md` |
 | 科学发明、优先权、累积发明 | `../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
 | 地图、工程、文明传播 | `cases/ming-renaissance-tech.md`、`../../findings/daming-hunyi-tu.md`、`../../findings/kunyu-wanguo-quantu.md` |
