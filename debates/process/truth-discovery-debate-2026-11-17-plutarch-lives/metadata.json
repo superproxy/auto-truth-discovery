@@ -1,0 +1,52 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "date": "2026-11-17",
+  "topic": "普鲁塔克《希腊罗马名人传》是历史还是道德寓言？",
+  "topic_slug": "plutarch-lives",
+  "status": "completed",
+  "concurrency": 6,
+  "steps": [
+    { "id": "collector_search", "status": "completed", "file": "steps/1-collector_search.md" },
+    { "id": "challenger_round_1", "status": "completed", "file": "steps/2-challenger_round_1.md" },
+    { "id": "reasoner_round_1", "status": "completed", "file": "steps/3-reasoner_round_1.md" },
+    { "id": "challenger_round", "status": "completed", "file": "steps/4-challenger_round.md" },
+    { "id": "reasoner_round", "status": "completed", "file": "steps/5-reasoner_round.md" },
+    { "id": "challenger_loop", "status": "completed", "file": "steps/6-challenger_loop.md" },
+    { "id": "judge_summary", "status": "completed", "file": "steps/7-judge_summary.md" },
+    { "id": "optimizer_skill_review", "status": "completed", "file": "steps/8-optimizer_skill_review.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_collector", "status": "completed", "file": "steps/9-optimizer_sync_collector.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_challenger", "status": "completed", "file": "steps/10-optimizer_sync_challenger.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_reasoner", "status": "completed", "file": "steps/11-optimizer_sync_reasoner.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_judge", "status": "completed", "file": "steps/12-optimizer_sync_judge.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_optimizer_self", "status": "completed", "file": "steps/13-optimizer_sync_optimizer_self.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_finalize", "status": "completed", "file": "steps/14-optimizer_finalize.md" }
+  ],
+  "conclusion_file": "debates/conclusions/plutarch-parallel-lives.md",
+  "conclusion": {
+    "labels": ["高度可能", "张力元文本", "已确认", "过度宣称", "相容待核", "个案升格", "设计污染", "道德塑形", "双重品牌化", "双标", "零正份额"],
+    "landing": "道德化平行列传工程；塑形≠寓言；轶事零正份额；3a相容待核；Synkrisis设计污染；双重品牌",
+    "confidence": "中高"
+  },
+  "methodology_increment": {
+    "type": "新叙事分层模式 + 新证据模式 + 方法论修正",
+    "case_score": "24/25",
+    "decision": "入库方法论+案例",
+    "primary_reference": ".agents/skills/truth-discovery/references/moralized-bios-engineering.md",
+    "primary_case": ".agents/skills/truth-discovery/cases/plutarch-parallel-lives.md",
+    "excluded_as_duplicate": [
+      "张力元文本三层切割",
+      "载言分裁／轶事零正份额主干",
+      "相容≠核对",
+      "归因污染梯度",
+      "双极品牌化（相反称号）"
+    ]
+  },
+  "closure": {
+    "topics_marked": true,
+    "readme_updated": true,
+    "agents_updated": true,
+    "inquiry_log_appended": true,
+    "step7_body_matches_conclusion": true
+  },
+  "optimizer_finalize": true
+}

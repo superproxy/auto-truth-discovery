@@ -129,7 +129,7 @@ tests/                             # 场景与验收
 
 平台定时（WorkBuddy recurring / Cursor `/loop`）唤醒时同样执行本指令；二者勿同时开（见 yaml `mutex`）。
 
-## 已结案（43 场，全表见 `debates/conclusions/README.md`）
+## 已结案（44 场，全表见 `debates/conclusions/README.md`）
 
 | # | 辩题 | 结论 | 标签 |
 |---|---|---|---|
@@ -156,6 +156,7 @@ tests/                             # 场景与验收
 | 21 | [司马迁对秦始皇的描述是否存在汉代政治偏见？](debates/conclusions/sima-qian-qinshihuang-han-bias.md) | 事件骨架高度可信；暴君内核真实但道德框架带汉初过秦话语结构性投影；暴君常识形象后世品牌化 | 结构性投影 |
 | 22 | [希罗多德"历史之父"还是"谎言之父"](debates/conclusions/herodotus-credibility.md) | 两称号皆后世包装、分层兼容；骨架粗粒度高度可信；内容沿来源梯度递减 | 双极品牌化 |
 | 23 | [修昔底德演讲词（葬礼演说）实录还是文学创作？](debates/conclusions/thucydides-speeches.md) | 骨架高度可能；措辞近已证伪；论旨无弱可推断正份额；代言式拟辞＋民主圣典品牌化 | 张力元文本 / 载言分裁 |
+| 24 | [普鲁塔克《希腊罗马名人传》是历史还是道德寓言？](debates/conclusions/plutarch-parallel-lives.md) | 道德化平行列传工程；塑形已确认≠寓言；轶事零正份额；3a相容待核；Synkrisis设计污染；双重品牌 | 道德塑形 / 设计污染 |
 
 ## 方法论体系
 
@@ -183,6 +184,7 @@ tests/                             # 场景与验收
 | 科学共识污染 | 引用级联/基金偏向/选择性发表/Meta分析污染/旋转门 |
 | 防御模式识别 | "承认小错、坚持大结论"模式 |
 | 作者方法元文本／载言保真 | 三层切割 (a)/(b)/(c)、软约束空转、弱可推断禁令、证据类型 0／100；见 `references/author-method-meta-text-fidelity.md` |
+| 道德化传记／bios 工程 | 塑形≠寓言、3a≠3b、比较装置设计污染、跨体裁双标、B1–B3；见 `references/moralized-bios-engineering.md` |
 | 旧方法论全文 | `.agents/skills/truth-discovery/references/legacy-methodology.md` |
 
 ## 关键命令
