@@ -127,3 +127,5 @@
 | 2026-11-17 | Git 发布改为角色 git.md，删除 debate-git-publish.sh。 | 提炼点 | `roles/git.md`；workflow L9 role=git；按流程 Shell 执行 git |
 | 2026-11-17 | AUTOMATION/automations 收口为 Cursor vs WorkBuddy 执行说明。 | 提炼点 | yaml platforms 块；AUTOMATION 重写为两平台表 + 共同执行层 |
 | 2026-11-17 | 删除 AUTOMATION.md；自动化说明仅留 automations.yaml。 | 提炼点 | 去重手册；AGENTS/README/RULES/paths 改指 yaml |
+| 2026-11-17 | 自动化执行：跑一轮求真辨伪辩论（修昔底德演讲词实录vs文学创作），验证链路并沉淀方法论增量。 | 需求 | 14步全流程落盘；新增「理想类型/时代话语表征」第三落点范式（references+case+SKILL 主干）；5角色同步（张力元文本/防御换壳/载言分裁/防软着陆标签）；topics 42→43；平台 automation 重建对齐 yaml（4a6fcce1） |
+| 2026-11-17 | 自动化执行本场辩论及落盘（修昔底德演讲词）：以权威结论 `thucydides-speeches.md`＋steps/5–6 收敛共识纠偏偏航产物并完成 Skill 汇总落盘。 | 需求 | 删偏航结论 `thucydides-speeches-orality-vs-literary.md` 与 ideal-type 案例；新建 `author-method-meta-text-fidelity.md`＋`thucydides-speeches-composition.md`；SKILL 两红旗＋参考入口改指权威文件；理想类型降为可选下游分账；角色精炼同步；topics ✅；结案 43 场 |

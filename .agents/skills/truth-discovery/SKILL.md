@@ -59,9 +59,11 @@ description: Use when the user questions whether a historical figure, classic te
 
 ## 分层裁判标签
 
-优先使用这些标签，而不是“真/假”：`已确认`、`高度可能`、`合理`、`待证`、`永久待证`、`不可知`、`过度宣称`、`归属错误`、`品牌化`、`改写`、`已证伪`、`累积发明`。
+优先使用这些标签，而不是“真/假”：`已确认`、`高度可能`、`合理`、`待证`、`永久待证`、`不可知`、`过度宣称`、`归属错误`、`品牌化`、`改写`、`已证伪`、`累积发明`、`张力元文本`、`代言式文学重构`。
 
 归属类问题按阶梯判断：人物 → 学派 → 编订 → 语料库 → 协作生态 → 品牌 → 改写 → 神话。
+
+永久不可知（证据原理上无法生成）与永久待证（证据被压制/销毁）须分开，前者不可靠更多搜索填补。作者方法元文本下的载言保真切割、软着陆禁令与证据类型分账见 `references/author-method-meta-text-fidelity.md`；「理想类型／时代表征」仅为可选下游用途分账，不得回潮「弱可推断正份额」（可选参考 `references/unverifiable-text-ideal-type.md`）。
 
 ## 内部辩论模式
 
@@ -92,10 +94,13 @@ description: Use when the user questions whether a historical figure, classic te
 - 家学未竟手稿不传，却对子辈定稿主张「非继承」或高比例继承 → 底稿占有率待证，勿混层。
 - 纪传体全书按单一真伪二分 → 压平体裁×时代可靠度梯度。
 - 列传长篇载言无出处却当现场录音 → 拟辞/载言层未与叙事事实分裁。
+- 史家方法序／自我声明声称「贴近大意」或「按场合所需填写」→ 只锚定意图结构，不锚定执行保真；须拆 (a) 意图声明／(b) 已实现保真／(c) 可测生成约束——无独立旁证时 (c) 方法论不可用，不得把张力元文本读成保真证书。
+- 「虽非逐字但大意弱可推断／unquantifiably authentic／伪精确残值概率」充当教材或下游史实锚 → 防御换壳红旗：弱可推断正份额与不可知标签不得冒充肯定证据；特异性只挡极端全虚构，不发保真正份额。
 - 互见一致 alone 升格史实 → 只能说明编集控制，不能反向证明事件层。
 - 单一人物叙事按「事件骨架→道德定性→政治语境→后世品牌」作归因污染梯度分层，可疑度递增；事件可信不担保评判可信，评判可疑不穿透骨架 → 防证据方向倒置与聚类外推。
 - 同一人物/机构被两个权威冠以相反称号且各自被制度化（双极品牌化）→ 判断谓词从「内容真伪」上移到「称号生产机制」；两相反品牌若各品牌不同层（方法/影响 vs 内容真实），在分层框架下并不互斥，「矛盾」是品牌化制造的假象；警惕负品牌寄生正品牌语义做二次品牌化（评价极性反转）。
-- 时间更早 ≠ 来源独立：同生态旁证（即使无引用关系、即使年代更早）不能充当独立验证线；相容 ≠ 核对——印证只证明文化生态真实、不证明具体记载属实，且印证常集中于易验证的边缘层，不得外推到难验证层。
+- 时间更早 ≠ 来源独立：同生态旁证（即使无引用关系、即使年代更早）不能充当独立验证线；相容 ≠ 核对——印证只证明文化生态真实、不证明具体记载属实，且印证常集中于易验证的边缘层，不得外推到难验证层；共性/体裁证据只设「排除纯胡说」的下界，不对忠实度上界贡献。
+- 移交转述会系统性柔化上游原文（把「撤回/证伪」说成「修正」）——裁决与自检以 steps 原文为准，不依赖二手摘要。
 
 ## 输出模板
 
@@ -120,6 +125,7 @@ description: Use when the user questions whether a historical figure, classic te
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md`；相反双称号/名誉极性分裂见 `references/bipolar-reputational-branding.md`、`cases/herodotus-credibility-bipolar-branding.md` |
 | 科学发明、优先权、累积发明 | `../../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
 | 地图、工程、文明传播 | `cases/ming-renaissance-tech.md`、`../../../findings/daming-hunyi-tu.md`、`../../../findings/kunyu-wanguo-quantu.md` |
+| 不可核验文本、自述方法论张力、史家拟辞/代言载言 | `references/author-method-meta-text-fidelity.md`、`cases/thucydides-speeches-composition.md`；结论见 `debates/conclusions/thucydides-speeches.md`；可选下游用途分账（不得回潮弱可推断）见 `references/unverifiable-text-ideal-type.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |
 
 ## 反模式
