@@ -98,9 +98,10 @@ debates/{工作流名称}-{日期}/
 
 ## 9. 定时后台迭代
 
-> 自动化的**唯一权威定义**在 `.agents/automations.yaml`（调度字段 + 完整提示词）。
-> 平台 automation 与本地脚本都只注入薄引导、指向该文件；执行手册见 `.agents/AUTOMATION.md`。
-> 去重靠 name 精确匹配更新，禁止新建第二个同名任务；平台无 `sync_key` 字段。
+> **调度层**：`.agents/automations.yaml` + 外部 loop skill 引用（见 AGENTS.md「自动化与 Loop」）。
+> **定义层**：`.agents/automations.yaml`。
+> **执行层**：上游 **init-role-agents**（见根目录 `AGENTS.md` 项目初始化）+ 本文件 §4 Subagent + 步骤 `loop:`。
+> 人类手册见 `.agents/AUTOMATION.md`；去重靠 name 精确匹配；平台无 `sync_key` 字段。
 
 **主用**：平台 recurring automation「求真辨伪辩论·定时循环」（默认每 1h），到点注入薄引导，
 新会话 agent 读 yaml 取完整指令后执行一轮。改流程只改 yaml 的 `execution_prompt`，无需同步平台；

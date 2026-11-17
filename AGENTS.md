@@ -12,15 +12,9 @@
 .agents/                           # agent 工程配置（skill + 工作流 + 初始化来源）
 ├── README.md                      # 本目录索引（结构以根目录 AGENTS.md 为准）
 ├── skills/
-│   └── truth-discovery/           # skill：辩证法主干 + 经典案例 + 长参考
-│       ├── SKILL.md               # 辩证法主干（通用入口）
-│       ├── cases/                 # 经典案例
-│       ├── tools/checklist.md     # 操作检查清单
-│       └── references/            # 专题长参考与旧版框架
-├── skills-init/
-│   ├── README.md                  # 来源引用清单（谁初始化了本工程）
-│   └── init-loop-agents/
-│       └── SKILL.md               # init-loop-agents 本地副本（通用工作流执行引擎）
+│   ├── truth-discovery/           # 本工程形成：方法论 + cases + references
+│   ├── README.md                  # skill 说明
+│   └── paths.yaml                 # 上游 / Loop skill 引用路径
 ├── roles/                         # 5个角色（collector/challenger/reasoner/judge/optimizer）
 ├── RULES.md                       # 执行规则（含角色能力同步规则）
 ├── debate-workflow.yaml           # 全流程辩论工作流（14步）
@@ -41,15 +35,48 @@ tests/                             # 场景与验收
 ```
 
 > 目录约定：`.agents/` 存放"agent 如何思考与执行"（配置与能力），根目录存放"辩论产生了什么"（数据与结论）。
-> 迁移历史：2026-11-17 由根目录 `skills/`、`agents/` 迁入 `.agents/`；同年取消 `.agents/agents/` 嵌套，工作流与角色文件平铺在 `.agents/` 根级；上游路径引用见 `.agents/skills-init/README.md`。
+> 迁移历史：2026-11-17 由根目录 `skills/`、`agents/` 迁入 `.agents/`；同年取消 `.agents/agents/` 嵌套。项目初始化见下文。
 
-## 初始化来源（重要）
+## 项目初始化
 
-本工程由上游 skill 仓库 https://github.com/superproxy/skills 的 **`init-loop-agents`** skill 初始化，
-其 `patterns/loop-enginerring/` 是本工程辩论工作流的原型。引用与副本见 `.agents/skills-init/`。
-- **引擎（上游）**：`.agents/skills-init/init-loop-agents/SKILL.md` — 通用工作流解析/调度/执行/保存协议
-- **实例（本项目）**：`.agents/debate-workflow.yaml` + `.agents/roles/` — 求真辨伪 14 步与五个角色（与 skill 同层，均在 `.agents/`）
-- 上游 skill 更新时只同步协议层改动，不改本项目角色/工作流实例。
+本仓库**不**把上游 skill 正文拷进 git。初始化 = 用上游 **pattern 落地本仓库实例** + 会话内 **Read 上游 SKILL 路径**。
+
+### 上游来源
+
+| 项 | 值 |
+|---|---|
+| 仓库 | https://github.com/superproxy/skills |
+| Pattern | `patterns/loop-enginerring/`（求真辨伪原型） |
+| 工作流引擎 skill | **`init-role-agents/SKILL.md`** |
+| 调度说明 skill | `init-loop-agents/SKILL.md`（通用 `/loop`，非 workflow 正文） |
+
+### 上游 vs 本仓库
+
+| 层级 | 上游（superproxy-skills） | 本仓库（git） |
+|---|---|---|
+| 工作流引擎说明 | init-role-agents | 只读引用，无副本 |
+| 定时自动化实例 | — | `.agents/automations.yaml` + `AUTOMATION.md` + `*.sh` |
+| Loop 能力（引用） | init-loop-agents、Cursor `loop` skill | 见「自动化与 Loop」；**本仓库无内置 loop 运行时** |
+| 工作流实例 | pattern yaml | `.agents/debate-workflow.yaml` |
+| 角色 | pattern roles | `.agents/roles/*.md` |
+| 执行规则 | pattern RULES | `.agents/RULES.md` |
+| 方法论 | — | `.agents/skills/truth-discovery/` |
+| 辩论产出 | — | `debates/`、`findings/` |
+
+### 新环境检查清单
+
+1. Clone 本仓库。
+2. Clone 或已有上游目录（默认 `~/Desktop/superproxy-skills`）；可选 `export SUPERPROXY_SKILLS=/path/to/superproxy-skills`。
+3. **Read** `$SUPERPROXY_SKILLS/init-role-agents/SKILL.md`（跑辩论必须）。
+4. 读本仓库：`.agents/RULES.md`、`debate-workflow.yaml`、`automations.yaml`；路径表见 `.agents/skills/paths.yaml`。
+
+勿在本仓库建 vendor / fetch 副本。上游协议变更在 superproxy 维护；本仓库只维护**实例**（yaml、roles、RULES）兼容性。
+
+### Skill 命名分工
+
+- **init-role-agents** — 解析 yaml、化身 roles、Subagent 同层并行、步骤 `loop:`。
+- **init-loop-agents** — 调度语义（Read 引用）；本项目 tick 落地在 **`.agents/automations.yaml`**。
+- **Cursor `loop` skill** — IDE 内 `/loop` 机制（非本仓库文件）；配置定时时 Read 该 skill + init-loop-agents，再读本仓库 `automations.yaml`。
 
 ## 工作流全景
 
@@ -91,17 +118,30 @@ tests/                             # 场景与验收
 
 > 方法论增量不单独存于 debates/。通用原则进 `SKILL.md`，专题长参考进 `references/`，可复用样本进 `cases/`。
 
-## 定时触发与 agent 执行
+## 自动化与 Loop（目录放哪、怎么调用）
 
-- **唯一真相源**：`.agents/automations.yaml`（调度字段 + 完整 `execution_prompt` + 薄 `bootstrap_prompt`）。
-  平台与命令行脚本都只存薄引导/读取同一份，**禁止在别处复制完整提示词**。
-- **人类执行手册**：`.agents/AUTOMATION.md`（含 L1-L9 拓扑层、闭环三件套、统一规范、命令行兜底）。
-- **触发方式（三选一，勿双开）**：
-  1. 平台 recurring automation「求真辨伪辩论·定时循环」——注入薄引导，agent 读 yaml 取全文执行（主用）；
-  2. 命令行兜底 `bash .agents/run-debate.sh [--loop]`——平台不支持时用 `codebuddy -p` 无头跑同一份定义；
-  3. 旧方案 `.agents/loop-debate.sh`——IDE 会话内 Monitored shell（薄引导）。
-- **agent 醒来后做什么**：读 yaml 取 `execution_prompt` → 读 AUTOMATION.md/RULES/workflow → 取首个未标 ✅ 辩题 → 按 L1-L9 层执行（层内并行、层间串行）→ 落盘 → 标 ✅ + 计数 +1 → 记问询 → 实跑 git 发布 → 报告。
-- **改什么同步到哪里**：改流程/提示词只改 yaml（平台不用动）；改 `rrule`/`status`/`cwd` 才同步平台；按 name 精确匹配更新，禁止新建同名任务（详见 AUTOMATION.md 第 2.3 节）。
+本仓库**没有**自带 loop 运行时。Loop 靠**外部 skill 引用**；本仓库只放**自动化实例**（均在 `.agents/` 根下，不在 `skills/`）。
+
+### 放哪个目录
+
+| 内容 | 路径 |
+|---|---|
+| 自动化定义 | `.agents/automations.yaml`（`execution_prompt` 为每轮正文） |
+| 执行手册 | `.agents/AUTOMATION.md` |
+| 载体 | `.agents/run-debate.sh`、`loop-debate.sh` |
+| 工作流 | `debate-workflow.yaml`、`roles/`、`RULES.md` |
+| Loop 能力 | **引用**：`skills/paths.yaml` → init-loop-agents、Cursor `loop` skill |
+| 方法论 | `skills/truth-discovery/` |
+
+### 自动化调用链
+
+1. （可选）配 `/loop` 时：Read `init-loop-agents` + Cursor `loop` skill（见 `paths.yaml`）。
+2. **必须** Read `automations.yaml` → `execution_prompt`。
+3. Read 上游 `init-role-agents` + `RULES.md` + `debate-workflow.yaml` → 跑一轮 → 落盘。
+
+### 触发载体（三选一）
+
+平台 automation · `run-debate.sh` · `loop-debate.sh`（+ Cursor loop 的 Monitored shell）。改步骤只改 yaml；改 `rrule` 同步平台（AUTOMATION.md §2.3）。
 
 ## 已结案（41 场，全表见 `debates/conclusions/README.md`）
 
@@ -160,20 +200,22 @@ tests/                             # 场景与验收
 
 | 任务 | 命令 |
 |---|---|
+| 查看项目初始化 | 本文件「项目初始化」节 |
 | 查看方法论 | `cat .agents/skills/truth-discovery/SKILL.md \| head -5` |
 | 查看辩题库 | `grep ✅ debates/topics.md` |
 | 查看结论汇总 | `cat debates/conclusions/README.md` |
 | 查看角色 | `ls .agents/roles/` |
 | 查看自动化定义（真相源） | `cat .agents/automations.yaml` |
 | 查看执行手册/统一规范 | `cat .agents/AUTOMATION.md` |
-| 查看初始化来源 | `cat .agents/skills-init/README.md` |
+| 查看 skill 说明 | `cat .agents/skills/README.md` |
+| 查看 Loop 引用 | `cat .agents/skills/paths.yaml` |
 | 查看问询记录 | `cat docs/inquiry-log.md` |
 | 手动跑一轮辩论 | `bash .agents/run-debate.sh`（或把 yaml 的 execution_prompt 发给 agent） |
 
 ## 约定
 
-- **单源维护**：本仓库 = source of truth
-- **SKILL.md 体积控制**：只放通用辩证法主干；专题长参考放 `references/`，样本放 `cases/`，清单放 `tools/`
+- **单源维护**：辩论产出 + **方法论 skill**（`skills/truth-discovery`）在本仓库 git；**自动化**在 `.agents/automations.yaml`；**Loop** 为外部 skill 引用
+- **外部 skill**：不进库；新环境见本文件「项目初始化」
 - **问询分类记录**：每次问询记录到 inquiry-log.md，标注"提炼点/需求/参考资料"
 - **角色能力同步**：`SKILL.md`、`references/` 或核心案例更新后 24h 内同步角色文件
 - **中文优先**：说明、案例、记录、方法论使用中文
@@ -182,8 +224,9 @@ tests/                             # 场景与验收
 ## 指令源优先级
 
 1. 本文件 = 仓库结构与命令的唯一权威
-2. `.agents/skills/truth-discovery/SKILL.md` = skill 行为的唯一权威
+2. `.agents/skills/truth-discovery/SKILL.md` = skill 行为唯一权威
 3. `.agents/RULES.md` = 多角色辩论执行规则
 4. `.agents/automations.yaml` = 自动化定义唯一真相源（调度 + 提示词）
 5. `.agents/AUTOMATION.md` = 人类可读版执行手册与统一规范
-6. `.agents/skills-init/README.md` = 初始化来源引用
+6. 本文件「项目初始化」= 上游对齐与新环境说明
+7. 外部 **init-role-agents**（`paths.yaml`）= 工作流引擎；**init-loop-agents** / Cursor **loop** = 调度能力（引用，非本仓库）

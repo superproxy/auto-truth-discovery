@@ -70,13 +70,20 @@
 > 新会话 agent 无历史上下文时，先读本节 + RULES.md + debate-workflow.yaml。
 > 若不确定从哪开始，按下方拓扑层逐层执行。
 
-### 触发链路
+### 触发链路（调度层 vs 执行层）
+
+```
+[调度层] 外部 loop skill（init-loop-agents + 可选 Cursor loop）+ 本文件；载体四选一：平台 | /loop | loop-debate.sh | run-debate.sh
+[执行层] 上游 init-role-agents（Read，见 AGENTS.md 项目初始化）+ RULES.md + debate-workflow.yaml
+   └─ 同拓扑层 Subagent 并行；步骤 loop: 字段驱动质疑-推理轮回
+         └─ 落盘 → 标 ✅ → 记问询 → git 发布 → 简要报告
+```
 
 ```
 平台调度器（每小时，rrule 在 automations.yaml）
    └─ 注入第 3 节薄引导 → 新会话 agent（无历史上下文）
          └─ agent 读 automations.yaml 取 execution_prompt 全文
-               └─ 读本文件 + RULES.md + debate-workflow.yaml
+               └─ AGENTS.md「自动化与 Loop」+ init-role-agents + 本文件 + RULES.md
                      └─ 按下方拓扑层逐层执行一轮辩论
                            └─ 落盘 → 标 ✅ → 记问询 → git 提交推送 → 简要报告
 ```

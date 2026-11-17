@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# 定时唤醒求真辨伪辩论迭代（本地 IDE：配合 Shell notify_on_output + ^AGENT_LOOP_TICK_）
+# IDE 定时载体（链 C）；loop 语义见 AGENTS.md「自动化与 Loop」+ paths.yaml 外部 loop skill
+# 本地 IDE：Monitored shell + notify_on_output + ^AGENT_LOOP_TICK_truth-discovery-debate
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

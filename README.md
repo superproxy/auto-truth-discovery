@@ -18,8 +18,7 @@
 
 ```
 .agents/                           # agent 工程配置（skill + 辩论工作流平铺）
-├── skills/truth-discovery/        # 自有 skill：主干 + 案例 + 参考 + 清单
-├── skills-init/                   # 上游 init-loop-agents 引用（README）+ 引擎副本
+├── skills/truth-discovery/        # 本工程方法论 + 案例
 ├── roles/                         # 5个辩论角色
 ├── RULES.md                       # 执行规则（含角色能力同步）
 ├── debate-workflow.yaml           # 全流程辩论工作流（14步）
@@ -37,8 +36,8 @@ docs/inquiry-log.md                # 问询分类记录
 
 ## 初始化来源
 
-本工程由 https://github.com/superproxy/skills 的 `init-loop-agents` skill 初始化，
-其 `patterns/loop-enginerring/` 为辩论工作流原型。引用声明与本地副本见 `.agents/skills-init/README.md`。
+本工程由 https://github.com/superproxy/skills 初始化（工作流 **`init-role-agents`**，调度 **`init-loop-agents`**），
+其 `patterns/loop-enginerring/` 为辩论工作流原型。项目初始化见根目录 [`AGENTS.md`](AGENTS.md)。
 
 ## 定时触发与 agent 执行
 
@@ -105,6 +104,7 @@ docs/inquiry-log.md                # 问询分类记录
 
 | 任务 | 命令 |
 |---|---|
+| 查看初始化 | `AGENTS.md`「项目初始化」 |
 | 查看方法论 | `cat .agents/skills/truth-discovery/SKILL.md \| head -5` |
 | 查看辩题库 | `grep ✅ debates/topics.md` |
 | 查看结论汇总 | `cat debates/conclusions/README.md` |

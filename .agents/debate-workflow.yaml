@@ -7,9 +7,10 @@ agents_dir: ".agents/roles"
 output:
   process_dir: "debates/process"      # 辩论过程记录
   result_dir: "debates/conclusions"   # 裁判结论
-  case_dir: ".agents/skills/truth-discovery/cases"  # 案例沉淀
-  skill_file: ".agents/skills/truth-discovery/SKILL.md"  # 辩证法主干
-  reference_dir: ".agents/skills/truth-discovery/references"  # 专题长参考
+  # 本工程 skill，见 .agents/skills/paths.yaml → bundled.truth-discovery
+  case_dir: ".agents/skills/truth-discovery/cases"
+  skill_file: ".agents/skills/truth-discovery/SKILL.md"
+  reference_dir: ".agents/skills/truth-discovery/references"
   inquiry_log: "docs/inquiry-log.md"  # 问询记录
 
 llm:

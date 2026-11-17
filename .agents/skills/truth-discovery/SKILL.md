@@ -94,6 +94,8 @@ description: Use when the user questions whether a historical figure, classic te
 - 列传长篇载言无出处却当现场录音 → 拟辞/载言层未与叙事事实分裁。
 - 互见一致 alone 升格史实 → 只能说明编集控制，不能反向证明事件层。
 - 单一人物叙事按「事件骨架→道德定性→政治语境→后世品牌」作归因污染梯度分层，可疑度递增；事件可信不担保评判可信，评判可疑不穿透骨架 → 防证据方向倒置与聚类外推。
+- 同一人物/机构被两个权威冠以相反称号且各自被制度化（双极品牌化）→ 判断谓词从「内容真伪」上移到「称号生产机制」；两相反品牌若各品牌不同层（方法/影响 vs 内容真实），在分层框架下并不互斥，「矛盾」是品牌化制造的假象；警惕负品牌寄生正品牌语义做二次品牌化（评价极性反转）。
+- 时间更早 ≠ 来源独立：同生态旁证（即使无引用关系、即使年代更早）不能充当独立验证线；相容 ≠ 核对——印证只证明文化生态真实、不证明具体记载属实，且印证常集中于易验证的边缘层，不得外推到难验证层。
 
 ## 输出模板
 
@@ -115,7 +117,7 @@ description: Use when the user questions whether a historical figure, classic te
 |---|---|
 | 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；旧框架见 `references/legacy-methodology.md` |
 | 单一人物/文本记载偏见、结构性投影 | `references/attribution-pollution-gradient.md`、`cases/simaqian-qinshihuang-bias.md`；结论见 `debates/conclusions/sima-qian-qinshihuang-han-bias.md` |
-| 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md` |
+| 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md`；相反双称号/名誉极性分裂见 `references/bipolar-reputational-branding.md`、`cases/herodotus-credibility-bipolar-branding.md` |
 | 科学发明、优先权、累积发明 | `../../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
 | 地图、工程、文明传播 | `cases/ming-renaissance-tech.md`、`../../../findings/daming-hunyi-tu.md`、`../../../findings/kunyu-wanguo-quantu.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |

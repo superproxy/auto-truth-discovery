@@ -1,0 +1,38 @@
+# Skill 路径：自有（仓库内） vs 外部（Session 内 Read）
+
+version: 5
+last_updated: 2026-11-17
+
+# 本仓库自动化实例（非 skill）
+automation:
+  definition: ".agents/automations.yaml"
+  handbook: ".agents/AUTOMATION.md"
+  scripts:
+    - ".agents/run-debate.sh"
+    - ".agents/loop-debate.sh"
+
+bundled:
+  truth-discovery:
+    dir: ".agents/skills/truth-discovery"
+    skill_md: ".agents/skills/truth-discovery/SKILL.md"
+    cases: ".agents/skills/truth-discovery/cases"
+    references: ".agents/skills/truth-discovery/references"
+
+external:
+  upstream_repo: "https://github.com/superproxy/skills"
+  superproxy_skills: "${SUPERPROXY_SKILLS:-$HOME/Desktop/superproxy-skills}"
+  setup: "根目录 AGENTS.md「项目初始化」"
+
+  init-role-agents:
+    role: workflow_engine
+    skill_md: "${SUPERPROXY_SKILLS:-$HOME/Desktop/superproxy-skills}/init-role-agents/SKILL.md"
+
+  init-loop-agents:
+    role: schedule_protocol
+    skill_md: "${SUPERPROXY_SKILLS:-$HOME/Desktop/superproxy-skills}/init-loop-agents/SKILL.md"
+    note: "通用 /loop 调度语义；本项目 tick 正文在 automations.yaml"
+
+  cursor-loop:
+    role: ide_schedule
+    skill_md: "${CURSOR_LOOP_SKILL:-$HOME/.cursor/skills-cursor/loop/SKILL.md}"
+    note: "Cursor 内置 loop skill；无此文件则不用 /loop，改用平台或 run-debate.sh"
