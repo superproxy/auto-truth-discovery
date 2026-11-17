@@ -1,0 +1,35 @@
+{
+  "topic": "《尔雅》的作者与成书年代争议如何解决？",
+  "slug": "erya-authorship",
+  "date": "2026-11-18",
+  "process_dir": "debates/process/truth-discovery-debate-2026-11-18-erya-authorship",
+  "conclusion": "debates/conclusions/erya-authorship.md",
+  "rounds": 3,
+  "status": "completed",
+  "steps": [
+    "1-collector_search",
+    "2-challenger_round_1",
+    "3-reasoner_round_1",
+    "4-challenger_round",
+    "5-reasoner_round",
+    "6-challenger_loop",
+    "7-judge_summary",
+    "8-optimizer_skill_review",
+    "9-optimizer_sync_collector",
+    "10-optimizer_sync_challenger",
+    "11-optimizer_sync_reasoner",
+    "12-optimizer_sync_judge",
+    "13-optimizer_sync_optimizer_self",
+    "14-optimizer_finalize",
+    "15-debate_git_publish"
+  ],
+  "labels": [
+    "近已证伪",
+    "高度可能",
+    "语料库",
+    "经学包装",
+    "品牌化"
+  ],
+  "topics_checked": true,
+  "skill_ingested": true
+}

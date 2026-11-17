@@ -129,7 +129,7 @@ tests/                             # 场景与验收
 
 平台定时（WorkBuddy recurring / Cursor `cursor-loop.sh` 或 `/loop`）唤醒时同样执行本指令；WorkBuddy 与 Cursor 勿同时开（见 yaml `mutex`）。
 
-## 已结案（51 场，全表见 `debates/conclusions/README.md`）
+## 已结案（52 场，全表见 `debates/conclusions/README.md`）
 
 | # | 辩题 | 结论 | 标签 |
 |---|---|---|---|
@@ -164,6 +164,7 @@ tests/                             # 场景与验收
 | 29 | [《竹书纪年》与《史记》关于上古史的记载冲突，哪一方更可信？](debates/conclusions/zhushu-jinian-vs-shiji.md) | 拒整书站队；今本不得当古本；古本对照默认零正份额；史记上古分层；双端「更真」品牌化 | 零正份额 / 分层史料 / 品牌化 |
 | 30 | [《尚书》今古文之争——古文尚书是否为伪作？](debates/conclusions/guwen-shangshu-forgery.md) | 梅本＋孔传晚出伪古文高度可能～已确认；孔壁连续真本已证伪；今文／汉际≠梅本；政治家法分表；拒全书连坐 | 已证伪 / 经学包装 / 零正份额 |
 | 31 | [《周礼》是否为周公所作，还是战国至汉初的托古建制？](debates/conclusions/zhouli-attribution.md) | 周公亲著过度宣称／近已证伪；战国至汉初托古编纂高度可能；古制碎片≠手稿；升格利用≠造伪充分条件；拒二元 | 近已证伪 / 高度可能 / 经学包装 |
+| 32 | [《尔雅》的作者与成书年代争议如何解决？](debates/conclusions/erya-authorship.md) | 周公／孔子亲著过度宣称／近已证伪；战国至汉初层累训诂＋汉世定型高度可能；多源语料库；解决＝分层阶梯非选作者；拒二元 | 近已证伪 / 高度可能 / 语料库 |
 
 ## 方法论体系
 
