@@ -123,6 +123,10 @@ description: Use when the user questions whether a historical figure, classic te
 - 古本辑佚／对照残条对事件史默认零正份额；对照用途＝拆单声部／主题学，≠「更真」胜出；仅真正分叉锚可窄升格发生坐标。
 - 「更原始故更真」「正史／官史故更真」→ 双端品牌化过度宣称；出土时间故事≠内容保真；官修身份升格权重＝0。
 - 多条异文仅共享「异于权威史书」维度 → 非独立异常，禁止概率连乘偷渡「异端传统整体更可信」。
+- 经典「古文／古本」同名偷换：汉际残传统 vs 晚出献本／定本 vs 全书 —— 未钉对象即谈真伪＝命题未成形（与今本≠古本同族）。
+- 晚出伪经／伪古文含古句、古料 → 古材料 ≠ 真篇章；对声称时代原件事件史默认零正份额；用途限伪书学／版本／思想史／辑佚对读。
+- 今古文（或同类）家法／立官／利禄胜负偷渡文献真伪，或文本伪作反向取消全部学派遗产 → 政治层与文献层必须分表。
+- 辨伪合围中攻一条枝节（单条历法／地理／成语）暗示目录篇数、传承断裂、采摭主干崩溃 → 防御换壳；枝节可修 ≠ 身份宣称复活。
 - 移交转述会系统性柔化上游原文（把「撤回/证伪」说成「修正」）——裁决与自检以 steps 原文为准，不依赖二手摘要。
 
 ## 输出模板
@@ -143,7 +147,7 @@ description: Use when the user questions whether a historical figure, classic te
 
 | 问题类型 | 参考/案例 |
 |---|---|
-| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；双源上古冲突／今本≠古本见 `cases/zhushu-jinian-vs-shiji.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`cases/valmiki-ramayana-authorship.md`（对照荷马）；宫廷诗人／戏剧语料库与「梵语X」比较品牌见 `cases/kalidasa-authorship.md`；旧框架见 `references/legacy-methodology.md` |
+| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`（伪古文／梅本；结论 `debates/conclusions/guwen-shangshu-forgery.md`）、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；双源上古冲突／今本≠古本见 `cases/zhushu-jinian-vs-shiji.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`cases/valmiki-ramayana-authorship.md`（对照荷马）；宫廷诗人／戏剧语料库与「梵语X」比较品牌见 `cases/kalidasa-authorship.md`；旧框架见 `references/legacy-methodology.md` |
 | 单一人物/文本记载偏见、结构性投影 | `references/attribution-pollution-gradient.md`、`cases/simaqian-qinshihuang-bias.md`；结论见 `debates/conclusions/sima-qian-qinshihuang-han-bias.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md`；相反双称号/名誉极性分裂见 `references/bipolar-reputational-branding.md`、`cases/herodotus-credibility-bipolar-branding.md` |
 | 科学发明、优先权、累积发明 | `../../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
