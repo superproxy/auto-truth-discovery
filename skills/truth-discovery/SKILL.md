@@ -93,6 +93,7 @@ description: Use when the user questions whether a historical figure, classic te
 - 纪传体全书按单一真伪二分 → 压平体裁×时代可靠度梯度。
 - 列传长篇载言无出处却当现场录音 → 拟辞/载言层未与叙事事实分裁。
 - 互见一致 alone 升格史实 → 只能说明编集控制，不能反向证明事件层。
+- 单一人物叙事按「事件骨架→道德定性→政治语境→后世品牌」作归因污染梯度分层，可疑度递增；事件可信不担保评判可信，评判可疑不穿透骨架 → 防证据方向倒置与聚类外推。
 
 ## 输出模板
 
@@ -113,6 +114,7 @@ description: Use when the user questions whether a historical figure, classic te
 | 问题类型 | 参考/案例 |
 |---|---|
 | 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；旧框架见 `references/legacy-methodology.md` |
+| 单一人物/文本记载偏见、结构性投影 | `references/attribution-pollution-gradient.md`、`cases/simaqian-qinshihuang-bias.md`；结论见 `debates/conclusions/sima-qian-qinshihuang-han-bias.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md` |
 | 科学发明、优先权、累积发明 | `../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
 | 地图、工程、文明传播 | `cases/ming-renaissance-tech.md`、`../../findings/daming-hunyi-tu.md`、`../../findings/kunyu-wanguo-quantu.md` |
