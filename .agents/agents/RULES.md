@@ -26,11 +26,11 @@
 
 ### 辩论记录
 
-每场辩论结束后，辩论记录保存到 `debates/` 目录，与 `agents/` 平行。
+每场辩论结束后，辩论记录保存到 `debates/` 目录，与 `.agents/agents/` 平行。
 
 ## 2. 解析工作流
 
-读取 `agents/debate-workflow.yaml`。提取名称、输入、步骤、依赖关系（depends_on）、条件（conditions）和循环（loops）。
+读取 `.agents/agents/debate-workflow.yaml`。提取名称、输入、步骤、依赖关系（depends_on）、条件（conditions）和循环（loops）。
 
 ## 3. 收集输入
 
@@ -55,7 +55,7 @@
 
 对每个步骤（单进程顺序模式时逐步执行；并发模式下同层批量派发）：
 
-1. 读取 `agents/roles/{role}.md`
+1. 读取 `.agents/agents/roles/{role}.md`
 2. 提取 frontmatter（`---`）之后的所有 markdown 内容作为角色人格
 3. 将任务中的 `{{变量}}` 替换为上下文值（来自输入或前序步骤输出）
 4. **评估条件**：如果设置了 `condition`，评估它。条件不满足则跳过该步骤。运算符：`contains`、`equals`、`not_contains`、`not_equals`
@@ -98,23 +98,23 @@ debates/{工作流名称}-{日期}/
 
 ## 9. 定时后台迭代
 
-本地会话用 `agents/loop-debate.sh`（默认每 **1h** 唤醒，环境变量 `LOOP_DEBATE_INTERVAL` 秒，默认 `3600`）：
+本地会话用 `.agents/agents/loop-debate.sh`（默认每 **1h** 唤醒，环境变量 `LOOP_DEBATE_INTERVAL` 秒，默认 `3600`）：
 
 ```bash
-chmod +x agents/loop-debate.sh agents/debate-git-publish.sh
-agents/loop-debate.sh
-# 自定义间隔例：LOOP_DEBATE_INTERVAL=7200 agents/loop-debate.sh
+chmod +x .agents/agents/loop-debate.sh .agents/agents/debate-git-publish.sh
+.agents/agents/loop-debate.sh
+# 自定义间隔例：LOOP_DEBATE_INTERVAL=7200 .agents/agents/loop-debate.sh
 ```
 
-在 Cursor 中用 **Monitored shell** 后台运行该脚本，`notify_on_output` 匹配 `^AGENT_LOOP_TICK_truth-discovery-debate`。每次唤醒解析 JSON 中的 `prompt` 并执行一轮工作流。启用定时器后**立即手动跑一轮**（首轮不等待 sleep）。停止：`pkill -f 'agents/loop-debate.sh'` 或结束对应终端任务。
+在 Cursor 中用 **Monitored shell** 后台运行该脚本，`notify_on_output` 匹配 `^AGENT_LOOP_TICK_truth-discovery-debate`。每次唤醒解析 JSON 中的 `prompt` 并执行一轮工作流。启用定时器后**立即手动跑一轮**（首轮不等待 sleep）。停止：`pkill -f '.agents/agents/loop-debate.sh'` 或结束对应终端任务。
 
-**Git 闭环**：工作流末步 `debate_git_publish` 在 `optimizer_finalize` 之后执行 `agents/debate-git-publish.sh`（提交并 `git push origin` 当前分支；无变更则跳过）。辩论会话内须用 Shell 实际运行该脚本，不得只写「已推送」。
+**Git 闭环**：工作流末步 `debate_git_publish` 在 `optimizer_finalize` 之后执行 `.agents/agents/debate-git-publish.sh`（提交并 `git push origin` 当前分支；无变更则跳过）。辩论会话内须用 Shell 实际运行该脚本，不得只写「已推送」。
 
 ## 10. 重要规则
 
 - 每个步骤必须真正化身所分配的角色——禁止通用回复
 - 禁止跳过或合并步骤；严格按拓扑层级执行（同层可并行，不得打乱层间顺序）
-- 如果角色文件缺失，告知用户安装 agents/roles
+- 如果角色文件缺失，告知用户安装 .agents/agents/roles
 - 如果条件不满足，将该步骤标记为"已跳过"并继续
 - 对于 `depends_on_mode: "any_completed"`，当任意一个上游步骤完成时即可继续（而非等待全部）
 - **每次辩论结束后，必须记录到 `docs/inquiry-log.md`**

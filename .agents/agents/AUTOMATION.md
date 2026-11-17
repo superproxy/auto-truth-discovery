@@ -6,7 +6,7 @@
 
 ## 1. 意图
 
-让 agent 每 1 小时自动醒来，执行一轮 `agents/debate-workflow.yaml` 全流程辩论，
+让 agent 每 1 小时自动醒来，执行一轮 `.agents/agents/debate-workflow.yaml` 全流程辩论，
 从 `debates/topics.md` 消费下一个未辩题，产出过程与结论，并把该题标记完成。
 
 这是一场 agent **自己给自己定时发消息**的接力——不依赖 IDE 的 Shell 输出监视器，
@@ -34,21 +34,69 @@ sync_key: "truth-discovery-debate-loop"   # 按此 key 查找已有任务，存�
 （下文路径均相对该目录；如工具不继承工作目录，请自行切换到该目录）
 
 步骤：
-1. 读取 agents/RULES.md（执行规则）与 agents/debate-workflow.yaml（工作流定义）。
+1. 读取 .agents/agents/RULES.md（执行规则）与 .agents/agents/debate-workflow.yaml（工作流定义）。
 2. 从 debates/topics.md 中选取「第一个行尾没有 ✅ 的辩题」作为 topic。
    若全部已标 ✅，输出「辩题库已耗尽」并正常结束，不报错。
 3. 按 depends_on 做拓扑排序，逐层执行 debate-workflow.yaml 的步骤：
    - 同一拓扑层用子智能体并行派发，并发数遵守 concurrency（默认 6）；
    - 优化者裁判后层为 6 路并行（optimizer_skill_review + 五角色同步 + optimizer_finalize）；
-   - 每一步读取 agents/roles/{role}.md，完全化身该角色，禁止通用回复；
+   - 每一步读取 .agents/agents/roles/{role}.md，完全化身该角色，禁止通用回复；
    - 带 loop 的步骤辩论到质疑者「无新问题」，且不超过 max_iterations。
 4. 过程写入 debates/process/，结论写入 debates/conclusions/。
 5. 【关键闭环】结论落盘后，回到 debates/topics.md，在刚辩完那一题的行尾补上 " ✅"，
    并同步更新文件头部「共 N 场已完成辩论」的计数。不写这一步，下一轮会重复选同一题。
 6. 按 RULES.md 要求：记录到 docs/inquiry-log.md；检查是否需要同步更新角色方法论武器库与 SKILL.md。
-7. 结束后在仓库根目录执行：`bash agents/debate-git-publish.sh "<本轮 topic>"`（无变更跳过；有变更则 commit 并 push origin）。
+7. 结束后在仓库根目录执行：`bash .agents/agents/debate-git-publish.sh "<本轮 topic>"`（无变更跳过；有变更则 commit 并 push origin）。
 8. 简要报告：本轮辩题、结论文件位置、题库剩余未辩题数、Git 发布结果。
 ```
+
+## 3.5 Agent 执行手册：定时器触发后，agent 具体怎么做
+
+> 这一节回答「谁来触发、agent 醒来后按什么顺序做什么」。新会话 agent 不知上下文时，先读本节。
+
+### 触发链路
+
+```
+平台调度器（每小时）
+   └─ 注入第 3 节提示词 → 新会话 agent（无历史上下文）
+         └─ agent 读本文件 + RULES.md + debate-workflow.yaml
+               └─ 按下方拓扑层逐层执行一轮辩论
+                     └─ 落盘 → 标 ✅ → 记问询 → git 提交推送 → 简要报告
+```
+
+- **触发者**：WorkBuddy 平台的 recurring automation（第 2 节定义），到点自动注入提示词。
+- **执行者**：收到提示词的 agent，**完全自包含**，不依赖任何历史对话。
+- **终止条件**：题库耗尽（全部 ✅）时输出「辩题库已耗尽」并正常结束。
+
+### 一轮执行的拓扑层（严格层间顺序，层内可并行）
+
+| 层 | 步骤（step id） | 执行方式 | 读取的人格文件 |
+|---|---|---|---|
+| L1 | `collector_search` + `challenger_round_1` | 2 个子智能体并行 | `collector.md`、`challenger.md` |
+| L2 | `reasoner_round_1` | 单步 | `reasoner.md` |
+| L3 | `challenger_round` | 单步 | `challenger.md` |
+| L4 | `reasoner_round` | 单步 | `reasoner.md` |
+| L5 | `challenger_loop` | 循环体：未达「无新问题」则回到 L4，≤98 轮 | `challenger.md` |
+| L6 | `judge_summary` | 单步，产出裁判报告 | `judge.md` |
+| L7 | 6 路并行：`optimizer_skill_review` + `optimizer_sync_{collector,challenger,reasoner,judge,optimizer_self}` | 6 个子智能体并行 | `optimizer.md` |
+| L8 | `optimizer_finalize` | 汇总落盘：更新 SKILL/角色/topics ✅/inquiry-log | `optimizer.md` |
+| L9 | `debate_git_publish` | Shell 实跑 `bash .agents/agents/debate-git-publish.sh "<topic>"` | — |
+
+### 执行要点（每轮不可跳过）
+
+1. **角色化身**：每个 step 必须 `Read .agents/agents/roles/{role}.md`，提取 frontmatter 之后内容作为人格，**禁止通用回复**。
+2. **落盘**：过程写 `debates/process/truth-discovery-debate-<日期>-<slug>/steps/{N}-{step_id}.md`；结论写 `debates/conclusions/<slug>.md`。
+3. **闭环三件套**（漏掉则下轮空转）：
+   - `debates/topics.md` 本题行尾补 ` ✅`，头部计数 +1；
+   - `debates/conclusions/README.md` 已结案数 +1 并追加结论行；
+   - `docs/inquiry-log.md` 追加一条「需求」记录。
+4. **能力同步**：若产生方法论增量，按 RULES.md 第 8 节同步 SKILL.md / references / cases / 五个角色文件。
+5. **Git 闭环**：必须用 Shell **实际执行**发布脚本（会 `git add` → `commit` → `push origin`），禁止只写「已推送」。
+
+### 手动触发
+
+不定时器等，直接把第 3 节提示词发给 agent 即可跑一轮；或用旧方案
+`LOOP_DEBATE_INTERVAL=3600 .agents/agents/loop-debate.sh`（与 automation 二选一，勿双开）。
 
 ## 4. 设计说明（why）
 
@@ -71,5 +119,5 @@ sync_key: "truth-discovery-debate-loop"   # 按此 key 查找已有任务，存�
 
 ## 6. 与旧方案的关系
 
-`agents/loop-debate.sh` 是 IDE 会话内的旧方案（Monitored shell + `notify_on_output`），
+`.agents/agents/loop-debate.sh` 是 IDE 会话内的旧方案（Monitored shell + `notify_on_output`），
 本规范是其在 WorkBuddy 平台上的替代实现。二者**不要同时启用**，否则会双开辩论。

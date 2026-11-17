@@ -1,6 +1,6 @@
 # 案例：司马迁对秦始皇的描述是否存在汉代政治偏见？
 
-> 可复用样本。方法论主干见 `../references/attribution-pollution-gradient.md`；完整辩论见 `../../debates/process/truth-discovery-debate-2026-11-17-qinshihuang-han-bias/`，裁判报告见 `../../debates/conclusions/sima-qian-qinshihuang-han-bias.md`。
+> 可复用样本。方法论主干见 `../references/attribution-pollution-gradient.md`；完整辩论见 `../../../../debates/process/truth-discovery-debate-2026-11-17-qinshihuang-han-bias/`，裁判报告见 `../../../../debates/conclusions/sima-qian-qinshihuang-han-bias.md`。
 > **谱系边界**：本书前两案分别处理《史记》全书分层（体裁×时代可靠度梯度）与《汉书》作者归属（家学续作/协作生态）；本案处理**既定作者笔下的单一人物偏见归因**，分析对象与谓词不同，勿与前两案混层。
 
 ## 一、主题与命题拆分

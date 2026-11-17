@@ -1,6 +1,6 @@
 # 古文《尚书》辨伪方法案例
 
-> 辩论过程：`../../../debates/process/guwen-shangshu-forgery.md`
+> 辩论过程：`../../../../debates/process/guwen-shangshu-forgery.md`
 
 ## 核心判断
 

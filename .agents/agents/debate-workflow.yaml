@@ -1,15 +1,15 @@
 name: "求真辨伪：全流程辩论工作流"
 description: "搜集争议话题 → 审核筛选 → 质疑者与推理者反复辩论 → 裁判者总结 → Skill优化者判断是否沉淀 → 同步角色能力 → 记录问询"
 
-agents_dir: "agents/roles"
+agents_dir: ".agents/agents/roles"
 
 # 输出路径
 output:
   process_dir: "debates/process"      # 辩论过程记录
   result_dir: "debates/conclusions"   # 裁判结论
-  case_dir: "skills/truth-discovery/cases"  # 案例沉淀
-  skill_file: "skills/truth-discovery/SKILL.md"  # 辩证法主干
-  reference_dir: "skills/truth-discovery/references"  # 专题长参考
+  case_dir: ".agents/skills/truth-discovery/cases"  # 案例沉淀
+  skill_file: ".agents/skills/truth-discovery/SKILL.md"  # 辩证法主干
+  reference_dir: ".agents/skills/truth-discovery/references"  # 专题长参考
   inquiry_log: "docs/inquiry-log.md"  # 问询记录
 
 llm:
@@ -319,7 +319,7 @@ steps:
     parallel_group: optimizer_post_judge
     depends_on: [judge_summary]
     task: |
-      你只检查 **Collector**（`agents/roles/collector.md`）是否需要更新武器库/评分维度。
+      你只检查 **Collector**（`.agents/agents/roles/collector.md`）是否需要更新武器库/评分维度。
 
       ## 裁判者最终报告
       {{final_report}}
@@ -334,7 +334,7 @@ steps:
     parallel_group: optimizer_post_judge
     depends_on: [judge_summary]
     task: |
-      你只检查 **Challenger**（`agents/roles/challenger.md`）新红旗是否入库。
+      你只检查 **Challenger**（`.agents/agents/roles/challenger.md`）新红旗是否入库。
 
       ## 裁判者最终报告
       {{final_report}}
@@ -349,7 +349,7 @@ steps:
     parallel_group: optimizer_post_judge
     depends_on: [judge_summary]
     task: |
-      你只检查 **Reasoner**（`agents/roles/reasoner.md`）新证据模式是否入库。
+      你只检查 **Reasoner**（`.agents/agents/roles/reasoner.md`）新证据模式是否入库。
 
       ## 裁判者最终报告
       {{final_report}}
@@ -364,7 +364,7 @@ steps:
     parallel_group: optimizer_post_judge
     depends_on: [judge_summary]
     task: |
-      你只检查 **Judge**（`agents/roles/judge.md`）新归属/动机模式是否入库。
+      你只检查 **Judge**（`.agents/agents/roles/judge.md`）新归属/动机模式是否入库。
 
       ## 裁判者最终报告
       {{final_report}}
@@ -379,7 +379,7 @@ steps:
     parallel_group: optimizer_post_judge
     depends_on: [judge_summary]
     task: |
-      你只检查 **Optimizer 自身**（`agents/roles/optimizer.md`）增量类型清单与审查维度是否需更新。
+      你只检查 **Optimizer 自身**（`.agents/agents/roles/optimizer.md`）增量类型清单与审查维度是否需更新。
 
       ## 裁判者最终报告
       {{final_report}}
@@ -442,7 +442,7 @@ steps:
       辩论与优化者落盘已完成。在仓库根目录 **必须** 执行（用 Shell 工具，不要只用文字描述）：
 
       ```bash
-      bash agents/debate-git-publish.sh "{{topic}}"
+      bash .agents/agents/debate-git-publish.sh "{{topic}}"
       ```
 
       ## 输出要求

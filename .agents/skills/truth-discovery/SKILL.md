@@ -116,8 +116,8 @@ description: Use when the user questions whether a historical figure, classic te
 | 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；旧框架见 `references/legacy-methodology.md` |
 | 单一人物/文本记载偏见、结构性投影 | `references/attribution-pollution-gradient.md`、`cases/simaqian-qinshihuang-bias.md`；结论见 `debates/conclusions/sima-qian-qinshihuang-han-bias.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md` |
-| 科学发明、优先权、累积发明 | `../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
-| 地图、工程、文明传播 | `cases/ming-renaissance-tech.md`、`../../findings/daming-hunyi-tu.md`、`../../findings/kunyu-wanguo-quantu.md` |
+| 科学发明、优先权、累积发明 | `../../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
+| 地图、工程、文明传播 | `cases/ming-renaissance-tech.md`、`../../../findings/daming-hunyi-tu.md`、`../../../findings/kunyu-wanguo-quantu.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |
 
 ## 反模式

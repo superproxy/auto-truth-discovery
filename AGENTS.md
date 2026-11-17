@@ -9,27 +9,45 @@
 ## 工程结构
 
 ```
-skills/truth-discovery/           # skill：辩证法主干 + 经典案例 + 长参考
-├── SKILL.md                      # 辩证法主干（通用入口）
-├── cases/                        # 经典案例
-├── tools/checklist.md            # 操作检查清单
-└── references/                   # 专题长参考与旧版框架
+.agents/                           # agent 工程配置（skill + 工作流 + 初始化来源）
+├── skills/
+│   └── truth-discovery/           # skill：辩证法主干 + 经典案例 + 长参考
+│       ├── SKILL.md               # 辩证法主干（通用入口）
+│       ├── cases/                 # 经典案例
+│       ├── tools/checklist.md     # 操作检查清单
+│       └── references/            # 专题长参考与旧版框架
+├── skills-init/
+│   └── init-loop-agents/          # 上游初始化 skill 的引用与副本
+│       ├── README.md              # 来源引用清单（谁初始化了本工程）
+│       └── SKILL.md               # init-loop-agents 本地副本（通用工作流执行引擎）
+└── agents/                        # 智能体：角色 + 工作流 + 定时规范
+    ├── roles/                     # 5个角色（collector/challenger/reasoner/judge/optimizer）
+    ├── RULES.md                   # 执行规则（含角色能力同步规则）
+    ├── debate-workflow.yaml       # 全流程辩论工作流（14步）
+    ├── AUTOMATION.md              # 定时循环规范 + Agent 执行手册
+    ├── loop-debate.sh             # 旧方案：IDE 会话内定时脚本
+    └── debate-git-publish.sh      # 辩论落盘提交推送
 
-agents/                           # 智能体：角色 + 工作流
-├── roles/                        # 5个角色（collector/challenger/reasoner/judge/optimizer）
-├── RULES.md                      # 执行规则（含角色能力同步规则）
-└── debate-workflow.yaml          # 全流程辩论工作流（8步）
+debates/                           # 辩论场地（产出，留在根目录）
+├── topics.md                      # 600个辩题（18领域，✅=已辩论）
+├── process/                       # 辩论过程记录
+└── conclusions/                   # 裁判结论 + README汇总
 
-debates/                          # 辩论场地
-├── topics.md                     # 600个辩题（18领域，17个✅已辩论）
-├── process/                      # 辩论过程记录（每个辩题一个文件）
-└── conclusions/                  # 裁判结论（每个辩题一个文件 + README汇总）
-
-findings/                         # skill直接判断（非辩论产出，与debates平行）
-
-docs/
-└── inquiry-log.md                # 问询分类记录
+findings/                          # skill直接判断（非辩论产出，与debates平行）
+docs/inquiry-log.md                # 问询分类记录
+tests/                             # 场景与验收
 ```
+
+> 目录约定：`.agents/` 存放"agent 如何思考与执行"（配置与能力），根目录存放"辩论产生了什么"（数据与结论）。
+> 迁移历史：2026-11-17 由 `skills/`、`agents/` 整体迁入 `.agents/`；上游路径引用见 `.agents/skills-init/README.md`。
+
+## 初始化来源（重要）
+
+本工程由上游 skill 仓库 https://github.com/superproxy/skills 的 **`init-loop-agents`** skill 初始化，
+其 `patterns/loop-enginerring/` 是本工程辩论工作流的原型。引用与副本见 `.agents/skills-init/`。
+- **引擎（上游）**：`.agents/skills-init/init-loop-agents/SKILL.md` — 通用工作流解析/调度/执行/保存协议
+- **实例（本项目）**：`.agents/agents/debate-workflow.yaml` + `.agents/agents/roles/` — 求真辨伪 14 步与五个角色
+- 上游 skill 更新时只同步协议层改动，不改本项目角色/工作流实例。
 
 ## 工作流全景
 
@@ -45,10 +63,10 @@ docs/
         ▼
 🛠️ Optimizer      审查辩论 → 沉淀方法论/案例 → 同步角色能力 → 记录问询
         │
-        ├── 通用原则   → skills/truth-discovery/SKILL.md
-        ├── 专题参考   → skills/truth-discovery/references/
-        ├── 经典案例   → skills/truth-discovery/cases/
-        ├── 角色同步   → agents/roles/*.md
+        ├── 通用原则   → .agents/skills/truth-discovery/SKILL.md
+        ├── 专题参考   → .agents/skills/truth-discovery/references/
+        ├── 经典案例   → .agents/skills/truth-discovery/cases/
+        ├── 角色同步   → .agents/agents/roles/*.md
         ├── 辩题标注   → debates/topics.md ✅
         └── 问询记录   → docs/inquiry-log.md
 ```
@@ -71,7 +89,15 @@ docs/
 
 > 方法论增量不单独存于 debates/。通用原则进 `SKILL.md`，专题长参考进 `references/`，可复用样本进 `cases/`。
 
-## 已结案（40 场，全表见 `debates/conclusions/README.md`）
+## 定时触发与 agent 执行
+
+- **规范位置**：`.agents/agents/AUTOMATION.md`（单一真相源，含第 3.5 节 Agent 执行手册）。
+- **触发方式**：平台 recurring automation「求真辨伪辩论·定时循环」，每小时注入自包含提示词，新会话 agent 无历史上下文也能跑。
+- **agent 醒来后做什么**：读 AUTOMATION.md + RULES.md + debate-workflow.yaml → 取首个未标 ✅ 辩题 → 按 L1-L9 拓扑层逐层执行（层内并行、层间串行）→ 落盘 → 标 ✅ + 计数 +1 → 记问询 → 实跑 git 发布脚本 → 简要报告。
+- **改流程**：只改 `.agents/agents/AUTOMATION.md` 后重新同步定时任务；不要新建第二个 automation。
+- **旧方案**：`.agents/agents/loop-debate.sh`（IDE 会话内 Monitored shell），与 automation 二选一，勿双开。
+
+## 已结案（41 场，全表见 `debates/conclusions/README.md`）
 
 | # | 辩题 | 结论 | 标签 |
 |---|---|---|---|
@@ -93,8 +119,9 @@ docs/
 | 16 | [《山海经》记录可信度](findings/shanhaijing.md) | 山经地理高度可信，异兽过度宣称 | 品牌化 |
 | 17 | [庞贝古城与中国联系](findings/pompeii-china.md) | 直接联系极弱，间接丝绸贸易高度可能 | 未发现 |
 | 18 | [《国语》与《左传》是否为同一作者？](debates/conclusions/guoyu-zuozhuan-same-author.md) | 共享传统高度可能，同一作者过度宣称，左氏二书为经学单名压缩 | 经学包装 |
-| 19 | [班固是否独立完成《汉书》？](debates/conclusions/ban-gu-hanshu-ban-biao.md) | 主撰与承父未竟高度可能，强独立完成过度宣称 | 累积发明 |
+| 19 | [班固是否独立完成《汉书》？](debates/conclusions/ban-gu-hanshu-ban-biao.md) | 主撰与承父未竟高度可能，强独立完成过度宣称，累积成书 | 累积发明 |
 | 20 | [司马迁《史记》可靠记录与文学虚构](debates/conclusions/shiji-reliable-record-vs-fiction.md) | 分层史料综合体；载言与五帝前过度宣称；全书信史品牌化 | 分层史料 |
+| 21 | [司马迁对秦始皇的描述是否存在汉代政治偏见？](debates/conclusions/sima-qian-qinshihuang-han-bias.md) | 事件骨架高度可信；暴君内核真实但道德框架带汉初过秦话语结构性投影；暴君常识形象后世品牌化 | 结构性投影 |
 
 ## 方法论体系
 
@@ -114,23 +141,27 @@ docs/
 | 章节 | 核心内容 |
 |---|---|
 | 证据不对称 | 缺失不等价、隐匿加权、举证责任不对称、幸存者偏差 |
-| 隐匿模式 | 七种隐匿模式类型学（物理销毁/机构清洗/叙事替代/证人消除/时间稀释/分类遮蔽/合法化清洗） |
-| 完美犯罪问题 | 可判断/可推断/永久待证/不可知 四层处理、"无法证明≠未发生" |
+| 隐匿模式 | 七种隐匿模式类型学 |
+| 完美犯罪问题 | 可判断/可推断/永久待证/不可知 四层处理 |
 | 异常聚类 | 七种异常类型、概率聚合、与隐匿模式对照 |
-| 制造传统 vs 商业放大 | 从零制造（渗透率<10%）vs 商业放大（>30%）、社会强制维持机制、知情≠自由 |
+| 归因污染梯度 | 单一人物叙事骨架→属性→框架→品牌分层、结构性投影 vs 个人偏见 |
+| 制造传统 vs 商业放大 | 从零制造 vs 商业放大、社会强制维持机制、知情≠自由 |
 | 科学共识污染 | 引用级联/基金偏向/选择性发表/Meta分析污染/旋转门 |
 | 防御模式识别 | "承认小错、坚持大结论"模式 |
-| 旧方法论全文 | `skills/truth-discovery/references/legacy-methodology.md` |
+| 旧方法论全文 | `.agents/skills/truth-discovery/references/legacy-methodology.md` |
 
 ## 关键命令
 
 | 任务 | 命令 |
 |---|---|
-| 查看方法论 | `cat skills/truth-discovery/SKILL.md \| head -5` |
+| 查看方法论 | `cat .agents/skills/truth-discovery/SKILL.md \| head -5` |
 | 查看辩题库 | `grep ✅ debates/topics.md` |
 | 查看结论汇总 | `cat debates/conclusions/README.md` |
-| 查看角色 | `ls agents/roles/` |
+| 查看角色 | `ls .agents/agents/roles/` |
+| 查看定时规范 | `cat .agents/agents/AUTOMATION.md` |
+| 查看初始化来源 | `cat .agents/skills-init/README.md` |
 | 查看问询记录 | `cat docs/inquiry-log.md` |
+| 手动跑一轮辩论 | 把 `.agents/agents/AUTOMATION.md` 第 3 节提示词发给 agent |
 
 ## 约定
 
@@ -144,5 +175,7 @@ docs/
 ## 指令源优先级
 
 1. 本文件 = 仓库结构与命令的唯一权威
-2. `skills/truth-discovery/SKILL.md` = skill 行为的唯一权威
-3. `agents/RULES.md` = 多角色辩论执行规则
+2. `.agents/skills/truth-discovery/SKILL.md` = skill 行为的唯一权威
+3. `.agents/agents/RULES.md` = 多角色辩论执行规则
+4. `.agents/agents/AUTOMATION.md` = 定时循环与 agent 执行规范
+5. `.agents/skills-init/README.md` = 初始化来源引用
