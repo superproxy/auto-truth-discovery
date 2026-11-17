@@ -98,15 +98,17 @@ debates/{工作流名称}-{日期}/
 
 ## 9. 定时后台迭代
 
-本地会话用 `agents/loop-debate.sh`（默认每 6h 唤醒，环境变量 `LOOP_DEBATE_INTERVAL` 秒）：
+本地会话用 `agents/loop-debate.sh`（默认每 **1h** 唤醒，环境变量 `LOOP_DEBATE_INTERVAL` 秒，默认 `3600`）：
 
 ```bash
-chmod +x agents/loop-debate.sh
-# 例：每 1 小时一轮
-LOOP_DEBATE_INTERVAL=3600 agents/loop-debate.sh
+chmod +x agents/loop-debate.sh agents/debate-git-publish.sh
+agents/loop-debate.sh
+# 自定义间隔例：LOOP_DEBATE_INTERVAL=7200 agents/loop-debate.sh
 ```
 
 在 Cursor 中用 **Monitored shell** 后台运行该脚本，`notify_on_output` 匹配 `^AGENT_LOOP_TICK_truth-discovery-debate`。每次唤醒解析 JSON 中的 `prompt` 并执行一轮工作流。启用定时器后**立即手动跑一轮**（首轮不等待 sleep）。停止：`pkill -f 'agents/loop-debate.sh'` 或结束对应终端任务。
+
+**Git 闭环**：工作流末步 `debate_git_publish` 在 `optimizer_finalize` 之后执行 `agents/debate-git-publish.sh`（提交并 `git push origin` 当前分支；无变更则跳过）。辩论会话内须用 Shell 实际运行该脚本，不得只写「已推送」。
 
 ## 10. 重要规则
 

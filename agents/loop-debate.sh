@@ -3,7 +3,7 @@
 set -euo pipefail
 
 PURPOSE="${LOOP_DEBATE_PURPOSE:-truth-discovery-debate}"
-INTERVAL="${LOOP_DEBATE_INTERVAL:-21600}"
+INTERVAL="${LOOP_DEBATE_INTERVAL:-3600}"
 
 read -r -d '' PROMPT <<'EOF' || true
 按 agents/RULES.md 执行 agents/debate-workflow.yaml 全流程一次：
@@ -12,6 +12,7 @@ read -r -d '' PROMPT <<'EOF' || true
 3. 裁判后优化者 6 路并行（optimizer_skill_review + 五个角色同步 + optimizer_finalize 汇总落盘）
 4. 过程写入 debates/process/<workflow>-<date>/；结论写入 debates/conclusions/
 5. 勿跳过步骤；循环辩论至质疑者「无新问题」
+6. optimizer_finalize 完成后在仓库根目录执行：`bash agents/debate-git-publish.sh "<本轮 topic>"`（无变更则跳过；有变更则 commit 并 push origin）
 EOF
 
 emit() {
