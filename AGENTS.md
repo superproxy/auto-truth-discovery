@@ -71,7 +71,7 @@ docs/
 
 > 方法论增量不单独存于 debates/。通用原则进 `SKILL.md`，专题长参考进 `references/`，可复用样本进 `cases/`。
 
-## 已结案（17场）
+## 已结案（38 场，全表见 `debates/conclusions/README.md`）
 
 | # | 辩题 | 结论 | 标签 |
 |---|---|---|---|
@@ -92,6 +92,7 @@ docs/
 | 15 | [大脑10%迷思](debates/conclusions/brain-10-percent.md) | 已证伪，詹姆斯被误读 | 已证伪 |
 | 16 | [《山海经》记录可信度](findings/shanhaijing.md) | 山经地理高度可信，异兽过度宣称 | 品牌化 |
 | 17 | [庞贝古城与中国联系](findings/pompeii-china.md) | 直接联系极弱，间接丝绸贸易高度可能 | 未发现 |
+| 18 | [《国语》与《左传》是否为同一作者？](debates/conclusions/guoyu-zuozhuan-same-author.md) | 共享传统高度可能，同一作者过度宣称，左氏二书为经学单名压缩 | 经学包装 |
 
 ## 方法论体系
 

@@ -1,0 +1,26 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "date": "2026-11-17",
+  "topic": "《国语》与《左传》是否为同一作者？",
+  "topic_slug": "guoyu-zuozhuan-same-author",
+  "status": "completed",
+  "concurrency": 6,
+  "steps": [
+    { "id": "collector_search", "status": "completed", "file": "steps/1-collector_search.md" },
+    { "id": "challenger_round_1", "status": "completed", "file": "steps/2-challenger_round_1.md" },
+    { "id": "reasoner_round_1", "status": "completed", "file": "steps/3-reasoner_round_1.md" },
+    { "id": "challenger_round", "status": "completed", "file": "steps/4-challenger_round.md" },
+    { "id": "reasoner_round", "status": "completed", "file": "steps/5-reasoner_round.md" },
+    { "id": "challenger_loop", "status": "completed", "file": "steps/6-challenger_loop.md" },
+    { "id": "judge_summary", "status": "completed", "file": "steps/7-judge_summary.md" },
+    { "id": "optimizer_skill_review", "status": "completed", "file": "steps/8-optimizer_skill_review.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_collector", "status": "completed", "file": "steps/9-optimizer_sync_collector.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_challenger", "status": "completed", "file": "steps/10-optimizer_sync_challenger.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_reasoner", "status": "completed", "file": "steps/11-optimizer_sync_reasoner.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_judge", "status": "completed", "file": "steps/12-optimizer_sync_judge.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_sync_optimizer_self", "status": "completed", "file": "steps/13-optimizer_sync_optimizer_self.md", "parallel_group": "optimizer_post_judge" },
+    { "id": "optimizer_finalize", "status": "completed", "file": "steps/14-optimizer_finalize.md" }
+  ],
+  "conclusion_file": "debates/conclusions/guoyu-zuozhuan-same-author.md",
+  "optimizer_finalize": true
+}

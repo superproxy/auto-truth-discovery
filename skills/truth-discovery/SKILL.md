@@ -85,6 +85,9 @@ description: Use when the user questions whether a historical figure, classic te
 - 多个来源看似独立，其实循环引用同一原始说法。
 - 争议被转移到定义游戏：什么才算发现、文明、传统、自由选择。
 - 对方承认小错，但小错已经动摇核心证据。
+- 互文或平行段落只支持「共享材料池」，不能单向升格为「同一作者」。
+- 姊妹典籍中一书已判多源编纂时，连带「同著他书」应链条二次降级，举证在主张方。
+- 制度性体裁分立（如国别记言 vs 编年附传）且无自署名时，慎断「一人一稿多体」。
 
 ## 输出模板
 
@@ -104,7 +107,7 @@ description: Use when the user questions whether a historical figure, classic te
 
 | 问题类型 | 参考/案例 |
 |---|---|
-| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；旧框架见 `references/legacy-methodology.md` |
+| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；旧框架见 `references/legacy-methodology.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md` |
 | 科学发明、优先权、累积发明 | `../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
 | 地图、工程、文明传播 | `cases/ming-renaissance-tech.md`、`../../findings/daming-hunyi-tu.md`、`../../findings/kunyu-wanguo-quantu.md` |

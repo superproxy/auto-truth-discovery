@@ -16,7 +16,8 @@ llm:
   provider: deepseek
   model: deepseek-chat
 
-concurrency: 1
+# 同拓扑层级步骤的最大并发子智能体数（IDE 内用 Task 并行派发；优化者层为 6 路）
+concurrency: 6
 
 inputs:
   - name: topic
@@ -285,13 +286,15 @@ steps:
     output: final_report
     depends_on: [challenger_loop]
 
-  # ── 第 6 步：Skill 优化者 → 沉淀 + 同步角色 + 记录问询 ──
-  - id: optimizer_review
+  # ── 第 6 步：Skill 优化者（6 路并行 → 汇总） ──
+  - id: optimizer_skill_review
     role: "optimizer"
-    name: "Skill优化者"
+    name: "Skill优化者·沉淀审查"
     emoji: "🛠️"
+    parallel_group: optimizer_post_judge
+    depends_on: [judge_summary]
     task: |
-      辩论已结束，裁判者已给出分层结论。请完成以下四项任务：
+      你只负责 **skill 沉淀审查**（不要检查角色文件、不要改 topics / inquiry-log）。
 
       ## 待求真主题
       {{topic}}
@@ -302,36 +305,130 @@ steps:
       ## 裁判者最终报告
       {{final_report}}
 
-      ## 任务一：审查是否沉淀到 skill 知识库
-      1. 评估方法论增量（新红旗信号/新证据模式/新归属模式/新动机模式/新隐匿模式/方法论修正）
-      2. 评估案例价值（典型性/辩论质量/结论清晰度/教育价值/可复用性，各5分）
-      3. 按入库决策矩阵做出判断
+      1. 评估方法论增量（新红旗/证据/归属/动机/隐匿/法证/方法论修正）
+      2. 案例价值五维度各 5 分
+      3. 按入库决策矩阵给出决策与拟写入路径（SKILL.md / references/ / cases/）
 
-      ## 任务二：同步角色能力
-      检查以下角色是否需要更新：
-      - Challenger：是否有新红旗信号需要加入武器库？
-      - Reasoner：是否有新证据模式需要加入武器库？
-      - Judge：是否有新归属/动机模式需要加入武器库？
-      - Collector：是否有新审核维度需要加入评分体系？
-      - Optimizer：是否需要更新增量类型清单？
-      如需同步，指明具体添加到哪个文件的哪个位置。
+      输出标题：`### Skill 沉淀审查（并行子步）`
+    output: optimizer_skill_review_out
 
-      ## 任务三：更新辩题库
-      在 `debates/topics.md` 中将本辩题标注为 ✅。
-
-      ## 任务四：记录问询
-      将本次辩论记录到 `docs/inquiry-log.md`，标注为"需求"。
-
-      ## 输出要求
-      ### Skill 优化报告
-      - 辩论概要
-      - 方法论增量评估
-      - 案例价值评估（五维度打分）
-      - 入库决策（入库方法论+案例 / 仅入库方法论 / 仅入库案例 / 不入库）
-      - 入库内容（如适用）
-      - 角色能力同步（如适用）
-      - 不入库说明（如适用）
-
-      要求：严格把关，宁缺毋滥。先判断沉淀位置：通用原则进 SKILL.md，专题长参考进 references/，可复用样本进 cases/。SKILL.md 只保留辩证法主干。角色同步必须在 24 小时内完成。
-    output: optimizer_report
+  - id: optimizer_sync_collector
+    role: "optimizer"
+    name: "Skill优化者·同步搜集者"
+    emoji: "🛠️"
+    parallel_group: optimizer_post_judge
     depends_on: [judge_summary]
+    task: |
+      你只检查 **Collector**（`agents/roles/collector.md`）是否需要更新武器库/评分维度。
+
+      ## 裁判者最终报告
+      {{final_report}}
+
+      输出：`### 角色同步·Collector`（无需更新则明确写「无需更新」；否则给出文件位置与拟追加段落）
+    output: optimizer_sync_collector_out
+
+  - id: optimizer_sync_challenger
+    role: "optimizer"
+    name: "Skill优化者·同步质疑者"
+    emoji: "🛠️"
+    parallel_group: optimizer_post_judge
+    depends_on: [judge_summary]
+    task: |
+      你只检查 **Challenger**（`agents/roles/challenger.md`）新红旗是否入库。
+
+      ## 裁判者最终报告
+      {{final_report}}
+
+      输出：`### 角色同步·Challenger`
+    output: optimizer_sync_challenger_out
+
+  - id: optimizer_sync_reasoner
+    role: "optimizer"
+    name: "Skill优化者·同步推理者"
+    emoji: "🛠️"
+    parallel_group: optimizer_post_judge
+    depends_on: [judge_summary]
+    task: |
+      你只检查 **Reasoner**（`agents/roles/reasoner.md`）新证据模式是否入库。
+
+      ## 裁判者最终报告
+      {{final_report}}
+
+      输出：`### 角色同步·Reasoner`
+    output: optimizer_sync_reasoner_out
+
+  - id: optimizer_sync_judge
+    role: "optimizer"
+    name: "Skill优化者·同步裁判者"
+    emoji: "🛠️"
+    parallel_group: optimizer_post_judge
+    depends_on: [judge_summary]
+    task: |
+      你只检查 **Judge**（`agents/roles/judge.md`）新归属/动机模式是否入库。
+
+      ## 裁判者最终报告
+      {{final_report}}
+
+      输出：`### 角色同步·Judge`
+    output: optimizer_sync_judge_out
+
+  - id: optimizer_sync_optimizer_self
+    role: "optimizer"
+    name: "Skill优化者·自检"
+    emoji: "🛠️"
+    parallel_group: optimizer_post_judge
+    depends_on: [judge_summary]
+    task: |
+      你只检查 **Optimizer 自身**（`agents/roles/optimizer.md`）增量类型清单与审查维度是否需更新。
+
+      ## 裁判者最终报告
+      {{final_report}}
+
+      输出：`### 角色同步·Optimizer`
+    output: optimizer_sync_optimizer_self_out
+
+  - id: optimizer_finalize
+    role: "optimizer"
+    name: "Skill优化者·汇总落盘"
+    emoji: "🛠️"
+    depends_on:
+      - optimizer_skill_review
+      - optimizer_sync_collector
+      - optimizer_sync_challenger
+      - optimizer_sync_reasoner
+      - optimizer_sync_judge
+      - optimizer_sync_optimizer_self
+    depends_on_mode: all_completed
+    task: |
+      并行子步已完成。请 **汇总** 并 **落盘**（可实际编辑仓库文件）。
+
+      ## 待求真主题
+      {{topic}}
+
+      ## 并行子步输出
+      ### 沉淀审查
+      {{optimizer_skill_review_out}}
+
+      ### Collector
+      {{optimizer_sync_collector_out}}
+
+      ### Challenger
+      {{optimizer_sync_challenger_out}}
+
+      ### Reasoner
+      {{optimizer_sync_reasoner_out}}
+
+      ### Judge
+      {{optimizer_sync_judge_out}}
+
+      ### Optimizer
+      {{optimizer_sync_optimizer_self_out}}
+
+      ## 你必须完成
+      1. 合并为完整 **Skill 优化报告**（入库决策 + 拟写入内容摘要）
+      2. 按子步建议更新 skill/角色文件（若有）
+      3. 在 `debates/topics.md` 将本辩题标 ✅
+      4. 在 `docs/inquiry-log.md` 追加一条「需求」记录
+
+      要求：宁缺毋滥；SKILL.md 只保留辩证法主干。
+    output: optimizer_report
