@@ -24,8 +24,9 @@
     ├── roles/                     # 5个角色
     ├── RULES.md                   # 执行规则（含角色能力同步）
     ├── debate-workflow.yaml       # 全流程辩论工作流（14步）
-    ├── AUTOMATION.md              # 定时循环规范 + Agent 执行手册
-    └── *.sh                       # 旧定时脚本 / 辩论发布脚本
+    ├── automations.yaml           # 自动化定义唯一真相源
+    ├── AUTOMATION.md              # 统一规范 + Agent 执行手册（含命令行兜底）
+    └── *.sh                       # run-debate(CLI兜底) / loop-debate(旧) / git-publish
 
 debates/                           # 辩论场地（产出）
 ├── topics.md                      # 600个辩题（18领域，✅=已辩论）
@@ -42,11 +43,13 @@ docs/inquiry-log.md                # 问询分类记录
 
 ## 定时触发与 agent 执行
 
-- 平台每 1 小时注入自包含提示词，新会话 agent 无历史上下文也能跑一轮辩论。
-- **规范与执行手册**：`.agents/agents/AUTOMATION.md`（第 3.5 节列出 L1-L9 拓扑层：层内并行、层间串行）。
+- **唯一真相源**：`.agents/agents/automations.yaml`（调度 + 完整提示词 + 薄引导）；
+  **执行手册**：`.agents/agents/AUTOMATION.md`（L1-L9 拓扑层、闭环三件套、命令行兜底）。
+- **三选一，勿双开**：① 平台 automation（注入薄引导，agent 读 yaml 执行，主用）；
+  ② 命令行兜底 `bash .agents/agents/run-debate.sh [--loop]`（平台不支持时用 `codebuddy -p` 无头跑同一份定义）；
+  ③ 旧方案 `loop-debate.sh`（IDE Monitored shell）。
 - agent 醒来后：取首个未标 ✅ 辩题 → 逐层执行 → 落盘 → 标 ✅+计数 → 记问询 → 实跑 git 发布 → 报告。
-- 改流程只改 AUTOMATION.md 后重新同步定时任务，不要新建第二个 automation。
-- 旧方案 `.agents/agents/loop-debate.sh` 与 automation 二选一，勿双开。
+- 改流程/提示词只改 yaml（平台不用动）；改 `rrule`/`status`/`cwd` 才同步平台；按 name 匹配更新，勿建第二个。
 
 ## 工作流全景
 
@@ -106,8 +109,9 @@ docs/inquiry-log.md                # 问询分类记录
 | 查看方法论 | `cat .agents/skills/truth-discovery/SKILL.md \| head -5` |
 | 查看辩题库 | `grep ✅ debates/topics.md` |
 | 查看结论汇总 | `cat debates/conclusions/README.md` |
-| 查看定时规范 | `cat .agents/agents/AUTOMATION.md` |
-| 手动跑一轮 | 把 `.agents/agents/AUTOMATION.md` 第 3 节提示词发给 agent |
+| 查看自动化定义 | `cat .agents/agents/automations.yaml` |
+| 查看执行手册 | `cat .agents/agents/AUTOMATION.md` |
+| 手动跑一轮 | `bash .agents/agents/run-debate.sh`（或把 yaml 的 execution_prompt 发给 agent） |
 
 ## 约定
 
@@ -121,4 +125,5 @@ docs/inquiry-log.md                # 问询分类记录
 1. `AGENTS.md` = 仓库结构与命令的唯一权威
 2. `.agents/skills/truth-discovery/SKILL.md` = skill 行为的唯一权威
 3. `.agents/agents/RULES.md` = 多角色辩论执行规则
-4. `.agents/agents/AUTOMATION.md` = 定时循环与 agent 执行规范
+4. `.agents/agents/automations.yaml` = 自动化定义唯一真相源
+5. `.agents/agents/AUTOMATION.md` = 执行手册与统一规范

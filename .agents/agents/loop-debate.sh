@@ -5,14 +5,13 @@ set -euo pipefail
 PURPOSE="${LOOP_DEBATE_PURPOSE:-truth-discovery-debate}"
 INTERVAL="${LOOP_DEBATE_INTERVAL:-3600}"
 
+# 薄引导：与平台 automation 同源，完整指令在 automations.yaml（单一真相源）。
+# 勿在此内嵌完整 prompt——否则又多一份会漂移的副本。
 read -r -d '' PROMPT <<'EOF' || true
-按 .agents/agents/RULES.md 执行 .agents/agents/debate-workflow.yaml 全流程一次：
-1. 从 debates/topics.md 选取首个未标 ✅ 的辩题作为 topic（若无则输出「辩题库已耗尽」并结束）
-2. 有依赖的步骤串行；同一拓扑层（含 parallel_group）用子智能体 Task 并行派发，遵守 concurrency
-3. 裁判后优化者 6 路并行（optimizer_skill_review + 五个角色同步 + optimizer_finalize 汇总落盘）
-4. 过程写入 debates/process/<workflow>-<date>/；结论写入 debates/conclusions/
-5. 勿跳过步骤；循环辩论至质疑者「无新问题」
-6. optimizer_finalize 完成后在仓库根目录执行：`bash .agents/agents/debate-git-publish.sh "<本轮 topic>"`（无变更则跳过；有变更则 commit 并 push origin）
+执行 auto-truth-discovery 项目的一轮「求真辨伪」辩论工作流。
+工作目录：/Users/yangxuezeng/Desktop/auto-truth-discovery（若工具不继承工作目录，先切换到该目录）。
+本任务为薄引导：完整执行指令在 .agents/agents/automations.yaml 中 id=truth-discovery-debate-loop 的 execution_prompt 字段。
+请先用 Read 读取该文件，取出 execution_prompt 全文并严格执行；不要自行简化或改写步骤。
 EOF
 
 emit() {

@@ -98,7 +98,20 @@ debates/{工作流名称}-{日期}/
 
 ## 9. 定时后台迭代
 
-本地会话用 `.agents/agents/loop-debate.sh`（默认每 **1h** 唤醒，环境变量 `LOOP_DEBATE_INTERVAL` 秒，默认 `3600`）：
+> 自动化的**唯一权威定义**在 `.agents/agents/automations.yaml`（调度字段 + 完整提示词）。
+> 平台 automation 与本地脚本都只注入薄引导、指向该文件；执行手册见 `.agents/agents/AUTOMATION.md`。
+> 去重靠 name 精确匹配更新，禁止新建第二个同名任务；平台无 `sync_key` 字段。
+
+**主用**：平台 recurring automation「求真辨伪辩论·定时循环」（默认每 1h），到点注入薄引导，
+新会话 agent 读 yaml 取完整指令后执行一轮。改流程只改 yaml 的 `execution_prompt`，无需同步平台；
+改 `rrule`/`status`/`cwd` 才同步平台（详见 AUTOMATION.md 第 2.3 节决策表）。
+
+**命令行兜底（平台不支持时）**：`bash .agents/agents/run-debate.sh`（跑一轮）或加 `--loop` 定时循环。
+它用 `codebuddy -p` 无头读 `automations.yaml` 的 `execution_prompt` 执行，与平台同源不另存副本；
+详见 AUTOMATION.md 第 4.5 节。三套触发链（平台 / run-debate.sh / loop-debate.sh）只启用其一。
+
+**旧方案（备用，勿与主用同时启用）**：本地会话用 `.agents/agents/loop-debate.sh`
+（默认每 **1h** 唤醒，环境变量 `LOOP_DEBATE_INTERVAL` 秒，默认 `3600`；heredoc 同为薄引导）：
 
 ```bash
 chmod +x .agents/agents/loop-debate.sh .agents/agents/debate-git-publish.sh
@@ -106,7 +119,7 @@ chmod +x .agents/agents/loop-debate.sh .agents/agents/debate-git-publish.sh
 # 自定义间隔例：LOOP_DEBATE_INTERVAL=7200 .agents/agents/loop-debate.sh
 ```
 
-在 Cursor 中用 **Monitored shell** 后台运行该脚本，`notify_on_output` 匹配 `^AGENT_LOOP_TICK_truth-discovery-debate`。每次唤醒解析 JSON 中的 `prompt` 并执行一轮工作流。启用定时器后**立即手动跑一轮**（首轮不等待 sleep）。停止：`pkill -f '.agents/agents/loop-debate.sh'` 或结束对应终端任务。
+在 Cursor 中用 **Monitored shell** 后台运行该脚本，`notify_on_output` 匹配 `^AGENT_LOOP_TICK_truth-discovery-debate`。启用后**立即手动跑一轮**。停止：`pkill -f '.agents/agents/loop-debate.sh'`。
 
 **Git 闭环**：工作流末步 `debate_git_publish` 在 `optimizer_finalize` 之后执行 `.agents/agents/debate-git-publish.sh`（提交并 `git push origin` 当前分支；无变更则跳过）。辩论会话内须用 Shell 实际运行该脚本，不得只写「已推送」。
 
