@@ -129,7 +129,7 @@ tests/                             # 场景与验收
 
 平台定时（WorkBuddy recurring / Cursor `cursor-loop.sh` 或 `/loop`）唤醒时同样执行本指令；WorkBuddy 与 Cursor 勿同时开（见 yaml `mutex`）。
 
-## 已结案（45 场，全表见 `debates/conclusions/README.md`）
+## 已结案（46 场，全表见 `debates/conclusions/README.md`）
 
 | # | 辩题 | 结论 | 标签 |
 |---|---|---|---|
@@ -158,6 +158,7 @@ tests/                             # 场景与验收
 | 23 | [修昔底德演讲词（葬礼演说）实录还是文学创作？](debates/conclusions/thucydides-speeches.md) | 骨架高度可能；措辞近已证伪；论旨无弱可推断正份额；代言式拟辞＋民主圣典品牌化 | 张力元文本 / 载言分裁 |
 | 24 | [普鲁塔克《希腊罗马名人传》是历史还是道德寓言？](debates/conclusions/plutarch-parallel-lives.md) | 道德化平行列传工程；塑形已确认≠寓言；轶事零正份额；3a相容待核；Synkrisis设计污染；双重品牌 | 道德塑形 / 设计污染 |
 | 25 | [苏埃托尼乌斯《十二凯撒传》中的轶事是史料还是八卦？](debates/conclusions/suetonius-twelve-caesars.md) | 帝王轶事—类型学 bios；职位光环≠保管链；文书(a)/(b)；V0–V3；轶事零正份额；谓词隔离；双重品牌 | 零正份额 / 声誉史 / 职位光环 |
+| 26 | [印度史诗《摩诃婆罗多》作者毗耶娑是真实人物还是传说？](debates/conclusions/vyasa-mahabharata-authorship.md) | 编排者语义高度可能；人物合理待证；层累多手已确认方向；单作者现存MB近证伪；超级归名品牌化；拒二元 | 近证伪 / 品牌化 / 超级归名 |
 
 ## 方法论体系
 

@@ -80,6 +80,12 @@ description: Use when the user questions whether a historical figure, classic te
 ## 常见红旗
 
 - 一个人被归功于太多领域，却没有前人、助手、工具、机构或后继者。
+- 职称／通名语义（如 vyāsa＝编排者）被偷渡为护照式专名履历 → 功能标签对人物存在／作者身份升格权重＝0（只加严不加分）。
+- 史诗／圣典内自我归名、入内角色、传述框＝框架／权威装置，alone ≠ 外证历史作者；对作者命题默认零／近零正份额。
+- 「传说核心／可能整编节点」弱假说对「现存本作者身份」正份额＝0；拒「护照已证」与「从未有人已证伪」两端；超级归名证伪不得穿透为人物虚无。
+- 宣称「单一作者写出现存层累大本」时，近证伪须钉死文本对象，并显式排除「证伪口传传统／多手编定／名号功能」；「或许写了核心」无非循环外证＝偷渡正份额。
+- 批判校本／现代定本 ≠「恢复某圣作者原文」；战争核／历史事件核 ⟂ 作者归属，回流权重＝0。
+- 一人名下跨体裁超级归名（史诗＋吠陀／往世书簇等）＝品牌扩张；须与本典框架归名分权重，两端均不回赠单人全文。
 - 最早硬证据远晚于声称起源。
 - 现代教材把复杂链条压成一个英雄名字。
 - 一个叙事完美服务于宗教、民族、课程、市场或文明自豪。
@@ -127,7 +133,7 @@ description: Use when the user questions whether a historical figure, classic te
 
 | 问题类型 | 参考/案例 |
 |---|---|
-| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；旧框架见 `references/legacy-methodology.md` |
+| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`debates/conclusions/vyasa-mahabharata-authorship.md`（对照荷马）；旧框架见 `references/legacy-methodology.md` |
 | 单一人物/文本记载偏见、结构性投影 | `references/attribution-pollution-gradient.md`、`cases/simaqian-qinshihuang-bias.md`；结论见 `debates/conclusions/sima-qian-qinshihuang-han-bias.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md`；相反双称号/名誉极性分裂见 `references/bipolar-reputational-branding.md`、`cases/herodotus-credibility-bipolar-branding.md` |
 | 科学发明、优先权、累积发明 | `../../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
