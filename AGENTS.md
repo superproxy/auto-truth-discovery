@@ -15,14 +15,10 @@
 │   ├── truth-discovery/           # 本工程形成：方法论 + cases + references
 │   ├── README.md                  # skill 说明
 │   └── paths.yaml                 # 上游 / Loop skill 引用路径
-├── roles/                         # 5个角色（collector/challenger/reasoner/judge/optimizer）
+├── roles/                         # 辩论五角色 + git 发布（L9）
 ├── RULES.md                       # 执行规则（含角色能力同步规则）
 ├── debate-workflow.yaml           # 全流程辩论工作流（14步）
-├── automations.yaml               # 自动化定义唯一真相源（调度+完整提示词+薄引导）
-├── AUTOMATION.md                  # 人类可读版：统一规范 + Agent 执行手册
-├── run-debate.sh                  # 命令行兜底：无头 CLI 读真相源跑一轮/循环
-├── loop-debate.sh                 # 旧方案：IDE 会话内定时脚本（薄引导）
-└── debate-git-publish.sh          # 辩论落盘提交推送
+├── automations.yaml               # Cursor/WorkBuddy 入口 → debate-workflow
 
 debates/                           # 辩论场地（产出，留在根目录）
 ├── topics.md                      # 600个辩题（18领域，✅=已辩论）
@@ -55,8 +51,8 @@ tests/                             # 场景与验收
 | 层级 | 上游（superproxy-skills） | 本仓库（git） |
 |---|---|---|
 | 工作流引擎说明 | init-role-agents | 只读引用，无副本 |
-| 定时自动化实例 | — | `.agents/automations.yaml` + `AUTOMATION.md` + `*.sh` |
-| Loop 能力（引用） | init-loop-agents、Cursor `loop` skill | 见「自动化与 Loop」；**本仓库无内置 loop 运行时** |
+| 定时自动化实例 | — | `.agents/automations.yaml` |
+| Loop 能力（引用） | init-loop-agents、Cursor `loop` skill | 见「自动化」；**本仓库无内置 loop 运行时** |
 | 工作流实例 | pattern yaml | `.agents/debate-workflow.yaml` |
 | 角色 | pattern roles | `.agents/roles/*.md` |
 | 执行规则 | pattern RULES | `.agents/RULES.md` |
@@ -118,30 +114,20 @@ tests/                             # 场景与验收
 
 > 方法论增量不单独存于 debates/。通用原则进 `SKILL.md`，专题长参考进 `references/`，可复用样本进 `cases/`。
 
-## 自动化与 Loop（目录放哪、怎么调用）
+## 自动化
 
-本仓库**没有**自带 loop 运行时。Loop 靠**外部 skill 引用**；本仓库只放**自动化实例**（均在 `.agents/` 根下，不在 `skills/`）。
+入口：[`.agents/automations.yaml`](.agents/automations.yaml)（`platforms` + `execution_prompt` → `debate-workflow.yaml`）。
 
-### 放哪个目录
+### 指令：自动化执行
 
-| 内容 | 路径 |
-|---|---|
-| 自动化定义 | `.agents/automations.yaml`（`execution_prompt` 为每轮正文） |
-| 执行手册 | `.agents/AUTOMATION.md` |
-| 载体 | `.agents/run-debate.sh`、`loop-debate.sh` |
-| 工作流 | `debate-workflow.yaml`、`roles/`、`RULES.md` |
-| Loop 能力 | **引用**：`skills/paths.yaml` → init-loop-agents、Cursor `loop` skill |
-| 方法论 | `skills/truth-discovery/` |
+用户说出「自动化执行」（或同义：跑一轮辩论 / 执行辩论工作流）时，agent **立即**按下列步骤执行，勿再问是否确认：
 
-### 自动化调用链
+1. Read `.agents/automations.yaml` → 取 `execution_prompt`
+2. 按 `execution_prompt`：读 `.agents/RULES.md` 与 `.agents/debate-workflow.yaml`，用 init-role-agents 跑一整轮
+3. 辩题 = `debates/topics.md` 第一个行尾无 ✅；若全无 ✅ 则报告结束并停止
+4. 落盘、标 ✅、问询记录、L9 git（`roles/git.md`）按工作流末步完成
 
-1. （可选）配 `/loop` 时：Read `init-loop-agents` + Cursor `loop` skill（见 `paths.yaml`）。
-2. **必须** Read `automations.yaml` → `execution_prompt`。
-3. Read 上游 `init-role-agents` + `RULES.md` + `debate-workflow.yaml` → 跑一轮 → 落盘。
-
-### 触发载体（三选一）
-
-平台 automation · `run-debate.sh` · `loop-debate.sh`（+ Cursor loop 的 Monitored shell）。改步骤只改 yaml；改 `rrule` 同步平台（AUTOMATION.md §2.3）。
+平台定时（WorkBuddy recurring / Cursor `/loop`）唤醒时同样执行本指令；二者勿同时开（见 yaml `mutex`）。
 
 ## 已结案（41 场，全表见 `debates/conclusions/README.md`）
 
@@ -205,12 +191,11 @@ tests/                             # 场景与验收
 | 查看辩题库 | `grep ✅ debates/topics.md` |
 | 查看结论汇总 | `cat debates/conclusions/README.md` |
 | 查看角色 | `ls .agents/roles/` |
-| 查看自动化定义（真相源） | `cat .agents/automations.yaml` |
-| 查看执行手册/统一规范 | `cat .agents/AUTOMATION.md` |
+| 查看自动化入口 | `cat .agents/automations.yaml` |
 | 查看 skill 说明 | `cat .agents/skills/README.md` |
 | 查看 Loop 引用 | `cat .agents/skills/paths.yaml` |
 | 查看问询记录 | `cat docs/inquiry-log.md` |
-| 手动跑一轮辩论 | `bash .agents/run-debate.sh`（或把 yaml 的 execution_prompt 发给 agent） |
+| **自动化执行** | 用户指令 → 本文件「指令：自动化执行」→ `automations.yaml` `execution_prompt` |
 
 ## 约定
 
@@ -226,7 +211,6 @@ tests/                             # 场景与验收
 1. 本文件 = 仓库结构与命令的唯一权威
 2. `.agents/skills/truth-discovery/SKILL.md` = skill 行为唯一权威
 3. `.agents/RULES.md` = 多角色辩论执行规则
-4. `.agents/automations.yaml` = 自动化定义唯一真相源（调度 + 提示词）
-5. `.agents/AUTOMATION.md` = 人类可读版执行手册与统一规范
-6. 本文件「项目初始化」= 上游对齐与新环境说明
-7. 外部 **init-role-agents**（`paths.yaml`）= 工作流引擎；**init-loop-agents** / Cursor **loop** = 调度能力（引用，非本仓库）
+4. `.agents/automations.yaml` = Cursor/WorkBuddy 唤醒与 execution_prompt
+5. 本文件「项目初始化」= 上游对齐与新环境说明
+6. 外部 **init-role-agents**（`paths.yaml`）= 工作流引擎；**init-loop-agents** / Cursor **loop** = 调度能力（引用，非本仓库）

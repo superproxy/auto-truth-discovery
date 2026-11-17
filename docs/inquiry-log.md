@@ -118,3 +118,12 @@
 | 2026-11-17 | 取消 `skills-init/` 目录，初始化说明并入 `skills/INIT.md`。 | 提炼点 | 删除 skills-init；合并 README；全库路径改指 `.agents/skills/` |
 | 2026-11-17 | 项目初始化说明迁入根目录 `AGENTS.md`，删除 `skills/INIT.md`。 | 提炼点 | skills 目录只保留自有 skill + paths.yaml；automations/RULES 改指 AGENTS.md |
 | 2026-11-17 | 自动化归 `.agents/`；Loop 改为外部 skill 引用，删除 `skills/loop`。 | 提炼点 | AGENTS.md 增「自动化与 Loop」；paths.yaml 登记 init-loop-agents 与 Cursor loop |
+| 2026-11-17 | 创建 `.agents/loop/` 作为 Loop 模式统一入口，整合各平台启动命令。 | 需求 | `loop/README.md`、`platforms.yaml`、`start.sh`；`loop-debate.sh` 迁入 `loop/` 并保留根级包装；`automations.yaml`/`paths.yaml`/`AGENTS.md` 指向 loop 入口；execution_prompt step 0 先读 loop |
+| 2026-11-17 | 自动化结构瘦身：载体并入 `loop/`，去掉根级脚本与文档重复 bootstrap。 | 提炼点 | 删 `.agents/run-debate.sh`、`loop-debate.sh`；新增 `loop/run-debate.sh`+`lib.sh`；`loop-debate` 运行时读 yaml bootstrap；`AUTOMATION.md` §3 改指针；全库改 `loop/start.sh` |
+| 2026-11-17 | Loop 跨平台：Agent 原生 md 路径，bash 标为 Unix 可选。 | 需求 | 新增 `loop/AGENT.md`、`GIT-PUBLISH.md`；`platforms.yaml` agent_native/windows；prompt 去绝对路径；execution 步骤 0/7 指向 md |
+| 2026-11-17 | 移除 loop 内全部单独启动脚本，政策见 UNSUPPORTED.md。 | 提炼点 | 删 start/run-debate/loop-debate/lib.sh；automations agent_fallback；AUTOMATION §4.5 改为 agent 兜底 |
+| 2026-11-17 | 澄清 Loop：核心任务与分平台启动方式写入 TASK.md。 | 提炼点 | `loop/TASK.md`+`platforms.yaml` launch_matrix；execution_prompt step 0 先读 TASK |
+| 2026-11-17 | 自动化文档收口：loop 仅 ENTRY+GIT；yaml 瘦身；熟 Agent 可自判。 | 提炼点 | 删 TASK/AGENT/platforms/UNSUPPORTED/README；automations 短 execution_prompt |
+| 2026-11-17 | Git 发布改为角色 git.md，删除 debate-git-publish.sh。 | 提炼点 | `roles/git.md`；workflow L9 role=git；按流程 Shell 执行 git |
+| 2026-11-17 | AUTOMATION/automations 收口为 Cursor vs WorkBuddy 执行说明。 | 提炼点 | yaml platforms 块；AUTOMATION 重写为两平台表 + 共同执行层 |
+| 2026-11-17 | 删除 AUTOMATION.md；自动化说明仅留 automations.yaml。 | 提炼点 | 去重手册；AGENTS/README/RULES/paths 改指 yaml |

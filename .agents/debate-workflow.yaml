@@ -435,22 +435,11 @@ steps:
     output: optimizer_report
 
   - id: debate_git_publish
-    role: "optimizer"
+    role: "git"
     name: "辩论落盘·提交推送"
     emoji: "📤"
     depends_on: [optimizer_finalize]
     task: |
-      辩论与优化者落盘已完成。在仓库根目录 **必须** 执行（用 Shell 工具，不要只用文字描述）：
-
-      ```bash
-      bash .agents/debate-git-publish.sh "{{topic}}"
-      ```
-
-      ## 输出要求
-      ### Git 发布结果
-      - 是否提交（commit hash 或「无变更跳过」）
-      - 是否已 push 到 origin
-      - 失败时的完整错误信息与建议
-
-      禁止在未执行脚本的情况下声称已推送。
+      Read `.agents/roles/git.md`，化身 Git 发布者，在仓库根按其中流程执行（辩题：`{{topic}}`）。
+      用 Shell 跑 git；禁止未实跑而声称已推送。
     output: git_publish_out

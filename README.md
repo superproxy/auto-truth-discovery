@@ -22,9 +22,8 @@
 ├── roles/                         # 5个辩论角色
 ├── RULES.md                       # 执行规则（含角色能力同步）
 ├── debate-workflow.yaml           # 全流程辩论工作流（14步）
-├── automations.yaml               # 自动化定义唯一真相源
-├── AUTOMATION.md                  # 统一规范 + Agent 执行手册
-└── *.sh                           # run-debate / loop-debate / debate-git-publish
+├── automations.yaml               # Cursor/WorkBuddy 入口
+└── roles/                         # 含 git.md（L9）
 
 debates/                           # 辩论场地（产出）
 ├── topics.md                      # 600个辩题（18领域，✅=已辩论）
@@ -41,13 +40,8 @@ docs/inquiry-log.md                # 问询分类记录
 
 ## 定时触发与 agent 执行
 
-- **唯一真相源**：`.agents/automations.yaml`（调度 + 完整提示词 + 薄引导）；
-  **执行手册**：`.agents/AUTOMATION.md`（L1-L9 拓扑层、闭环三件套、命令行兜底）。
-- **三选一，勿双开**：① 平台 automation（注入薄引导，agent 读 yaml 执行，主用）；
-  ② 命令行兜底 `bash .agents/run-debate.sh [--loop]`（平台不支持时用 `codebuddy -p` 无头跑同一份定义）；
-  ③ 旧方案 `loop-debate.sh`（IDE Monitored shell）。
-- agent 醒来后：取首个未标 ✅ 辩题 → 逐层执行 → 落盘 → 标 ✅+计数 → 记问询 → 实跑 git 发布 → 报告。
-- 改流程/提示词只改 yaml（平台不用动）；改 `rrule`/`status`/`cwd` 才同步平台；按 name 匹配更新，勿建第二个。
+- **入口**：`.agents/automations.yaml`（WorkBuddy / Cursor → `execution_prompt` → `debate-workflow.yaml`）。
+- WorkBuddy 与 Cursor `/loop` 勿双开；agent 醒来后按工作流跑一轮。
 
 ## 工作流全景
 
@@ -109,8 +103,8 @@ docs/inquiry-log.md                # 问询分类记录
 | 查看辩题库 | `grep ✅ debates/topics.md` |
 | 查看结论汇总 | `cat debates/conclusions/README.md` |
 | 查看自动化定义 | `cat .agents/automations.yaml` |
-| 查看执行手册 | `cat .agents/AUTOMATION.md` |
-| 手动跑一轮 | `bash .agents/run-debate.sh`（或把 yaml 的 execution_prompt 发给 agent） |
+| 查看自动化入口 | `cat .agents/automations.yaml` |
+| 手动一轮辩论 | `automations.yaml` → `execution_prompt` |
 
 ## 约定
 
@@ -124,5 +118,4 @@ docs/inquiry-log.md                # 问询分类记录
 1. `AGENTS.md` = 仓库结构与命令的唯一权威
 2. `.agents/skills/truth-discovery/SKILL.md` = skill 行为的唯一权威
 3. `.agents/RULES.md` = 多角色辩论执行规则
-4. `.agents/automations.yaml` = 自动化定义唯一真相源
-5. `.agents/AUTOMATION.md` = 执行手册与统一规范
+4. `.agents/automations.yaml` = Cursor/WorkBuddy 入口与 execution_prompt
