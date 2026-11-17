@@ -7,7 +7,7 @@
 | 维度 | 说明 | 入口 |
 |---|---|---|
 | **使用 skill** | 加载 skill 直接求真判断，快速输出分层结论 | `.agents/skills/truth-discovery/SKILL.md` |
-| **辩论 agent** | 五角色全流程辩论，质疑-推理-裁判-优化 | `.agents/agents/debate-workflow.yaml` |
+| **辩论 agent** | 五角色全流程辩论，质疑-推理-裁判-优化 | `.agents/debate-workflow.yaml` |
 | **重要结论** | 所有判断结果汇总，含分层判断、置信度、标签 | `debates/conclusions/README.md` |
 
 ## 核心原则
@@ -17,16 +17,15 @@
 ## 工程结构
 
 ```
-.agents/                           # agent 工程配置
+.agents/                           # agent 工程配置（skill + 辩论工作流平铺）
 ├── skills/truth-discovery/        # 自有 skill：主干 + 案例 + 参考 + 清单
-├── skills-init/init-loop-agents/  # 上游初始化 skill 的引用与副本
-└── agents/                        # 辩论 agent：角色 + 工作流 + 定时规范
-    ├── roles/                     # 5个角色
-    ├── RULES.md                   # 执行规则（含角色能力同步）
-    ├── debate-workflow.yaml       # 全流程辩论工作流（14步）
-    ├── automations.yaml           # 自动化定义唯一真相源
-    ├── AUTOMATION.md              # 统一规范 + Agent 执行手册（含命令行兜底）
-    └── *.sh                       # run-debate(CLI兜底) / loop-debate(旧) / git-publish
+├── skills-init/                   # 上游 init-loop-agents 引用（README）+ 引擎副本
+├── roles/                         # 5个辩论角色
+├── RULES.md                       # 执行规则（含角色能力同步）
+├── debate-workflow.yaml           # 全流程辩论工作流（14步）
+├── automations.yaml               # 自动化定义唯一真相源
+├── AUTOMATION.md                  # 统一规范 + Agent 执行手册
+└── *.sh                           # run-debate / loop-debate / debate-git-publish
 
 debates/                           # 辩论场地（产出）
 ├── topics.md                      # 600个辩题（18领域，✅=已辩论）
@@ -43,10 +42,10 @@ docs/inquiry-log.md                # 问询分类记录
 
 ## 定时触发与 agent 执行
 
-- **唯一真相源**：`.agents/agents/automations.yaml`（调度 + 完整提示词 + 薄引导）；
-  **执行手册**：`.agents/agents/AUTOMATION.md`（L1-L9 拓扑层、闭环三件套、命令行兜底）。
+- **唯一真相源**：`.agents/automations.yaml`（调度 + 完整提示词 + 薄引导）；
+  **执行手册**：`.agents/AUTOMATION.md`（L1-L9 拓扑层、闭环三件套、命令行兜底）。
 - **三选一，勿双开**：① 平台 automation（注入薄引导，agent 读 yaml 执行，主用）；
-  ② 命令行兜底 `bash .agents/agents/run-debate.sh [--loop]`（平台不支持时用 `codebuddy -p` 无头跑同一份定义）；
+  ② 命令行兜底 `bash .agents/run-debate.sh [--loop]`（平台不支持时用 `codebuddy -p` 无头跑同一份定义）；
   ③ 旧方案 `loop-debate.sh`（IDE Monitored shell）。
 - agent 醒来后：取首个未标 ✅ 辩题 → 逐层执行 → 落盘 → 标 ✅+计数 → 记问询 → 实跑 git 发布 → 报告。
 - 改流程/提示词只改 yaml（平台不用动）；改 `rrule`/`status`/`cwd` 才同步平台；按 name 匹配更新，勿建第二个。
@@ -68,7 +67,7 @@ docs/inquiry-log.md                # 问询分类记录
         ├── 通用原则   → .agents/skills/truth-discovery/SKILL.md
         ├── 专题参考   → .agents/skills/truth-discovery/references/
         ├── 经典案例   → .agents/skills/truth-discovery/cases/
-        ├── 角色同步   → .agents/agents/roles/*.md
+        ├── 角色同步   → .agents/roles/*.md
         ├── 辩题标注   → debates/topics.md ✅
         └── 问询记录   → docs/inquiry-log.md
 ```
@@ -109,9 +108,9 @@ docs/inquiry-log.md                # 问询分类记录
 | 查看方法论 | `cat .agents/skills/truth-discovery/SKILL.md \| head -5` |
 | 查看辩题库 | `grep ✅ debates/topics.md` |
 | 查看结论汇总 | `cat debates/conclusions/README.md` |
-| 查看自动化定义 | `cat .agents/agents/automations.yaml` |
-| 查看执行手册 | `cat .agents/agents/AUTOMATION.md` |
-| 手动跑一轮 | `bash .agents/agents/run-debate.sh`（或把 yaml 的 execution_prompt 发给 agent） |
+| 查看自动化定义 | `cat .agents/automations.yaml` |
+| 查看执行手册 | `cat .agents/AUTOMATION.md` |
+| 手动跑一轮 | `bash .agents/run-debate.sh`（或把 yaml 的 execution_prompt 发给 agent） |
 
 ## 约定
 
@@ -124,6 +123,6 @@ docs/inquiry-log.md                # 问询分类记录
 
 1. `AGENTS.md` = 仓库结构与命令的唯一权威
 2. `.agents/skills/truth-discovery/SKILL.md` = skill 行为的唯一权威
-3. `.agents/agents/RULES.md` = 多角色辩论执行规则
-4. `.agents/agents/automations.yaml` = 自动化定义唯一真相源
-5. `.agents/agents/AUTOMATION.md` = 执行手册与统一规范
+3. `.agents/RULES.md` = 多角色辩论执行规则
+4. `.agents/automations.yaml` = 自动化定义唯一真相源
+5. `.agents/AUTOMATION.md` = 执行手册与统一规范

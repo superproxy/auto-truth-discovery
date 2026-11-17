@@ -32,10 +32,10 @@ fi
 # 仅纳入本工程常见落盘路径；未跟踪的其它文件需人工处理
 git add \
   AGENTS.md \
-  .agents/agents/ \
+  README.md \
+  .agents/ \
   debates/ \
   docs/inquiry-log.md \
-  .agents/skills/truth-discovery/ \
   findings/ 2>/dev/null || true
 
 # 其余已跟踪文件的修改

@@ -13,7 +13,7 @@ last_updated: 2026-11-17
 owner_repo: /Users/yangxuezeng/Desktop/auto-truth-discovery
 
 conventions:
-  single_source_of_truth: ".agents/agents/automations.yaml"
+  single_source_of_truth: ".agents/automations.yaml"
   thin_bootstrap: "平台/shell 载体只存指向本文件的薄引导，不内嵌完整 prompt"
   dedup_key: "name 精确匹配；已存在则 update，禁止新建第二个"
   platform_fields: "name / prompt / scheduleType / rrule / status / cwds"
@@ -35,9 +35,9 @@ automations:
       note: "平台侧匹配键为 name；known_id 仅供核对，不作为去重依据"
     # 命令行兜底：平台 automation 不可用/不支持时，用无头 CLI 读本文件跑一轮
     cli_fallback:
-      script: ".agents/agents/run-debate.sh"
-      command: "bash .agents/agents/run-debate.sh"
-      loop_command: "LOOP_DEBATE_INTERVAL=3600 bash .agents/agents/run-debate.sh --loop"
+      script: ".agents/run-debate.sh"
+      command: "bash .agents/run-debate.sh"
+      loop_command: "LOOP_DEBATE_INTERVAL=3600 bash .agents/run-debate.sh --loop"
       runtime: "codebuddy -p --permission-mode <mode> <execution_prompt>"
       source: "execution_prompt（与平台同源，不另存副本）"
       when: "平台 automation 不可用、被禁、或无头调度只在 CI/裸机环境时"
@@ -46,7 +46,7 @@ automations:
     bootstrap_prompt: |
       执行 auto-truth-discovery 项目的一轮「求真辨伪」辩论工作流。
       工作目录：/Users/yangxuezeng/Desktop/auto-truth-discovery（若工具不继承工作目录，先切换到该目录）。
-      本任务为薄引导：完整执行指令在 .agents/agents/automations.yaml 中 id=truth-discovery-debate-loop 的 execution_prompt 字段。
+      本任务为薄引导：完整执行指令在 .agents/automations.yaml 中 id=truth-discovery-debate-loop 的 execution_prompt 字段。
       请先用 Read 读取该文件，取出 execution_prompt 全文并严格执行；不要自行简化或改写步骤。
     # 完整执行提示词：唯一权威正文（薄引导指向此处）
     execution_prompt: |
@@ -55,16 +55,16 @@ automations:
       工作目录：/Users/yangxuezeng/Desktop/auto-truth-discovery（下文路径均相对该目录；如工具不继承工作目录，请先切换到该目录）。
 
       步骤：
-      1. 读取 .agents/agents/RULES.md（执行规则）、.agents/agents/AUTOMATION.md（执行手册）与 .agents/agents/debate-workflow.yaml（工作流定义）。若不确定如何执行，先读 AUTOMATION.md 的执行手册节。
+      1. 读取 .agents/RULES.md（执行规则）、.agents/AUTOMATION.md（执行手册）与 .agents/debate-workflow.yaml（工作流定义）。若不确定如何执行，先读 AUTOMATION.md 的执行手册节。
       2. 从 debates/topics.md 中选取「第一个行尾没有 ✅ 的辩题」作为 topic。若全部已标 ✅，输出「辩题库已耗尽」并正常结束，不报错。
-      3. 按 depends_on 做拓扑排序，逐层执行 debate-workflow.yaml 的步骤（层序见 AUTOMATION.md 执行手册）：L1 搜集者+质疑者首轮并行；L2-L5 质疑-推理辩论链（loop 至质疑者「无新问题」，不超过 workflow 的 max_iterations）；L6 裁判总结；L7 优化者 6 路并行；L8 汇总落盘；L9 git 发布。同一拓扑层用子智能体并行派发，并发数遵守 concurrency（默认 6）；每一步读取 .agents/agents/roles/{role}.md，完全化身该角色，禁止通用回复。
+      3. 按 depends_on 做拓扑排序，逐层执行 debate-workflow.yaml 的步骤（层序见 AUTOMATION.md 执行手册）：L1 搜集者+质疑者首轮并行；L2-L5 质疑-推理辩论链（loop 至质疑者「无新问题」，不超过 workflow 的 max_iterations）；L6 裁判总结；L7 优化者 6 路并行；L8 汇总落盘；L9 git 发布。同一拓扑层用子智能体并行派发，并发数遵守 concurrency（默认 6）；每一步读取 .agents/roles/{role}.md，完全化身该角色，禁止通用回复。
       4. 过程写入 debates/process/，结论写入 debates/conclusions/。
       5. 【关键闭环】结论落盘后，回到 debates/topics.md，在刚辩完那一题的行尾补上 " ✅"，同步更新文件头部「共 N 场已完成辩论」计数，并在 debates/conclusions/README.md 追加结论行。不写这一步，下一轮会重复选同一题。
       6. 按 RULES.md 要求：记录到 docs/inquiry-log.md；检查是否需要同步更新角色方法论武器库与 .agents/skills/truth-discovery/SKILL.md。
-      7. 结束后在仓库根目录实际执行：`bash .agents/agents/debate-git-publish.sh "<本轮 topic>"`（无变更跳过；有变更则 commit 并 push origin）。禁止只写「已推送」而不实跑脚本。
+      7. 结束后在仓库根目录实际执行：`bash .agents/debate-git-publish.sh "<本轮 topic>"`（无变更跳过；有变更则 commit 并 push origin）。禁止只写「已推送」而不实跑脚本。
       8. 简要报告：本轮辩题、结论文件位置、题库剩余未辩题数、Git 发布结果。
 
-      本任务定义见 .agents/agents/automations.yaml（id=truth-discovery-debate-loop）；初始化来源见 .agents/skills-init/README.md。
+      本任务定义见 .agents/automations.yaml（id=truth-discovery-debate-loop）；初始化来源见 .agents/skills-init/README.md。
 
 # 不属于本仓库的自动化：仅登记以避免误管理，不纳入本规范同步
 out_of_scope:

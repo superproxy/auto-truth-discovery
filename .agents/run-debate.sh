@@ -3,14 +3,14 @@
 # 从唯一真相源 automations.yaml 提取 execution_prompt，用 codebuddy -p 无头跑一轮辩论。
 # 平台与脚本同读一份定义，不产生新副本。
 #
-#   跑一轮：  bash .agents/agents/run-debate.sh
-#   定时循环：LOOP_DEBATE_INTERVAL=3600 bash .agents/agents/run-debate.sh --loop
-#   权限模式覆盖：DEBATE_AGENT_PERM_MODE=acceptEdits bash .agents/agents/run-debate.sh
+#   跑一轮：  bash .agents/run-debate.sh
+#   定时循环：LOOP_DEBATE_INTERVAL=3600 bash .agents/run-debate.sh --loop
+#   权限模式覆盖：DEBATE_AGENT_PERM_MODE=acceptEdits bash .agents/run-debate.sh
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
-YAML=".agents/agents/automations.yaml"
+YAML=".agents/automations.yaml"
 LOG="${DEBATE_CLI_LOG:-/tmp/auto-truth-discovery-debate-cli.log}"
 PERM_MODE="${DEBATE_AGENT_PERM_MODE:-bypassPermissions}"
 

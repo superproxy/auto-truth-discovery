@@ -10,6 +10,7 @@
 
 ```
 .agents/                           # agent 工程配置（skill + 工作流 + 初始化来源）
+├── README.md                      # 本目录索引（结构以根目录 AGENTS.md 为准）
 ├── skills/
 │   └── truth-discovery/           # skill：辩证法主干 + 经典案例 + 长参考
 │       ├── SKILL.md               # 辩证法主干（通用入口）
@@ -17,18 +18,17 @@
 │       ├── tools/checklist.md     # 操作检查清单
 │       └── references/            # 专题长参考与旧版框架
 ├── skills-init/
-│   └── init-loop-agents/          # 上游初始化 skill 的引用与副本
-│       ├── README.md              # 来源引用清单（谁初始化了本工程）
+│   ├── README.md                  # 来源引用清单（谁初始化了本工程）
+│   └── init-loop-agents/
 │       └── SKILL.md               # init-loop-agents 本地副本（通用工作流执行引擎）
-└── agents/                        # 智能体：角色 + 工作流 + 定时规范
-    ├── roles/                     # 5个角色（collector/challenger/reasoner/judge/optimizer）
-    ├── RULES.md                   # 执行规则（含角色能力同步规则）
-    ├── debate-workflow.yaml       # 全流程辩论工作流（14步）
-    ├── automations.yaml           # 自动化定义唯一真相源（调度+完整提示词+薄引导）
-    ├── AUTOMATION.md              # 人类可读版：统一规范 + Agent 执行手册
-    ├── run-debate.sh              # 命令行兜底：无头 CLI 读真相源跑一轮/循环
-    ├── loop-debate.sh             # 旧方案：IDE 会话内定时脚本（薄引导）
-    └── debate-git-publish.sh      # 辩论落盘提交推送
+├── roles/                         # 5个角色（collector/challenger/reasoner/judge/optimizer）
+├── RULES.md                       # 执行规则（含角色能力同步规则）
+├── debate-workflow.yaml           # 全流程辩论工作流（14步）
+├── automations.yaml               # 自动化定义唯一真相源（调度+完整提示词+薄引导）
+├── AUTOMATION.md                  # 人类可读版：统一规范 + Agent 执行手册
+├── run-debate.sh                  # 命令行兜底：无头 CLI 读真相源跑一轮/循环
+├── loop-debate.sh                 # 旧方案：IDE 会话内定时脚本（薄引导）
+└── debate-git-publish.sh          # 辩论落盘提交推送
 
 debates/                           # 辩论场地（产出，留在根目录）
 ├── topics.md                      # 600个辩题（18领域，✅=已辩论）
@@ -41,14 +41,14 @@ tests/                             # 场景与验收
 ```
 
 > 目录约定：`.agents/` 存放"agent 如何思考与执行"（配置与能力），根目录存放"辩论产生了什么"（数据与结论）。
-> 迁移历史：2026-11-17 由 `skills/`、`agents/` 整体迁入 `.agents/`；上游路径引用见 `.agents/skills-init/README.md`。
+> 迁移历史：2026-11-17 由根目录 `skills/`、`agents/` 迁入 `.agents/`；同年取消 `.agents/agents/` 嵌套，工作流与角色文件平铺在 `.agents/` 根级；上游路径引用见 `.agents/skills-init/README.md`。
 
 ## 初始化来源（重要）
 
 本工程由上游 skill 仓库 https://github.com/superproxy/skills 的 **`init-loop-agents`** skill 初始化，
 其 `patterns/loop-enginerring/` 是本工程辩论工作流的原型。引用与副本见 `.agents/skills-init/`。
 - **引擎（上游）**：`.agents/skills-init/init-loop-agents/SKILL.md` — 通用工作流解析/调度/执行/保存协议
-- **实例（本项目）**：`.agents/agents/debate-workflow.yaml` + `.agents/agents/roles/` — 求真辨伪 14 步与五个角色
+- **实例（本项目）**：`.agents/debate-workflow.yaml` + `.agents/roles/` — 求真辨伪 14 步与五个角色（与 skill 同层，均在 `.agents/`）
 - 上游 skill 更新时只同步协议层改动，不改本项目角色/工作流实例。
 
 ## 工作流全景
@@ -68,7 +68,7 @@ tests/                             # 场景与验收
         ├── 通用原则   → .agents/skills/truth-discovery/SKILL.md
         ├── 专题参考   → .agents/skills/truth-discovery/references/
         ├── 经典案例   → .agents/skills/truth-discovery/cases/
-        ├── 角色同步   → .agents/agents/roles/*.md
+        ├── 角色同步   → .agents/roles/*.md
         ├── 辩题标注   → debates/topics.md ✅
         └── 问询记录   → docs/inquiry-log.md
 ```
@@ -93,13 +93,13 @@ tests/                             # 场景与验收
 
 ## 定时触发与 agent 执行
 
-- **唯一真相源**：`.agents/agents/automations.yaml`（调度字段 + 完整 `execution_prompt` + 薄 `bootstrap_prompt`）。
+- **唯一真相源**：`.agents/automations.yaml`（调度字段 + 完整 `execution_prompt` + 薄 `bootstrap_prompt`）。
   平台与命令行脚本都只存薄引导/读取同一份，**禁止在别处复制完整提示词**。
-- **人类执行手册**：`.agents/agents/AUTOMATION.md`（含 L1-L9 拓扑层、闭环三件套、统一规范、命令行兜底）。
+- **人类执行手册**：`.agents/AUTOMATION.md`（含 L1-L9 拓扑层、闭环三件套、统一规范、命令行兜底）。
 - **触发方式（三选一，勿双开）**：
   1. 平台 recurring automation「求真辨伪辩论·定时循环」——注入薄引导，agent 读 yaml 取全文执行（主用）；
-  2. 命令行兜底 `bash .agents/agents/run-debate.sh [--loop]`——平台不支持时用 `codebuddy -p` 无头跑同一份定义；
-  3. 旧方案 `.agents/agents/loop-debate.sh`——IDE 会话内 Monitored shell（薄引导）。
+  2. 命令行兜底 `bash .agents/run-debate.sh [--loop]`——平台不支持时用 `codebuddy -p` 无头跑同一份定义；
+  3. 旧方案 `.agents/loop-debate.sh`——IDE 会话内 Monitored shell（薄引导）。
 - **agent 醒来后做什么**：读 yaml 取 `execution_prompt` → 读 AUTOMATION.md/RULES/workflow → 取首个未标 ✅ 辩题 → 按 L1-L9 层执行（层内并行、层间串行）→ 落盘 → 标 ✅ + 计数 +1 → 记问询 → 实跑 git 发布 → 报告。
 - **改什么同步到哪里**：改流程/提示词只改 yaml（平台不用动）；改 `rrule`/`status`/`cwd` 才同步平台；按 name 精确匹配更新，禁止新建同名任务（详见 AUTOMATION.md 第 2.3 节）。
 
@@ -163,12 +163,12 @@ tests/                             # 场景与验收
 | 查看方法论 | `cat .agents/skills/truth-discovery/SKILL.md \| head -5` |
 | 查看辩题库 | `grep ✅ debates/topics.md` |
 | 查看结论汇总 | `cat debates/conclusions/README.md` |
-| 查看角色 | `ls .agents/agents/roles/` |
-| 查看自动化定义（真相源） | `cat .agents/agents/automations.yaml` |
-| 查看执行手册/统一规范 | `cat .agents/agents/AUTOMATION.md` |
+| 查看角色 | `ls .agents/roles/` |
+| 查看自动化定义（真相源） | `cat .agents/automations.yaml` |
+| 查看执行手册/统一规范 | `cat .agents/AUTOMATION.md` |
 | 查看初始化来源 | `cat .agents/skills-init/README.md` |
 | 查看问询记录 | `cat docs/inquiry-log.md` |
-| 手动跑一轮辩论 | `bash .agents/agents/run-debate.sh`（或把 yaml 的 execution_prompt 发给 agent） |
+| 手动跑一轮辩论 | `bash .agents/run-debate.sh`（或把 yaml 的 execution_prompt 发给 agent） |
 
 ## 约定
 
@@ -183,7 +183,7 @@ tests/                             # 场景与验收
 
 1. 本文件 = 仓库结构与命令的唯一权威
 2. `.agents/skills/truth-discovery/SKILL.md` = skill 行为的唯一权威
-3. `.agents/agents/RULES.md` = 多角色辩论执行规则
-4. `.agents/agents/automations.yaml` = 自动化定义唯一真相源（调度 + 提示词）
-5. `.agents/agents/AUTOMATION.md` = 人类可读版执行手册与统一规范
+3. `.agents/RULES.md` = 多角色辩论执行规则
+4. `.agents/automations.yaml` = 自动化定义唯一真相源（调度 + 提示词）
+5. `.agents/AUTOMATION.md` = 人类可读版执行手册与统一规范
 6. `.agents/skills-init/README.md` = 初始化来源引用

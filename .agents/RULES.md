@@ -26,11 +26,11 @@
 
 ### 辩论记录
 
-每场辩论结束后，辩论记录保存到 `debates/` 目录，与 `.agents/agents/` 平行。
+每场辩论结束后，辩论记录保存到 `debates/` 目录，与 `.agents/` 平行。
 
 ## 2. 解析工作流
 
-读取 `.agents/agents/debate-workflow.yaml`。提取名称、输入、步骤、依赖关系（depends_on）、条件（conditions）和循环（loops）。
+读取 `.agents/debate-workflow.yaml`。提取名称、输入、步骤、依赖关系（depends_on）、条件（conditions）和循环（loops）。
 
 ## 3. 收集输入
 
@@ -55,7 +55,7 @@
 
 对每个步骤（单进程顺序模式时逐步执行；并发模式下同层批量派发）：
 
-1. 读取 `.agents/agents/roles/{role}.md`
+1. 读取 `.agents/roles/{role}.md`
 2. 提取 frontmatter（`---`）之后的所有 markdown 内容作为角色人格
 3. 将任务中的 `{{变量}}` 替换为上下文值（来自输入或前序步骤输出）
 4. **评估条件**：如果设置了 `condition`，评估它。条件不满足则跳过该步骤。运算符：`contains`、`equals`、`not_contains`、`not_equals`
@@ -98,36 +98,36 @@ debates/{工作流名称}-{日期}/
 
 ## 9. 定时后台迭代
 
-> 自动化的**唯一权威定义**在 `.agents/agents/automations.yaml`（调度字段 + 完整提示词）。
-> 平台 automation 与本地脚本都只注入薄引导、指向该文件；执行手册见 `.agents/agents/AUTOMATION.md`。
+> 自动化的**唯一权威定义**在 `.agents/automations.yaml`（调度字段 + 完整提示词）。
+> 平台 automation 与本地脚本都只注入薄引导、指向该文件；执行手册见 `.agents/AUTOMATION.md`。
 > 去重靠 name 精确匹配更新，禁止新建第二个同名任务；平台无 `sync_key` 字段。
 
 **主用**：平台 recurring automation「求真辨伪辩论·定时循环」（默认每 1h），到点注入薄引导，
 新会话 agent 读 yaml 取完整指令后执行一轮。改流程只改 yaml 的 `execution_prompt`，无需同步平台；
 改 `rrule`/`status`/`cwd` 才同步平台（详见 AUTOMATION.md 第 2.3 节决策表）。
 
-**命令行兜底（平台不支持时）**：`bash .agents/agents/run-debate.sh`（跑一轮）或加 `--loop` 定时循环。
+**命令行兜底（平台不支持时）**：`bash .agents/run-debate.sh`（跑一轮）或加 `--loop` 定时循环。
 它用 `codebuddy -p` 无头读 `automations.yaml` 的 `execution_prompt` 执行，与平台同源不另存副本；
 详见 AUTOMATION.md 第 4.5 节。三套触发链（平台 / run-debate.sh / loop-debate.sh）只启用其一。
 
-**旧方案（备用，勿与主用同时启用）**：本地会话用 `.agents/agents/loop-debate.sh`
+**旧方案（备用，勿与主用同时启用）**：本地会话用 `.agents/loop-debate.sh`
 （默认每 **1h** 唤醒，环境变量 `LOOP_DEBATE_INTERVAL` 秒，默认 `3600`；heredoc 同为薄引导）：
 
 ```bash
-chmod +x .agents/agents/loop-debate.sh .agents/agents/debate-git-publish.sh
-.agents/agents/loop-debate.sh
-# 自定义间隔例：LOOP_DEBATE_INTERVAL=7200 .agents/agents/loop-debate.sh
+chmod +x .agents/loop-debate.sh .agents/debate-git-publish.sh
+.agents/loop-debate.sh
+# 自定义间隔例：LOOP_DEBATE_INTERVAL=7200 .agents/loop-debate.sh
 ```
 
-在 Cursor 中用 **Monitored shell** 后台运行该脚本，`notify_on_output` 匹配 `^AGENT_LOOP_TICK_truth-discovery-debate`。启用后**立即手动跑一轮**。停止：`pkill -f '.agents/agents/loop-debate.sh'`。
+在 Cursor 中用 **Monitored shell** 后台运行该脚本，`notify_on_output` 匹配 `^AGENT_LOOP_TICK_truth-discovery-debate`。启用后**立即手动跑一轮**。停止：`pkill -f '.agents/loop-debate.sh'`。
 
-**Git 闭环**：工作流末步 `debate_git_publish` 在 `optimizer_finalize` 之后执行 `.agents/agents/debate-git-publish.sh`（提交并 `git push origin` 当前分支；无变更则跳过）。辩论会话内须用 Shell 实际运行该脚本，不得只写「已推送」。
+**Git 闭环**：工作流末步 `debate_git_publish` 在 `optimizer_finalize` 之后执行 `.agents/debate-git-publish.sh`（提交并 `git push origin` 当前分支；无变更则跳过）。辩论会话内须用 Shell 实际运行该脚本，不得只写「已推送」。
 
 ## 10. 重要规则
 
 - 每个步骤必须真正化身所分配的角色——禁止通用回复
 - 禁止跳过或合并步骤；严格按拓扑层级执行（同层可并行，不得打乱层间顺序）
-- 如果角色文件缺失，告知用户安装 .agents/agents/roles
+- 如果角色文件缺失，告知用户安装 .agents/roles
 - 如果条件不满足，将该步骤标记为"已跳过"并继续
 - 对于 `depends_on_mode: "any_completed"`，当任意一个上游步骤完成时即可继续（而非等待全部）
 - **每次辩论结束后，必须记录到 `docs/inquiry-log.md`**

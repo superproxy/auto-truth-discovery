@@ -1,13 +1,13 @@
 # 定时辩论循环 · 自动化规范与执行手册
 
 > **定义在哪里？** 调度的权威定义（name / rrule / status / cwd / 完整提示词）在
-> [`.agents/agents/automations.yaml`](automations.yaml) 的 `truth-discovery-debate-loop` 条目。
+> [`.agents/automations.yaml`](automations.yaml) 的 `truth-discovery-debate-loop` 条目。
 > 本文件是它的**人类可读版执行手册**：讲清定时器触发后 agent 具体怎么做。
 > 两者分工：yaml = 机器可读单一真相源；本文件 = 执行时的操作说明。
 
 ## 1. 意图
 
-让 agent 每 1 小时自动醒来，执行一轮 `.agents/agents/debate-workflow.yaml` 全流程辩论，
+让 agent 每 1 小时自动醒来，执行一轮 `.agents/debate-workflow.yaml` 全流程辩论，
 从 `debates/topics.md` 消费下一个未辩题，产出过程与结论，并把该题标记完成。
 
 这是一场 agent **自己给自己定时发消息**的接力——不依赖 IDE 的 Shell 输出监视器，
@@ -26,9 +26,9 @@
 
 | 角色 | 载体 | 存什么 | 禁止 |
 |---|---|---|---|
-| 权威定义 | `.agents/agents/automations.yaml` | 调度字段 + 完整 `execution_prompt` + 薄 `bootstrap_prompt` | — |
+| 权威定义 | `.agents/automations.yaml` | 调度字段 + 完整 `execution_prompt` + 薄 `bootstrap_prompt` | — |
 | 定时载体 | 平台 automation | 仅 `bootstrap_prompt`（薄引导，指向 yaml） | 内嵌完整提示词 |
-| 本地载体 | `.agents/agents/loop-debate.sh` | 仅薄引导 | 内嵌完整提示词 |
+| 本地载体 | `.agents/loop-debate.sh` | 仅薄引导 | 内嵌完整提示词 |
 | 人类说明 | 本文件 / RULES / AGENTS / README | 执行手册与入口指针 | 复制完整提示词正文 |
 
 ### 2.2 平台字段与去重
@@ -59,11 +59,11 @@
 ```
 执行 auto-truth-discovery 项目的一轮「求真辨伪」辩论工作流。
 工作目录：/Users/yangxuezeng/Desktop/auto-truth-discovery（若工具不继承工作目录，先切换到该目录）。
-本任务为薄引导：完整执行指令在 .agents/agents/automations.yaml 中 id=truth-discovery-debate-loop 的 execution_prompt 字段。
+本任务为薄引导：完整执行指令在 .agents/automations.yaml 中 id=truth-discovery-debate-loop 的 execution_prompt 字段。
 请先用 Read 读取该文件，取出 execution_prompt 全文并严格执行；不要自行简化或改写步骤。
 ```
 
-**完整执行提示词**请读 `.agents/agents/automations.yaml` → `execution_prompt`（唯一权威正文）。
+**完整执行提示词**请读 `.agents/automations.yaml` → `execution_prompt`（唯一权威正文）。
 
 ## 4. Agent 执行手册：定时器触发后，agent 具体怎么做
 
@@ -97,11 +97,11 @@
 | L6 | `judge_summary` | 单步，产出裁判报告 | `judge.md` |
 | L7 | 6 路并行：`optimizer_skill_review` + `optimizer_sync_{collector,challenger,reasoner,judge,optimizer_self}` | 6 个子智能体并行 | `optimizer.md` |
 | L8 | `optimizer_finalize` | 汇总落盘：更新 SKILL/角色/topics ✅/inquiry-log | `optimizer.md` |
-| L9 | `debate_git_publish` | Shell 实跑 `bash .agents/agents/debate-git-publish.sh "<topic>"` | — |
+| L9 | `debate_git_publish` | Shell 实跑 `bash .agents/debate-git-publish.sh "<topic>"` | — |
 
 ### 执行要点（每轮不可跳过）
 
-1. **角色化身**：每个 step 必须 `Read .agents/agents/roles/{role}.md`，提取 frontmatter 之后内容作为人格，**禁止通用回复**。
+1. **角色化身**：每个 step 必须 `Read .agents/roles/{role}.md`，提取 frontmatter 之后内容作为人格，**禁止通用回复**。
 2. **落盘**：过程写 `debates/process/truth-discovery-debate-<日期>-<slug>/steps/{N}-{step_id}.md`；结论写 `debates/conclusions/<slug>.md`。
 3. **闭环三件套**（漏掉则下轮空转）：
    - `debates/topics.md` 本题行尾补 ` ✅`，头部计数 +1；
@@ -127,16 +127,16 @@
 
 ```bash
 # 跑一轮（立即验证）
-bash .agents/agents/run-debate.sh
+bash .agents/run-debate.sh
 
 # 定时循环（每 1h，等效平台 rrule）
-LOOP_DEBATE_INTERVAL=3600 bash .agents/agents/run-debate.sh --loop
+LOOP_DEBATE_INTERVAL=3600 bash .agents/run-debate.sh --loop
 
 # 权限模式覆盖（无人值守默认 bypassPermissions；收紧可改）
-DEBATE_AGENT_PERM_MODE=acceptEdits bash .agents/agents/run-debate.sh
+DEBATE_AGENT_PERM_MODE=acceptEdits bash .agents/run-debate.sh
 
 # 日志默认 /tmp/auto-truth-discovery-debate-cli.log，可覆盖
-DEBATE_CLI_LOG=/path/to/log bash .agents/agents/run-debate.sh --loop
+DEBATE_CLI_LOG=/path/to/log bash .agents/run-debate.sh --loop
 ```
 
 **`run-debate.sh` 做什么**：`cd` 到仓库根 → awk 从 `automations.yaml` 提取 `execution_prompt`
@@ -144,7 +144,7 @@ DEBATE_CLI_LOG=/path/to/log bash .agents/agents/run-debate.sh --loop
 → 输出 tee 到日志 → `--loop` 时 sleep 指定间隔重复。辩论末步仍实跑 `debate-git-publish.sh` 闭环。
 
 **系统级常驻（可选，二选一）**：
-- cron：`crontab -e` 加 `0 * * * * cd <repo> && bash .agents/agents/run-debate.sh >> <log> 2>&1`
+- cron：`crontab -e` 加 `0 * * * * cd <repo> && bash .agents/run-debate.sh >> <log> 2>&1`
 - launchd：写 plist 指向 `run-debate.sh`，`launchctl load`；比 cron 更适合 macOS（权限/唤醒更稳）。
 - 脚本自带 `--loop`（前台 sleep 循环）是最简方案，配合 `tmux`/终端保活即可，无需系统调度器。
 
@@ -174,6 +174,6 @@ DEBATE_CLI_LOG=/path/to/log bash .agents/agents/run-debate.sh --loop
 
 ## 7. 与旧方案的关系
 
-`.agents/agents/loop-debate.sh` 是 IDE 会话内的旧方案（Monitored shell + `notify_on_output`），
+`.agents/loop-debate.sh` 是 IDE 会话内的旧方案（Monitored shell + `notify_on_output`），
 其 heredoc 已改为薄引导（与平台同源）。本 platform automation 是其在 WorkBuddy 上的替代实现。
 二者**不要同时启用**，否则会双开辩论（`automations.yaml` 中 shell 载体标为 disabled）。

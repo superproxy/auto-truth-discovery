@@ -20,12 +20,12 @@
 `agents/roles/*.md`，工作流结构来自 `agents/debate-workflow.yaml`」。本项目遵循该约定：
 
 - **引擎定义**（上游）：`.agents/skills-init/init-loop-agents/SKILL.md` — 通用工作流执行协议
-- **工作流实例**（本项目）：`.agents/agents/debate-workflow.yaml` — 求真辨伪 14 步
-- **角色人格**（本项目）：`.agents/agents/roles/*.md` — collector/challenger/reasoner/judge/optimizer
+- **工作流实例**（本项目）：`.agents/debate-workflow.yaml` — 求真辨伪 14 步
+- **角色人格**（本项目）：`.agents/roles/*.md` — collector/challenger/reasoner/judge/optimizer
 - **方法论 skill**（本项目）：`.agents/skills/truth-discovery/SKILL.md`
 
 > 注：副本中的路径按上游原文保留（相对根目录的 `agents/...`）。本项目落地布局已将 agents 下沉到
-> `.agents/agents/`，实际执行以 `.agents/agents/AUTOMATION.md` 与根目录 `AGENTS.md` 为准。
+> `.agents/`，实际执行以 `.agents/AUTOMATION.md` 与根目录 `AGENTS.md` 为准。
 
 ## 上游其他 skill（未采用，仅登记）
 
@@ -40,4 +40,4 @@
 
 1. 修改辩论执行协议前，先读本地副本，判断是否应回指上游仓库。
 2. 上游 skill 更新时，核对本地副本；仅同步协议层改动，不改本项目角色/工作流实例。
-3. 新会话的 agent 若不知如何执行工作流，读 `.agents/agents/AUTOMATION.md`（定时触发与执行说明）。
+3. 新会话的 agent 若不知如何执行工作流，读 `.agents/AUTOMATION.md`（定时触发与执行说明）。
