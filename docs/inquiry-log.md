@@ -138,3 +138,4 @@
 | 2026-11-18 | 自动化执行本场辩论及落盘（《尚书》今古文之争——古文尚书是否为伪作？）。 | 需求 | 14步全流程；结论 `guwen-shangshu-forgery.md`；入库薄方法论＋案例更新（SKILL：古文同名偷换／古料≠真篇／政治≠文献分表／枝节翻案防御换壳＋`cases/guwen-shangshu-forgery-method.md` 补链）；challenger/reasoner/judge/optimizer 薄同步；topics 尚书 ✅；结案 50 场 |
 | 2026-11-18 | 自动化执行本场辩论及落盘（《周礼》是否为周公所作，还是战国至汉初的托古建制？）。 | 需求 | 14步全流程；结论 `zhouli-attribution.md`；入库薄方法论＋案例（SKILL：升格利用≠造伪／古制碎片≠手稿／圣王–权臣假二分＋`cases/zhouli-attribution.md`）；challenger/reasoner/judge/optimizer 薄同步；topics 周礼 ✅；结案 51 场 |
 | 2026-11-18 | 自动化执行本场辩论及落盘（《尔雅》的作者与成书年代争议如何解决？）。 | 需求 | 14步全流程；结论 `erya-authorship.md`；入库薄方法论＋案例（SKILL：解决≠选作者／三档禁冒充／训诂≠官制划界＋`cases/erya-authorship.md`）；challenger/reasoner/judge/optimizer 薄同步；topics 尔雅 ✅；结案 52 场 |
+| 2026-11-18 | 自动化执行本场辩论及落盘（《黄帝内经》是否为黄帝所作？真实成书年代与作者是谁？）。 | 需求 | 14步全流程；结论 `huangdi-neijing-authorship.md`；入库薄方法论＋案例（SKILL：医经托名圣王／双书分账／王冰层正份额0＋`cases/huangdi-neijing-authorship.md`）；challenger/reasoner/judge/optimizer 薄同步；topics 黄帝内经 ✅；结案 53 场 |

@@ -131,6 +131,7 @@ description: Use when the user questions whether a historical figure, classic te
 - 古制记忆碎片／金文职官名相容被读成圣王手稿或西周官制实录＝半真半假；对亲著与实录命题事件史默认零正份额；禁「有金文印证故大体可靠」柔化。
 - 「圣王亲著／权臣全伪」假二分（如周公作《周礼》vs 刘歆全伪）→ 拒两端非凡宣称；近证伪须钉死单一个体＋独自写出＋现存层累成品并显式排除；收口多为晚出托古编纂＋升格包装。
 - 「作者／成书年代争议如何解决」若被读成选出唯一护照名 → 假任务／对象偷换；充分答句＝分层年代窗＋归属阶梯（材料核／初编／定型禁冒充）；训诂词典层累与托古官制蓝图须划界（名物语料库 ≠ 理想官制），纪律同属多源归名。
+- 医经对话体托名神话圣王（如《黄帝内经》黄帝问岐伯）→ 亲著近证伪须钉死句＋显式排除；内叙事医官角色升格外证作者＝0；《素问》《灵枢》等姊妹医经禁匀质年代／作者；后世注家重编（如王冰）对汉以前原貌默认正份额＝0；「作者是谁」＝学派语料库＋编订阶梯，禁佚名单作者偷渡护照；对齐希波克拉底医学语料库；拒「圣王亲著／全书无核全伪」假二分。
 - 移交转述会系统性柔化上游原文（把「撤回/证伪」说成「修正」）——裁决与自检以 steps 原文为准，不依赖二手摘要。
 
 ## 输出模板
@@ -151,7 +152,7 @@ description: Use when the user questions whether a historical figure, classic te
 
 | 问题类型 | 参考/案例 |
 |---|---|
-| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`（伪古文／梅本；结论 `debates/conclusions/guwen-shangshu-forgery.md`）、`cases/zhouli-attribution.md`（托古理想官制／升格≠造伪；结论 `debates/conclusions/zhouli-attribution.md`）、`cases/erya-authorship.md`（训诂词典层累／解决≠选作者；结论 `debates/conclusions/erya-authorship.md`）、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；双源上古冲突／今本≠古本见 `cases/zhushu-jinian-vs-shiji.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`cases/valmiki-ramayana-authorship.md`（对照荷马）；宫廷诗人／戏剧语料库与「梵语X」比较品牌见 `cases/kalidasa-authorship.md`；旧框架见 `references/legacy-methodology.md` |
+| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`（伪古文／梅本；结论 `debates/conclusions/guwen-shangshu-forgery.md`）、`cases/zhouli-attribution.md`（托古理想官制／升格≠造伪；结论 `debates/conclusions/zhouli-attribution.md`）、`cases/erya-authorship.md`（训诂词典层累／解决≠选作者；结论 `debates/conclusions/erya-authorship.md`）、`cases/huangdi-neijing-authorship.md`（医经托名圣王／素问灵枢分账／王冰层；结论 `debates/conclusions/huangdi-neijing-authorship.md`；对照希波克拉底文集）、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；双源上古冲突／今本≠古本见 `cases/zhushu-jinian-vs-shiji.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`cases/valmiki-ramayana-authorship.md`（对照荷马）；宫廷诗人／戏剧语料库与「梵语X」比较品牌见 `cases/kalidasa-authorship.md`；旧框架见 `references/legacy-methodology.md` |
 | 单一人物/文本记载偏见、结构性投影 | `references/attribution-pollution-gradient.md`、`cases/simaqian-qinshihuang-bias.md`；结论见 `debates/conclusions/sima-qian-qinshihuang-han-bias.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md`；相反双称号/名誉极性分裂见 `references/bipolar-reputational-branding.md`、`cases/herodotus-credibility-bipolar-branding.md` |
 | 科学发明、优先权、累积发明 | `../../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
