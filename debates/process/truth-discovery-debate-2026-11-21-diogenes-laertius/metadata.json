@@ -1,0 +1,27 @@
+{
+  "workflow": "求真辨伪·全流程辩论工作流",
+  "topic": "第欧根尼·拉尔修《名哲言行录》的史料来源是否可靠？",
+  "slug": "diogenes-laertius-lives-philosophers",
+  "date": "2026-11-21",
+  "steps_total": 14,
+  "steps_completed": 14,
+  "debate_rounds": 3,
+  "loop_exit": "challenger_output contains 无新问题",
+  "concurrency_mode": "单进程内联化身角色（符合本项目稳定执行惯例）",
+  "conclusion_file": "debates/conclusions/diogenes-laertius-lives-philosophers.md",
+  "process_dir": "debates/process/truth-discovery-debate-2026-11-21-diogenes-laertius",
+  "judge_summary": {
+    "overall_credibility": "中高",
+    "core_verdict": "拒斥整书可靠/八卦二分；二手编纂者转引枢纽；七层分裁",
+    "key_correction": "M3' 撤回高保真：囤积=低干预+高污染+原样性未检验、保真零正份额"
+  },
+  "methodology_delta": {
+    "count": 6,
+    "merged_into": "references/secondhand-compiler-transmission-hub.md",
+    "items": ["署名来源透明黑箱", "n=1幸存者偏差", "传承谱系建构", "载体/内容分离V0-V3", "囤积≠保真", "功劳归属禁令+多抄本≠多见证"]
+  },
+  "case": { "path": ".agents/skills/truth-discovery/cases/diogenes-laertius-lives-philosophers.md", "score": "23/25", "decision": "方法论+案例入库" },
+  "closure": { "topics_count": "45->46", "readme_count": 46, "inquiry_log_appended": true },
+  "roles_synced": ["collector", "challenger", "reasoner", "judge", "optimizer"],
+  "status": "completed"
+}

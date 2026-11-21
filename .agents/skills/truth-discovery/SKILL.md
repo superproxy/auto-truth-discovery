@@ -136,6 +136,9 @@ description: Use when the user questions whether a historical figure, classic te
 - 敌意体裁先行流通后，辩护方著作对传主"无损细节"的呼应默认＝辩护性回响，非独立观察线；辩护文本以体裁形象为参照系（自指）＝回响自证；升格须要求时间上先于体裁流通的独立观察载体。同一体裁生态内多部作品互仿互指＝同池回声（生态内持续性），禁异常概率连乘；讽刺→制度后果因果链三档：受害者自述损害（相容待核）／主因（待证）／份额比例（永久不可知，拒绝伪精确）。
 - 记载生态仅存两件完整文本却被制度化成"A vs B"穷尽对比 → 幸存双峰偏差：n=2 是下界过滤器（"分歧≥观测值"）非分布测量仪；比较前查目录/残篇/引用链重建生态宽度；若同源内部断层≥跨源差异（如柏拉图早期 vs 中后期 > 色诺芬-柏拉图间差异），双峰框架整体错位，改多点谱系；比较结论必须带存活过滤条件。
 - 辩护文本的章节结构跟随靶子（指控清单/控诉文）→ 申辩映射结构（辩护性回响的结构级）：靶子驱动段落观察份额不可量化，与体裁惯例段分账；多线"收敛"若由共享靶子+体裁公约数强制产生，收敛≠独立验证；同一人物被画成"完美导师"与"荒谬怪人"（褒贬镜像）=体裁角色扮演互为镜像，两侧都不承重历史观察；多体裁产出差异=用途差异，"谁更真实"不可答，归因多因并释、权重永久不可知，单因归因=过度简化。
+- 二手编纂者逐条署名来源、制造严谨外观，但来源多已散佚 → 署名来源＝透明黑箱：引用透明≠可核验，署名对材料真实性零正份额、仅目录学线索；并列异说不可核则降相容待核，禁「标了来源所以可信」加权。
+- 对大量对象编纂者是唯一幸存来源、后世皆源自他 → n=1 幸存偏差：同源互证＝0，「多源一致」只是同源回响；杀伤限轶事/生平/谱系层，不穿透可脱离转述链独立鉴定的嵌入一手文献层；功劳归材料与外部检验线，禁「X 记载较正确」柔化句。
+- 「不加批判所以忠实保存原貌」＝反直觉陷阱：囤积＝低干预 + 高污染 + 原样性未经检验，保真零正份额、仅弱否定；表中嵌入一手文献走载体/内容分离（V0 载体零加权／V1 内证只排低伪造／V2 外证只升骨架不证特定文本／V3 句级封顶），相容≠核对，师承/传承谱系＝建构（谱系事实≈0、观念史样本高、禁回潮），多抄本若共同祖先≠多见证。详见 `references/secondhand-compiler-transmission-hub.md`。
 - 移交转述会系统性柔化上游原文（把「撤回/证伪」说成「修正」）——裁决与自检以 steps 原文为准，不依赖二手摘要。
 
 ## 输出模板
@@ -165,6 +168,7 @@ description: Use when the user questions whether a historical figure, classic te
 | 道德化传记、平行列传、帝王轶事 bios、史料／八卦假二分 | `references/moralized-bios-engineering.md`、`cases/plutarch-parallel-lives.md`、`cases/suetonius-twelve-caesars.md`；结论见对应 `debates/conclusions/` |
 | 喜剧/讽刺体裁嫁接拼贴、辩护性回响、讽刺→制度因果链 | `references/genre-grafting-composite-caricature.md`、`cases/aristophanes-clouds-socrates.md`；结论见 `debates/conclusions/aristophanes-clouds-socrates-distortion.md` |
 | 幸存双峰偏差、申辩映射文本、体裁角色载体、双源记载差异 | `references/survivorship-pair-bias-and-defense-mapped-texts.md`、`cases/xenophon-plato-socrates-divergence.md`；结论见 `debates/conclusions/xenophon-plato-socrates-divergence.md` |
+| 二手编纂者/转引枢纽、署名透明黑箱、n=1 幸存、载体/内容分离、囤积≠保真 | `references/secondhand-compiler-transmission-hub.md`、`cases/diogenes-laertius-lives-philosophers.md`；结论见 `debates/conclusions/diogenes-laertius-lives-philosophers.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |
 
 ## 反模式
