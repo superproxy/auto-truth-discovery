@@ -1,0 +1,15 @@
+{
+  "topic": "色诺芬与柏拉图对苏格拉底的记载为何差异巨大？",
+  "date": "2026-11-21",
+  "rounds": 4,
+  "steps_completed": 14,
+  "conclusion": "debates/conclusions/xenophon-plato-socrates-divergence.md",
+  "labels": ["体裁角色载体", "申辩映射结构", "幸存双峰偏差", "同池收敛", "零正份额"],
+  "skill_updates": [
+    ".agents/skills/truth-discovery/SKILL.md (+2 红旗)",
+    ".agents/skills/truth-discovery/references/survivorship-pair-bias-and-defense-mapped-texts.md (新建)",
+    ".agents/skills/truth-discovery/cases/xenophon-plato-socrates-divergence.md (案例27)"
+  ],
+  "role_syncs": ["collector", "challenger", "reasoner", "judge", "optimizer"],
+  "topics_count": "44 → 45"
+}
