@@ -1,0 +1,15 @@
+{
+  "topic": "阿里斯托芬喜剧中对苏格拉底的描绘是否歪曲了历史苏格拉底？",
+  "date": "2026-11-21",
+  "rounds": 4,
+  "steps_completed": 14,
+  "conclusion": "debates/conclusions/aristophanes-clouds-socrates-distortion.md",
+  "labels": ["喜剧嫁接拼贴", "零正份额", "辩护性回响", "同池回声", "过度宣称"],
+  "skill_updates": [
+    ".agents/skills/truth-discovery/SKILL.md (+2 红旗)",
+    ".agents/skills/truth-discovery/references/genre-grafting-composite-caricature.md (新建)",
+    ".agents/skills/truth-discovery/cases/aristophanes-clouds-socrates.md (案例26)"
+  ],
+  "role_syncs": ["collector", "challenger", "reasoner", "judge", "optimizer"],
+  "topics_count": "43 → 44"
+}

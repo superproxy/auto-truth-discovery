@@ -59,7 +59,7 @@ description: Use when the user questions whether a historical figure, classic te
 
 ## 分层裁判标签
 
-优先使用这些标签，而不是“真/假”：`已确认`、`高度可能`、`合理`、`待证`、`永久待证`、`不可知`、`过度宣称`、`归属错误`、`品牌化`、`改写`、`已证伪`、`累积发明`、`张力元文本`、`代言式文学重构`、`道德塑形`、`设计污染`、`相容待核`、`零正份额`、`声誉史`。
+优先使用这些标签，而不是“真/假”：`已确认`、`高度可能`、`合理`、`待证`、`永久待证`、`不可知`、`过度宣称`、`归属错误`、`品牌化`、`改写`、`已证伪`、`累积发明`、`张力元文本`、`代言式文学重构`、`道德塑形`、`设计污染`、`喜剧嫁接拼贴`、`辩护性回响`、`相容待核`、`零正份额`、`声誉史`。
 
 归属类问题按阶梯判断：人物 → 学派 → 编订 → 语料库 → 协作生态 → 品牌 → 改写 → 神话。
 
@@ -132,6 +132,8 @@ description: Use when the user questions whether a historical figure, classic te
 - 「圣王亲著／权臣全伪」假二分（如周公作《周礼》vs 刘歆全伪）→ 拒两端非凡宣称；近证伪须钉死单一个体＋独自写出＋现存层累成品并显式排除；收口多为晚出托古编纂＋升格包装。
 - 「作者／成书年代争议如何解决」若被读成选出唯一护照名 → 假任务／对象偷换；充分答句＝分层年代窗＋归属阶梯（材料核／初编／定型禁冒充）；训诂词典层累与托古官制蓝图须划界（名物语料库 ≠ 理想官制），纪律同属多源归名。
 - 医经对话体托名神话圣王（如《黄帝内经》黄帝问岐伯）→ 亲著近证伪须钉死句＋显式排除；内叙事医官角色升格外证作者＝0；《素问》《灵枢》等姊妹医经禁匀质年代／作者；后世注家重编（如王冰）对汉以前原貌默认正份额＝0；「作者是谁」＝学派语料库＋编订阶梯，禁佚名单作者偷渡护照；对齐希波克拉底医学语料库；拒「圣王亲著／全书无核全伪」假二分。
+- 反讽体裁（喜剧/讽刺/戏仿）为真实个人挂载"思想/技艺/习俗"特征：先做嫁接溯源三问——①可归溯独立源头（他人学说/先例案）？②命中体裁指控 topos？③与传主可证强身份标识直接矛盾？任一成立 → 该元素对传主"现时立场"正份额＝0；错挂本身＝模板套用自证。产物既非"歪曲真实底本"亦非"忠实夸张"——拒"歪曲/忠实"二分，落点＝体裁产物＋接受史载体（公众认知镜像高度可用；传主史料零正份额）。
+- 敌意体裁先行流通后，辩护方著作对传主"无损细节"的呼应默认＝辩护性回响，非独立观察线；辩护文本以体裁形象为参照系（自指）＝回响自证；升格须要求时间上先于体裁流通的独立观察载体。同一体裁生态内多部作品互仿互指＝同池回声（生态内持续性），禁异常概率连乘；讽刺→制度后果因果链三档：受害者自述损害（相容待核）／主因（待证）／份额比例（永久不可知，拒绝伪精确）。
 - 移交转述会系统性柔化上游原文（把「撤回/证伪」说成「修正」）——裁决与自检以 steps 原文为准，不依赖二手摘要。
 
 ## 输出模板
@@ -159,6 +161,7 @@ description: Use when the user questions whether a historical figure, classic te
 | 地图、工程、文明传播 | `cases/ming-renaissance-tech.md`、`../../../findings/daming-hunyi-tu.md`、`../../../findings/kunyu-wanguo-quantu.md` |
 | 不可核验文本、自述方法论张力、史家拟辞/代言载言 | `references/author-method-meta-text-fidelity.md`、`cases/thucydides-speeches-composition.md`；结论见 `debates/conclusions/thucydides-speeches.md`；可选下游用途分账（不得回潮弱可推断）见 `references/unverifiable-text-ideal-type.md` |
 | 道德化传记、平行列传、帝王轶事 bios、史料／八卦假二分 | `references/moralized-bios-engineering.md`、`cases/plutarch-parallel-lives.md`、`cases/suetonius-twelve-caesars.md`；结论见对应 `debates/conclusions/` |
+| 喜剧/讽刺体裁嫁接拼贴、辩护性回响、讽刺→制度因果链 | `references/genre-grafting-composite-caricature.md`、`cases/aristophanes-clouds-socrates.md`；结论见 `debates/conclusions/aristophanes-clouds-socrates-distortion.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |
 
 ## 反模式
