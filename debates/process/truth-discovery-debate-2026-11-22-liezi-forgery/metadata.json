@@ -1,0 +1,36 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "topic": "《列子》是否为魏晋伪书？其中寓言是先秦思想还是魏晋玄学？",
+  "date": "2026-11-22",
+  "slug": "liezi-forgery-fables-authorship",
+  "status": "completed",
+  "engine": "inline role-persona execution (upstream init-role-agents unavailable; per project convention)",
+  "topology": {
+    "L1": ["collector_search", "challenger_round_1"],
+    "L2": "reasoner_round_1",
+    "L3": "challenger_round",
+    "L4": "reasoner_round",
+    "L5": "challenger_loop",
+    "L6": "judge_summary",
+    "L7": ["optimizer_skill_review", "optimizer_sync_collector", "optimizer_sync_challenger", "optimizer_sync_reasoner", "optimizer_sync_judge", "optimizer_sync_optimizer_self"],
+    "L8": "optimizer_finalize",
+    "L9": "debate_git_publish"
+  },
+  "debate_rounds": 3,
+  "closure": "challenger declared 无新问题可结案",
+  "reasoner_revisions": 4,
+  "steps_present": ["1","2","3","4","5","6","7","8","9","10","11","12","13","summary.md","metadata.json"],
+  "deliverables": {
+    "conclusion": "debates/conclusions/liezi-forgery-fables-authorship.md",
+    "reference": ".agents/skills/truth-discovery/references/forgery-predicate-decomposition-dating-axes.md",
+    "case": ".agents/skills/truth-discovery/cases/liezi-forgery-fables-authorship.md",
+    "case_number": 30,
+    "case_score": "24/25"
+  },
+  "closure_actions": {
+    "topics": "47 -> 48 (列子 ✅)",
+    "readme": "55 -> 56",
+    "inquiry_log": "+1"
+  },
+  "concurrency_note": "伊索案（第51场 L1-L8 上一轮已完成）由并发定时流于 22:12:10 抢先提交 1a1f38e；本流以文件系统状态为准，未双开同题。"
+}

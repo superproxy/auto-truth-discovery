@@ -144,6 +144,15 @@ description: Use when the user questions whether a historical figure, classic te
 - 体裁形容词（"X 式故事"）或描述性族裔/体征标签（如 Aesop←Aithiop）被实体化为作者专名 → **体裁标签实体化**：对作者命题零正份额；"体裁需要一个作者名"的叙事冲动使 (体裁→虚构创始人) 为主解释，(真人→体裁得名) 不可知不加权；多个古典作家都提"X 式故事"只是体裁锚，对人物零份额。
 - 开放语料库（按最早出处分型分代、边界持续开放、含 identifiable 文人原创与跨文明共享）被压成"一个人的书"→ 近证伪锁定句＝"单一作者独自写出全部开放语料库"（≠史诗案"单人写出现存层累定本"）；"民间故事集"只描述无主口传层，作整库标签过度简化。详见 `references/genre-eponym-reification-open-corpus.md`。
 - 归名传统自身的经典文本说出与归名叙事相矛盾的话（如 Babrius 自序称寓言为叙利亚发明）＝**本典内部反证**：对"开创者"品牌是强反证，对起源地只作相容线索不单独定案；"X 开创某体裁"降为"X 是某传统名义焦点＋中心主义包装"。
+- 辨伪论证引用权威支持"文本抄袭/伪托"，而该权威原文主张的恰是相反方向（"A 窃 B"被引为"B 窃 A"，如朱熹"佛窃《列子》"被引为"《列子》窃佛"）＝**方向反转引用**（接受史污染第三形态，区别于切除/柔化）：正份额＝0，禁"降强度保大结论"；三判据＝主谓方向核对／同篇异引对照／受益方引用检查。详见 `references/forgery-evidence-polarity-reversal.md`。
+- 题面"X 是先秦思想还是魏晋玄学""X 是 A 时代还是 B 时代思想"＝**思想断代假任务**：预设单一归属，须横向拆故事核／写定层／注疏阐释层，层间年代不传递（与"今本≠古本"纵向版本态正交）；注者的玄学被读成原书思想＝注疏倒灌，正份额＝0；"作伪者不会犯的错"只排除一人精心伪托、不证明朝代（负向排除≠正向断代）。
+- 古籍"是否某时代伪作"题：可考事件锚（译经年/汲冢出土/避讳）能建**可被反例证伪的断代夹逼窗口**，强于"文气像"与单向"最早硬证据晚"；但两文本相似对称、不构成方向证据——取材方向若依赖"文本伪"待证结论反推＝循环、若依赖传播大方向＝背景推断，须把窗口降为**条件性结论＋序数量化**，禁伪装铁证。
+- 辨伪合围中把权威原意整个引反支撑己方（朱熹"佛书窃列子"被引成"列子窃佛书"）＝**引文极性反转**（移交转述柔化的极性升级子类）：凡"某权威说X"须回原文核谓词方向；反转柱出局但禁外推"整座合围不可信"。
+- "某故事不见于同时代他书"被当"更早古本遗存"的证据＝**缺沉默当剪影**（证据方向倒置新子型）：沉默同时兼容遗存与新创、双向零份额；无独立判据则退回不可知栏，禁进正面结论。
+- 辨伪"多证据线"若共享同一隐含前提（都以"文本后出"为据）则非独立柱、合围强度被系统性高估 → 逐条抽前提测试折价，拒"五证合围""铁证"强度词；真伪未决但两方向同向削弱同一命题＝**双刃证据**，收口"路径未决、方向已定"禁空转。详见 `references/dating-pincer-and-citation-polarity.md`。
+- "X 是否为伪书""X 是 A 时代还是 B 时代思想"＝**伪书谓词未分解**：把人物/定本/材料/思想/包装五轴压成二元；判"伪"必须注明哪一轴，禁跨轴外推（定本伪不穿透人物存在、不否定材料古来源）；"含古料⇒定本真"与"定本伪⇒材料/人物亦伪"两端越界均禁。详见 `references/forgery-predicate-decomposition-dating-axes.md`。
+- 具体文本结构与 dating 明确的外源文本平行＋无更早独立旁证＝**断代下限（terminus post quem）**，不可降格为"时代风气相容"；对方以"该思想彼时已有"消解时，要求出示同等文本结构的更早独立旁证，无则下限成立（可测平行 vs 宽泛生态）。
+- 以叙事素材层的佛典/外源平行（具体故事、道具、情节）外推**整个义理框架层**为外来＝**叙事外推义理**红旗：叙事素材可找具体平行、可断代锚定；义理框架属思想生态渐变、只定生态归属（本土内生 vs 外来）；禁互相越界。
 
 ## 输出模板
 
@@ -163,7 +172,7 @@ description: Use when the user questions whether a historical figure, classic te
 
 | 问题类型 | 参考/案例 |
 |---|---|
-| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`（伪古文／梅本；结论 `debates/conclusions/guwen-shangshu-forgery.md`）、`cases/zhouli-attribution.md`（托古理想官制／升格≠造伪；结论 `debates/conclusions/zhouli-attribution.md`）、`cases/erya-authorship.md`（训诂词典层累／解决≠选作者；结论 `debates/conclusions/erya-authorship.md`）、`cases/huangdi-neijing-authorship.md`（医经托名圣王／素问灵枢分账／王冰层；结论 `debates/conclusions/huangdi-neijing-authorship.md`；对照希波克拉底文集）、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；双源上古冲突／今本≠古本见 `cases/zhushu-jinian-vs-shiji.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`cases/valmiki-ramayana-authorship.md`（对照荷马）；宫廷诗人／戏剧语料库与「梵语X」比较品牌见 `cases/kalidasa-authorship.md`；旧框架见 `references/legacy-methodology.md` |
+| 作者、经典、托名、语料库 | `cases/guwen-shangshu-forgery-method.md`（伪古文／梅本；结论 `debates/conclusions/guwen-shangshu-forgery.md`）、`cases/zhouli-attribution.md`（托古理想官制／升格≠造伪；结论 `debates/conclusions/zhouli-attribution.md`）、`cases/erya-authorship.md`（训诂词典层累／解决≠选作者；结论 `debates/conclusions/erya-authorship.md`）、`cases/huangdi-neijing-authorship.md`（医经托名圣王／素问灵枢分账／王冰层；结论 `debates/conclusions/huangdi-neijing-authorship.md`；对照希波克拉底文集）、`cases/liezi-wei-jin-forgery.md`（辨伪证据方向反转／思想断代假任务／注疏倒灌；方法长参考 `references/forgery-evidence-polarity-reversal.md`；结论 `debates/conclusions/liezi-wei-jin-forgery.md`）、Aristotle、Shakespeare、老子、《庄子》等案例；双书同归见 `debates/conclusions/guoyu-zuozhuan-same-author.md`；家学续作与断代史见 `debates/conclusions/ban-gu-hanshu-ban-biao.md`；纪传分层见 `debates/conclusions/shiji-reliable-record-vs-fiction.md`；双源上古冲突／今本≠古本见 `cases/zhushu-jinian-vs-shiji.md`；口传史诗／编排者称号／超级归名见 `cases/vyasa-mahabharata-authorship.md`、`cases/valmiki-ramayana-authorship.md`（对照荷马）；宫廷诗人／戏剧语料库与「梵语X」比较品牌见 `cases/kalidasa-authorship.md`；旧框架见 `references/legacy-methodology.md` |
 | 单一人物/文本记载偏见、结构性投影 | `references/attribution-pollution-gradient.md`、`cases/simaqian-qinshihuang-bias.md`；结论见 `debates/conclusions/sima-qian-qinshihuang-han-bias.md` |
 | 商业制造传统、品牌化 | `cases/debeers-diamond-tradition.md`、`cases/sugar-industry-science-manipulation.md`；相反双称号/名誉极性分裂见 `references/bipolar-reputational-branding.md`、`cases/herodotus-credibility-bipolar-branding.md` |
 | 科学发明、优先权、累积发明 | `../../../debates/conclusions/edison-lightbulb.md`、`references/legacy-methodology.md` |
@@ -174,6 +183,8 @@ description: Use when the user questions whether a historical figure, classic te
 | 幸存双峰偏差、申辩映射文本、体裁角色载体、双源记载差异 | `references/survivorship-pair-bias-and-defense-mapped-texts.md`、`cases/xenophon-plato-socrates-divergence.md`；结论见 `debates/conclusions/xenophon-plato-socrates-divergence.md` |
 | 二手编纂者/转引枢纽、署名透明黑箱、n=1 幸存、载体/内容分离、囤积≠保真 | `references/secondhand-compiler-transmission-hub.md`、`cases/diogenes-laertius-lives-philosophers.md`；结论见 `debates/conclusions/diogenes-laertius-lives-philosophers.md` |
 | 无主口传短篇体裁/开放语料库、体裁标签实体化、双问正交、本典内部反证 | `references/genre-eponym-reification-open-corpus.md`、`cases/aesop-existence-fables-authorship.md`（对照 vyasa/valmiki/homer 长篇史诗案，禁匀质套用）；结论见 `debates/conclusions/aesop-existence-fables-authorship.md` |
+| 古籍断代辨伪、断代夹逼/方向条件化、引文极性反转、缺沉默当剪影、合围折价、层累写定本 | `references/dating-pincer-and-citation-polarity.md`、`cases/liezi-wei-jin-redaction.md`（对照伪尚书政治定本/周礼托古官制/尔雅词典/内经医经/伊索开放语料库，禁匀质套用）；结论见 `debates/conclusions/liezi-wei-jin-redaction.md` |
+| 伪书谓词分解、断代多轴正交、断代下限≠相容、材料层累≠定本年代、叙事素材⊥义理框架 | `references/forgery-predicate-decomposition-dating-axes.md`、`cases/liezi-forgery-fables-authorship.md`（闭合定本可锚年代，与伊索开放语料库案钉死分界；继承尚书/周礼/内经辨伪家族的主干/枝节分离与拒连坐）；结论见 `debates/conclusions/liezi-forgery-fables-authorship.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |
 
 ## 反模式

@@ -1,0 +1,30 @@
+{
+  "topic": "《列子》是否为魏晋伪书？其中寓言是先秦思想还是魏晋玄学？",
+  "slug": "liezi-wei-jin-redaction",
+  "date": "2026-11-22",
+  "workflow": "truth-discovery-debate",
+  "rounds": 4,
+  "steps_total": 14,
+  "status": "completed",
+  "engine": "single-process inline role embodiment (init-role-agents engine file absent at default path; followed RULES.md §5 sequential topology)",
+  "topology": "L1 collector+challenger_round_1 parallel -> L2 reasoner_round_1 -> L3 challenger_round -> L4 reasoner_round (M1-M4) -> L5 challenger_loop(no new issues) -> L6 judge -> L7 six-way optimizer parallel -> L8 optimizer_finalize -> L9 git",
+  "roles_embodied": ["collector", "challenger", "reasoner", "judge", "optimizer", "git"],
+  "exit_condition": "challenger_output contains 无新问题",
+  "conclusion_file": "debates/conclusions/liezi-wei-jin-redaction.md",
+  "process_dir": "debates/process/truth-discovery-debate-2026-11-22-liezi/",
+  "key_findings": [
+    "层累写定本(layered redaction)范式：拒'战国真书/魏晋伪书'二元，今本西晋285-311条件性窗口写定",
+    "断代夹逼(dating pincer)+取材方向条件化：可证伪双锚窗口，方向依赖背景推断则降序数量化禁铁证",
+    "引文极性反转(citation polarity inversion)：朱熹'佛书窃列子'被引成'列子窃佛书'——移交柔化的极性升级子类",
+    "缺沉默当剪影(absence-as-survival)：不见于他书双向零份额，推理者M1自我撤回为不可知",
+    "合围独立性折价：五证合围降为两硬锚+条件性辅证；刘向序双刃收口'路径未决方向已定'",
+    "与伪尚书/周礼/尔雅/内经/伊索五案机制分界，禁匀质套用近证伪模板"
+  ],
+  "methodology_increments": [
+    "references/dating-pincer-and-citation-polarity.md (new)",
+    "cases/liezi-wei-jin-redaction.md (new, case 30, 25/25)",
+    "SKILL.md +4 thin red flags + reference entry",
+    "5 roles thin sync (collector/challenger/reasoner/judge/optimizer)"
+  ],
+  "concurrency_note": "上一轮伊索(第51题)由并发定时流先完成并提交1a1f38e；本轮开跑前确认工作区干净、HEAD=伊索，未双开同题"
+}
