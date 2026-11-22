@@ -140,6 +140,10 @@ description: Use when the user questions whether a historical figure, classic te
 - 对大量对象编纂者是唯一幸存来源、后世皆源自他 → n=1 幸存偏差：同源互证＝0，「多源一致」只是同源回响；杀伤限轶事/生平/谱系层，不穿透可脱离转述链独立鉴定的嵌入一手文献层；功劳归材料与外部检验线，禁「X 记载较正确」柔化句。
 - 「不加批判所以忠实保存原貌」＝反直觉陷阱：囤积＝低干预 + 高污染 + 原样性未经检验，保真零正份额、仅弱否定；表中嵌入一手文献走载体/内容分离（V0 载体零加权／V1 内证只排低伪造／V2 外证只升骨架不证特定文本／V3 句级封顶），相容≠核对，师承/传承谱系＝建构（谱系事实≈0、观念史样本高、禁回潮），多抄本若共同祖先≠多见证。详见 `references/secondhand-compiler-transmission-hub.md`。
 - 移交转述会系统性柔化上游原文（把「撤回/证伪」说成「修正」）——裁决与自检以 steps 原文为准，不依赖二手摘要。
+- 无主口传短篇体裁（寓言/笑话/格言/成语故事）被压成"真实作者个人创作 vs 纯虚构民间故事集"→ **正交双问**：人物存在 ⊥ 文本归属，禁一问吞另一问（存在弱核心不担保一人作，集体创作不否证人物）。
+- 体裁形容词（"X 式故事"）或描述性族裔/体征标签（如 Aesop←Aithiop）被实体化为作者专名 → **体裁标签实体化**：对作者命题零正份额；"体裁需要一个作者名"的叙事冲动使 (体裁→虚构创始人) 为主解释，(真人→体裁得名) 不可知不加权；多个古典作家都提"X 式故事"只是体裁锚，对人物零份额。
+- 开放语料库（按最早出处分型分代、边界持续开放、含 identifiable 文人原创与跨文明共享）被压成"一个人的书"→ 近证伪锁定句＝"单一作者独自写出全部开放语料库"（≠史诗案"单人写出现存层累定本"）；"民间故事集"只描述无主口传层，作整库标签过度简化。详见 `references/genre-eponym-reification-open-corpus.md`。
+- 归名传统自身的经典文本说出与归名叙事相矛盾的话（如 Babrius 自序称寓言为叙利亚发明）＝**本典内部反证**：对"开创者"品牌是强反证，对起源地只作相容线索不单独定案；"X 开创某体裁"降为"X 是某传统名义焦点＋中心主义包装"。
 
 ## 输出模板
 
@@ -169,6 +173,7 @@ description: Use when the user questions whether a historical figure, classic te
 | 喜剧/讽刺体裁嫁接拼贴、辩护性回响、讽刺→制度因果链 | `references/genre-grafting-composite-caricature.md`、`cases/aristophanes-clouds-socrates.md`；结论见 `debates/conclusions/aristophanes-clouds-socrates-distortion.md` |
 | 幸存双峰偏差、申辩映射文本、体裁角色载体、双源记载差异 | `references/survivorship-pair-bias-and-defense-mapped-texts.md`、`cases/xenophon-plato-socrates-divergence.md`；结论见 `debates/conclusions/xenophon-plato-socrates-divergence.md` |
 | 二手编纂者/转引枢纽、署名透明黑箱、n=1 幸存、载体/内容分离、囤积≠保真 | `references/secondhand-compiler-transmission-hub.md`、`cases/diogenes-laertius-lives-philosophers.md`；结论见 `debates/conclusions/diogenes-laertius-lives-philosophers.md` |
+| 无主口传短篇体裁/开放语料库、体裁标签实体化、双问正交、本典内部反证 | `references/genre-eponym-reification-open-corpus.md`、`cases/aesop-existence-fables-authorship.md`（对照 vyasa/valmiki/homer 长篇史诗案，禁匀质套用）；结论见 `debates/conclusions/aesop-existence-fables-authorship.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |
 
 ## 反模式

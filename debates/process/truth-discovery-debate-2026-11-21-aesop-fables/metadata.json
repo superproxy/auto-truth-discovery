@@ -1,0 +1,22 @@
+{
+  "topic": "伊索是否真实存在？《伊索寓言》是个人创作还是民间故事集？",
+  "slug": "aesop-existence-fables-authorship",
+  "date": "2026-11-21",
+  "workflow": "truth-discovery-debate",
+  "rounds": 4,
+  "steps_total": 14,
+  "status": "completed",
+  "engine": "single-process inline role embodiment (init-role-agents engine file absent at default path; followed RULES.md §5 sequential topology)",
+  "topology": "L1 collector+challenger_round_1 parallel -> L2 reasoner_round_1 -> L3 challenger_round -> L4 reasoner_round (M1-M5) -> L5 challenger_loop(no new issues) -> L6 judge -> L7 six-way optimizer parallel -> L8 optimizer_finalize -> L9 git",
+  "roles_embodied": ["collector", "challenger", "reasoner", "judge", "optimizer", "git"],
+  "exit_condition": "challenger_output contains 无新问题",
+  "conclusion_file": "debates/conclusions/aesop-existence-fables-authorship.md",
+  "process_dir": "debates/process/truth-discovery-debate-2026-11-21-aesop-fables/",
+  "key_findings": [
+    "体裁标签实体化(genre-eponym reification) + 开放式语料库(open corpus) 双机制",
+    "人物层=合理待证/弱于护照的传说核心, 强制附疑似体裁拟人化标注",
+    "个人创作命题=已近证伪(钉死单一作者独自写出全部584+则)",
+    "Babrius 自序叙利亚发明=本典内部反证",
+    "与 vyasa/valmiki/homer 口传史诗圣作者案机制分界"
+  ]
+}
