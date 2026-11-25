@@ -157,6 +157,8 @@ description: Use when the user questions whether a historical figure, classic te
 - **证据等级通胀**：把 B 级考证推断（后世权威提要＋推理链）标成 S 级硬反证——凡"铁证/硬反证"须回查是出土实物(S)／近同时代文本(A)／现代考证转述(B)，标错即重标；B 级组合推断可高置信但不得冒充 S 级。
 - **晚出证据共柱坍缩**：用一条晚出证据（如皇甫谧注）去打破"早期目录沉默"的双向对称前，先做载体依赖检查——该证据的存在是否依赖同一载体（目录著录）？共柱则对称不可打破，写定年代永久待证，禁"用同柱证据破沉默"的自我循环；人物/目录/注本三线晚出常共享"现存证据都晚"同一前提，合围强度须折价。详见 `references/hermit-eponym-strategy-corpus.md`。
 - **隐者通名托名的术数实用文本**：地望/居所通名（如"鬼谷"）被读成专名护照→升格权重0，收口"传说核心合理/专名待证"（两端非凡举证，不推出"从未有此人"）；师承传闻（近同代B级）与后世接枝弟子名单须分裁（后者零正份额）；出土文献证术数生态真实＝相容、不证闭合定本来源；托名隐者＋实用术数＋闭合定本，与列子（玄学寓言极性反转）、伊索（开放语料库）、内经（神话圣王医经）、晏子（人物确定言行录）钉死分界。详见 `references/hermit-eponym-strategy-corpus.md`。
+- **份额分配假任务**：人物与文本归属均确定、正文由无名分工的集体写成的署名经典（主编/权臣姓氏冠名），被问"某人贡献几何/占几成"时——无分工记录、无可加总单位（篇数/字数/思想条目均不可归属到人）→该数值命题**非法**（比"待证"更强），判"份额假任务"；禁止柔化为"大致可估"，替代操作＝拆发起/资助/组织/裁定/执笔/署名/包装职能层逐层归属定级，禁重折百分比。与"解决作者争议假任务"（选名版）、"三不可锚"（断代版）同属反伪精确主线，本案为**份额版**。落点＝主编主持的协作生态写定本。
+- **双向品牌化与书名态偷换**：署名膨胀（"全书皆主编一人智慧／字字不可改"）与署名抹除（"主编固无与也"）并存、受质疑时互相搬出续命→两端皆过度宣称，回到原始目录学"辑/作"分判＋职能层分解；同一书多名（《吕氏春秋》姓氏冠名／《吕览》体例简称／《吕子》诸子升格）对应不同署名机制，压成一层＝对象偷换，《吕子》为二次品牌化。守四条对称不传递：资助/组织≠执笔、裁定意图≠贯彻、署名≠思想独归、集体执笔≠主编无与。详见 `references/editor-signature-collaborative-share.md`。
 
 ## 输出模板
 
@@ -191,6 +193,7 @@ description: Use when the user questions whether a historical figure, classic te
 | 伪书谓词分解、断代多轴正交、断代下限≠相容、材料层累≠定本年代、叙事素材⊥义理框架 | `references/forgery-predicate-decomposition-dating-axes.md`、`cases/liezi-forgery-fables-authorship.md`（闭合定本可锚年代，与伊索开放语料库案钉死分界；继承尚书/周礼/内经辨伪家族的主干/枝节分离与拒连坐）；结论见 `debates/conclusions/liezi-forgery-fables-authorship.md` |
 | 人物确定型言行录归属、双问非对称、三条不传递、思想三分、亲笔证伪等级标定、出土简本校勘-断代双刃 | `references/identified-figure-account-compilation.md`、`cases/yanzi-chunqiu-authorship.md`（传主 S 级锁定、争点在文本归属/成书分层；与列子人物存疑型、伊索开放语料库型、内经神话圣王托名型钉死分界）；结论见 `debates/conclusions/yanzi-chunqiu-authorship.md` |
 | 隐者通名托名术数文本、晚出证据共柱坍缩、目录晚出型子书辨伪、三不可锚收口 | `references/hermit-eponym-strategy-corpus.md`、`cases/guiguzi-dating-authorship.md`（托名隐者＋实用术数＋闭合定本；用晚出注本破目录沉默对称前的载体依赖检查；师承传闻vs学派合法性叙事分裁；与列子极性反转/伊索开放语料库/内经圣王医经/晏子人物确定钉死分界）；结论见 `debates/conclusions/guiguzi-dating-authorship.md` |
+| 主编署名／集体编纂贡献份额假任务、协作生态写定本、双向品牌化、书名态三分 | `references/editor-signature-collaborative-share.md`、`cases/lvshi-chunqiu-collective-authorship.md`（人物与文本归属确定、争"贡献几何"；无单位无记录→份额命题非法，拆六职能层；四条对称不传递；署名膨胀vs抹除互相续命；《吕氏春秋》/《吕览》/《吕子》三分二次品牌化；锚点多解给窗口；与托名型/言行录型/开放语料库型钉死分界）；结论见 `debates/conclusions/lvshi-chunqiu-collective-authorship.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |
 
 ## 反模式

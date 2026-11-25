@@ -1,0 +1,41 @@
+{
+  "workflow": "truth-discovery-debate",
+  "topic": "《吕氏春秋》是吕不韦门客集体创作，吕不韦本人贡献几何？",
+  "topic_index": 55,
+  "date": "2026-11-25",
+  "session_no": 51,
+  "engine": "init-roles (upstream, renamed from init-role-agents)",
+  "execution_mode": "single-process inline role embodiment",
+  "topology": {
+    "L1": ["collector_search", "challenger_round_1"],
+    "L2": ["reasoner_round_1"],
+    "L3": ["challenger_round"],
+    "L4": ["reasoner_round"],
+    "L5": ["challenger_loop"],
+    "L6": ["judge_summary"],
+    "L7": ["optimizer_skill_review", "optimizer_sync_collector", "optimizer_sync_challenger", "optimizer_sync_reasoner", "optimizer_sync_judge", "optimizer_sync_optimizer_self", "optimizer_finalize"],
+    "L8": ["process_persist"],
+    "L9": ["debate_git_publish"]
+  },
+  "debate_rounds": 4,
+  "loop_exit": "challenger_output contains 无新问题",
+  "conclusion": {
+    "verdict": "份额假任务（命题非法）；六职能层分解；主编主持的协作生态写定本；四条对称不传递；双向品牌化",
+    "confidence": 0.86,
+    "labels": ["份额假任务", "协作生态写定本", "主编署名", "四条不传递", "双向品牌化", "书名态三分", "二次品牌化", "不可分层不可判", "永久待证"]
+  },
+  "methodology_delta": {
+    "new_reference": "references/editor-signature-collaborative-share.md",
+    "new_case": "cases/lvshi-chunqiu-collective-authorship.md (案例33, 25/25)",
+    "skill_red_flags": 2,
+    "roles_synced": 5,
+    "core_revisions": ["M1 证据等级通胀撤回·史记汉志同源折单柱B", "M2 统一编排控制者降为相容待核", "M3 补反向禁令·思想渗透不可分层不可判", "M4 multipolar两问分层·纲领语义决定(b)", "M5 书名态三分·吕子二次品牌化", "M6 月令材料外溢→篇序反向改造"]
+  },
+  "closure": {
+    "topics_count": "50→51",
+    "readme_count": "58→59",
+    "inquiry_log": "+1",
+    "conclusion_file": "debates/conclusions/lvshi-chunqiu-collective-authorship.md"
+  },
+  "concurrency_check": "git status clean except .workbuddy/ untracked; no existing steps dir for this topic at start"
+}
