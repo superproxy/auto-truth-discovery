@@ -1,0 +1,45 @@
+{
+  "workflow": "truth-discovery-debate",
+  "date": "2026-11-25",
+  "session": 52,
+  "topic": "《战国策》的作者是谁？是否为刘向编纂时的重新整理？",
+  "topic_slug": "zhanguo-ce-authorship",
+  "topic_line": 56,
+  "execution_mode": "single-process inline role embodiment",
+  "engine": "init-roles",
+  "concurrency": 6,
+  "debate_rounds": 4,
+  "exit_condition": "challenger: 无新问题，可结案",
+  "steps": [
+    {"n": 1, "id": "collector_search", "role": "collector", "status": "completed"},
+    {"n": 2, "id": "challenger_round_1", "role": "challenger", "status": "completed"},
+    {"n": 3, "id": "reasoner_round_1", "role": "reasoner", "status": "completed"},
+    {"n": 4, "id": "challenger_round", "role": "challenger", "status": "completed"},
+    {"n": 5, "id": "reasoner_round", "role": "reasoner", "status": "completed"},
+    {"n": 6, "id": "challenger_loop", "role": "challenger", "status": "completed"},
+    {"n": 7, "id": "judge_summary", "role": "judge", "status": "completed"},
+    {"n": 8, "id": "optimizer_parallel", "role": "optimizer", "status": "completed", "note": "6 parallel substeps aggregated"},
+    {"n": 9, "id": "optimizer_finalize", "role": "optimizer", "status": "completed"},
+    {"n": 10, "id": "debate_git_publish", "role": "git", "status": "pending"}
+  ],
+  "result": {
+    "core": "作者谓词假任务·编校版（编校者≠著者）；否定式收口无具名著者",
+    "confidence": 0.87,
+    "confidence_scope": "framework, not any named-author claim",
+    "labels": ["作者谓词假任务·编校版", "编校者≠著者", "否定式收口", "命名≠创作", "五条不传递", "同源异编下限", "歧义谓词双义反判", "零正份额", "品牌化"]
+  },
+  "artifacts": {
+    "conclusion": "debates/conclusions/zhanguo-ce-authorship.md",
+    "reference": ".agents/skills/truth-discovery/references/redactor-not-author.md",
+    "case": ".agents/skills/truth-discovery/cases/zhanguo-ce-authorship.md",
+    "case_number": 34,
+    "case_score": "23/25"
+  },
+  "closure": {
+    "topics": "51 -> 52 (line 56 ✅)",
+    "readme": "59 -> 60 cases",
+    "inquiry_log": "+1 entry"
+  },
+  "skill_sync": ["SKILL.md +2 red flags +1 reference entry", "collector", "challenger", "reasoner", "judge", "optimizer"],
+  "methodology_increment": "反伪精确主线第四变体：作者谓词假任务·编校版（编校者≠著者）；否定式收口；五条对称不传递；整理歧义谓词双义反判；同源异编多传本下限收口"
+}
