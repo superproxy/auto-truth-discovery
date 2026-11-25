@@ -1,0 +1,42 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "topic": "《梦溪笔谈》沈括的科学观察是否被后世夸大？",
+  "topic_index": 60,
+  "session": 56,
+  "date": "2026-11-25",
+  "slug": "mengxi-bitan-scientific-observation-inflation",
+  "process_dir": "debates/process/truth-discovery-debate-2026-11-25-mengxi-bitan",
+  "conclusion_file": "debates/conclusions/mengxi-bitan-scientific-observation-inflation.md",
+  "steps": [
+    "1-collector_search", "2-challenger_round_1", "3-reasoner_round_1",
+    "4-challenger_round_2", "5-reasoner_round_2", "6-challenger_loop",
+    "7-judge_summary", "8-optimizer_parallel", "9-optimizer_finalize"
+  ],
+  "debate_rounds": 3,
+  "loop_exit": "challenger_output contains 无新问题",
+  "execution_mode": "single-process inline role embodiment (concurrency layer done sequentially); optimizer L7 dispatched as 6 parallel sub-agents",
+  "conclusion": {
+    "verdict": "接受端评价放大审计（与来源大轴正交的第四轴）；拒被夸大/未被夸大两端，落点为事实内核可信＋评价双端放大混合对象",
+    "confidence": 0.85,
+    "confidence_scope": "框架，非幅度断言",
+    "key_labels": ["事实⊥评价正交双问", "命名加冕（首要放大）", "接受端放大", "功过双端放大（证据强度不对称）", "优先权伪精确(P1/P2)", "幅度序数化", "事实层三分", "义项分离", "声誉史＋零正份额", "混合对象"]
+  },
+  "methodology_increment": {
+    "axis": "接受端评价放大审计（与来源大轴生产端三轴正交的第四轴）",
+    "new_reference": "references/reception-side-evaluative-amplification-audit.md",
+    "new_case": "cases/mengxi-bitan-reception-amplification.md",
+    "case_number": 38,
+    "case_score": "24/25",
+    "skill_thin_red_flags": 1,
+    "reference_entry": 1,
+    "skill_tags": 4,
+    "roles_synced": ["collector", "challenger", "reasoner", "judge", "optimizer"],
+    "core_corrections": ["M2 命名/范畴加冕提升为结论中心（教科书级）", "M4 证据强度不对称诚实标注禁伪造对称（教科书级）", "M1 事实层三分", "M3 义项分离", "M5 幅度序数化"],
+    "naming_fix": "优先权判据 V1/V2 改标 P1/P2，避与二手枢纽 V0–V3 冲突"
+  },
+  "closure": {
+    "topics": "55→56",
+    "conclusions_readme": "63→64",
+    "inquiry_log": "+1"
+  }
+}
