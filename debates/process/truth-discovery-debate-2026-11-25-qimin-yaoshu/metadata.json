@@ -1,0 +1,39 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "topic": "《齐民要术》贾思勰的农业知识来源是亲身实践还是文献汇编？",
+  "topic_index": 59,
+  "session": 55,
+  "date": "2026-11-25",
+  "slug": "qimin-yaoshu-practice-vs-compilation",
+  "process_dir": "debates/process/truth-discovery-debate-2026-11-25-qimin-yaoshu",
+  "conclusion_file": "debates/conclusions/qimin-yaoshu-practice-vs-compilation.md",
+  "steps": [
+    "1-collector_search", "2-challenger_round_1", "3-reasoner_round_1",
+    "4-challenger_round_2", "5-reasoner_round_2", "6-challenger_loop",
+    "7-judge_summary", "8-optimizer_parallel", "9-optimizer_finalize"
+  ],
+  "debate_rounds": 3,
+  "loop_exit": "challenger_output contains 无新问题",
+  "execution_mode": "single-process inline role embodiment (concurrency layer done sequentially)",
+  "conclusion": {
+    "verdict": "来源取向假二分（来源大轴第三变体）；拒纯实践/纯汇编两端",
+    "confidence": 0.86,
+    "confidence_scope": "框架，非比例断言",
+    "key_labels": ["来源取向假二分", "四源分层", "语义分裁", "释义≠核证", "反向检验足迹（存在性vs比例性）", "(a)≠(b)维持", "标示≠忠实", "辑佚三禁令", "对象不纯净", "品牌化双端同拆"]
+  },
+  "methodology_increment": {
+    "new_reference": "references/source-orientation-experience-vs-compilation.md",
+    "new_case": "cases/qimin-yaoshu-practice-vs-compilation.md",
+    "case_number": 37,
+    "case_score": "24/25",
+    "skill_thin_red_flags": 1,
+    "reference_entry": 1,
+    "roles_synced": ["collector", "challenger", "reasoner", "judge", "optimizer"],
+    "core_corrections": ["M1 存在性vs比例性", "M2 释义≠核证", "M3 本典内证self-bootstrapping撤回弱升格"]
+  },
+  "closure": {
+    "topics": "54→55",
+    "conclusions_readme": "62→63",
+    "inquiry_log": "+1"
+  }
+}
