@@ -1,0 +1,23 @@
+{
+  "workflow": "truth-discovery-debate",
+  "topic": "《天工开物》宋应星的技术记载是否均为当时实有技术？",
+  "date": "2026-11-25",
+  "slug": "tiangong-kaiwu-technical-records-veracity",
+  "debate_rounds": 3,
+  "conclusion": "拒二元；全称命题过度宣称；存在性多数实有（S/A）＋保真性分层（亲历现象观察较高/原理判断与转述偏低）",
+  "confidence": 0.85,
+  "methodology_increment": "技术内容真实性审计新轴（存在性⊥保真性正交）；观察≠理解；广度精度张力",
+  "case_score": "24/25",
+  "files": {
+    "conclusion": "debates/conclusions/tiangong-kaiwu-technical-records-veracity.md",
+    "reference": ".agents/skills/truth-discovery/references/technical-records-veracity-audit.md",
+    "case": ".agents/skills/truth-discovery/cases/tiangong-kaiwu-technical-records-veracity.md",
+    "process_dir": "debates/process/truth-discovery-debate-2026-11-25-tiangong-kaiwu/"
+  },
+  "closure": {
+    "topics": "56→57",
+    "readme": "64→65",
+    "inquiry_log": "+1"
+  },
+  "steps_completed": [1, 2, 3, 4, 5, 6, 7, 8]
+}
