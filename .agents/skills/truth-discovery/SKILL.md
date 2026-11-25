@@ -153,6 +153,8 @@ description: Use when the user questions whether a historical figure, classic te
 - "X 是否为伪书""X 是 A 时代还是 B 时代思想"＝**伪书谓词未分解**：把人物/定本/材料/思想/包装五轴压成二元；判"伪"必须注明哪一轴，禁跨轴外推（定本伪不穿透人物存在、不否定材料古来源）；"含古料⇒定本真"与"定本伪⇒材料/人物亦伪"两端越界均禁。详见 `references/forgery-predicate-decomposition-dating-axes.md`。
 - 具体文本结构与 dating 明确的外源文本平行＋无更早独立旁证＝**断代下限（terminus post quem）**，不可降格为"时代风气相容"；对方以"该思想彼时已有"消解时，要求出示同等文本结构的更早独立旁证，无则下限成立（可测平行 vs 宽泛生态）。
 - 以叙事素材层的佛典/外源平行（具体故事、道具、情节）外推**整个义理框架层**为外来＝**叙事外推义理**红旗：叙事素材可找具体平行、可断代锚定；义理框架属思想生态渐变、只定生态归属（本土内生 vs 外来）；禁互相越界。
+- **人物确定型言行录**（传主由 S 级史料锁定存在、争点在文本归属/成书分层）被压成"本人亲著/后人伪作"站队 → **双问非对称**：人物确定对文本亲笔正份额＝0，"自著"锁定句＝"逐章亲笔写出全本"且证伪须标等级（B 级组合推断≠S 级铁证）；守**三条不传递**（事件核≠亲笔／材料下限≠定本年代／编者立场≠传主学派）；**思想三分**（编者注入层零／采录传主言行层相容线索／不可分驳杂层不可判），禁把"编者立场墨/稷下"读成"传主属墨"（柳宗元"为是书者墨之道"）。局部内证（殁后事）只证局部增窜，不外推全书亲笔证伪的 S 级；言行录对事件史默认零份额，"某故事他书也有"＝同池互见非分叉；出土简本"校勘—断代双刃"但"谁更近原本"永久待证；编者自述（刘向目录篇数）行为事实 A／确切数字 B 分判。与列子（人物存疑）、伊索（开放语料库）、内经（神话圣王）钉死分界，禁匀质套用。详见 `references/identified-figure-account-compilation.md`。
+- **证据等级通胀**：把 B 级考证推断（后世权威提要＋推理链）标成 S 级硬反证——凡"铁证/硬反证"须回查是出土实物(S)／近同时代文本(A)／现代考证转述(B)，标错即重标；B 级组合推断可高置信但不得冒充 S 级。
 
 ## 输出模板
 
@@ -185,6 +187,7 @@ description: Use when the user questions whether a historical figure, classic te
 | 无主口传短篇体裁/开放语料库、体裁标签实体化、双问正交、本典内部反证 | `references/genre-eponym-reification-open-corpus.md`、`cases/aesop-existence-fables-authorship.md`（对照 vyasa/valmiki/homer 长篇史诗案，禁匀质套用）；结论见 `debates/conclusions/aesop-existence-fables-authorship.md` |
 | 古籍断代辨伪、断代夹逼/方向条件化、引文极性反转、缺沉默当剪影、合围折价、层累写定本 | `references/dating-pincer-and-citation-polarity.md`、`cases/liezi-wei-jin-redaction.md`（对照伪尚书政治定本/周礼托古官制/尔雅词典/内经医经/伊索开放语料库，禁匀质套用）；结论见 `debates/conclusions/liezi-wei-jin-redaction.md` |
 | 伪书谓词分解、断代多轴正交、断代下限≠相容、材料层累≠定本年代、叙事素材⊥义理框架 | `references/forgery-predicate-decomposition-dating-axes.md`、`cases/liezi-forgery-fables-authorship.md`（闭合定本可锚年代，与伊索开放语料库案钉死分界；继承尚书/周礼/内经辨伪家族的主干/枝节分离与拒连坐）；结论见 `debates/conclusions/liezi-forgery-fables-authorship.md` |
+| 人物确定型言行录归属、双问非对称、三条不传递、思想三分、亲笔证伪等级标定、出土简本校勘-断代双刃 | `references/identified-figure-account-compilation.md`、`cases/yanzi-chunqiu-authorship.md`（传主 S 级锁定、争点在文本归属/成书分层；与列子人物存疑型、伊索开放语料库型、内经神话圣王托名型钉死分界）；结论见 `debates/conclusions/yanzi-chunqiu-authorship.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |
 
 ## 反模式

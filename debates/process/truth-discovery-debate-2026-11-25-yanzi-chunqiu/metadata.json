@@ -1,0 +1,31 @@
+{
+  "workflow": "truth-discovery-debate",
+  "topic": "《晏子春秋》是晏婴本人所著还是战国后人编纂？",
+  "slug": "yanzi-chunqiu-authorship",
+  "date": "2026-11-25",
+  "status": "completed",
+  "closure": "challenger declared 无新问题，可结案",
+  "debate_rounds": 4,
+  "topology": ["L1-collector+challenger(parallel)", "L2-reasoner", "L3-challenger", "L4-reasoner", "L5-challenger-loop", "L6-judge", "L7-6x-optimizer(parallel)", "L8-finalize", "L9-git"],
+  "execution_mode": "single-process inline role embodiment",
+  "outputs": {
+    "conclusion": "debates/conclusions/yanzi-chunqiu-authorship.md",
+    "reference": ".agents/skills/truth-discovery/references/identified-figure-account-compilation.md",
+    "case": ".agents/skills/truth-discovery/cases/yanzi-chunqiu-authorship.md",
+    "process_dir": "debates/process/truth-discovery-debate-2026-11-25-yanzi-chunqiu"
+  },
+  "methodology_delta": {
+    "new_paradigm": "identified-figure account compilation (vs person-uncertain type)",
+    "core": ["双问非对称", "三条不传递", "思想层三分", "亲笔证伪等级标定", "局部内证作用域精确化", "出土简本校勘-断代双刃", "编者自述证明力分判"],
+    "case_score": "24/25",
+    "decision": "入库 methodology + case"
+  },
+  "reasoner_corrections": ["M1 孺子荼内证 S→B", "M2 事件史默认0+阀门示范", "M3 可判层拎出", "M4 定本事实A/数字B", "M5 思想三分"],
+  "closure_changes": {
+    "topics": "48→49",
+    "readme_conclusion": "56→57",
+    "inquiry_log": "+1"
+  },
+  "role_sync": ["collector", "challenger", "reasoner", "judge", "optimizer"],
+  "steps": 15
+}
