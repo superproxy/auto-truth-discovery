@@ -163,6 +163,7 @@ description: Use when the user questions whether a historical figure, classic te
 - 「X 是否为某人编纂／整理时的重新整理」＝**歧义谓词假任务**：「整理」＝校订定名则已确认（A）、＝著述重写全书则近证伪（B 组合＋同源异编负向排除），两义不可混判；出土同源异编材料（如马王堆帛书，无本题名／异名标签、编次不同）只锚材料层下限、不证本书下限与定本来源，对今本双向零份额，「谁更近原本」永久待证。
 - **来源复合谓词假任务／来源声明审计**：著者已确定时问「X 的学术来源是否可靠吗」——「来源」是复合词（材料/接触/人物/师承/立场/版本六轴异质），压成单一「可靠否」＝命题未成形；须逐轴分裁并给否定式分层收口（总宣称「来源可靠」＝过度宣称），禁六表平均后报「整体中高」（分层规避聚合）。作者自报来源（「信而有证」「博采通人」）＝元文本三层信任审计：(a) 意图已确认／(b) 不发已实现证书／(c) 可测约束须有可失败反向检验，仅有「阙如」正例而无「应阙清单」＝幸存偏差，降弱可测。
 - **接触→摹录保真偷渡／跨轴借用**：制度接近或一手接触事实（如奉诏校书、见过器物）被滑移成「逐字转录可靠」→ 接触事实与摹录保真分判，接近度只加严不加分（职位光环近亲）；用材料层可核性给元文本轴加分＝跨轴借用，禁。一手接触者 ≠ 二手编纂枢纽（后者套署名零正份额），黑箱杀伤限该轴不外推。详见 `references/source-claim-audit.md`。
+- **注疏体来源构成份额假任务／体裁范畴错置**：问「某注本注文有多少原创、多少抄录」——著者已确定但题面把两个非法前提打包：①「原创%/抄录%」预设不可加总的计数单位（一条之内"引旧文＋校谬＋补见闻"混合、无分工清单）→ 份额假任务（**单作者文本内构成**新变体，区别于《吕氏春秋》集体作者贡献份额）；②「抄录」贬义谓词把现代原创性 regime 倒灌进以**引书立注**为成法的注疏体→体裁范畴错置，谓词部分失效。三分框架：具名引书（标示行为 A、**标示≠忠实**、忠实度相容待核）／未具名袭用（对原创**正份额＝0**、构成不可判、用途限辑佚/主题/接受史）／自述按语（归属 A、正确性另核）。辑佚价值另账守**三禁令**（只升文献保存轴／不回流原创／不回流总判断），防「高价值故原创」软着陆；今本经注混淆→对象不纯净、作用域限可归名层。详见 `references/commentary-source-composition-audit.md`。
 
 ## 输出模板
 
@@ -200,6 +201,7 @@ description: Use when the user questions whether a historical figure, classic te
 | 主编署名／集体编纂贡献份额假任务、协作生态写定本、双向品牌化、书名态三分 | `references/editor-signature-collaborative-share.md`、`cases/lvshi-chunqiu-collective-authorship.md`（人物与文本归属确定、争"贡献几何"；无单位无记录→份额命题非法，拆六职能层；四条对称不传递；署名膨胀vs抹除互相续命；《吕氏春秋》/《吕览》/《吕子》三分二次品牌化；锚点多解给窗口；与托名型/言行录型/开放语料库型钉死分界）；结论见 `debates/conclusions/lvshi-chunqiu-collective-authorship.md` |
 | 编校者≠著者、作者谓词假任务·编校版、否定式收口、「整理」歧义谓词分解、同源异编多传本下限 | `references/redactor-not-author.md`、`cases/zhanguo-ce-authorship.md`（多源材料汇编＋刘向校定命名；"作者是谁"谓词不适用→否定式无具名著者；五条对称不传递；"整理"编校已确认vs著述近证伪；马王堆帛书只证材料下限；与尔雅选名版/吕氏春秋份额版/鬼谷子断代三不可锚版钉死四变体分界）；结论见 `debates/conclusions/zhanguo-ce-authorship.md` |
 | 确定作者的知识来源可靠性、来源声明审计、作者自报来源元文本、一手接触 vs 二手枢纽 | `references/source-claim-audit.md`、`cases/shuowen-jiezi-source-reliability.md`（著者确定、争"来源可靠吗"；来源六轴分裁＋否定式分层收口＋元文本 (a)(b)(c) 信任审计＋自限项三重压测＋接触≠摹录＋升格三禁令；与作者谓词假任务四变体/二手枢纽/言行录/张力元文本钉死分界）；结论见 `debates/conclusions/shuowen-jiezi-source-reliability.md` |
+| 注疏体来源构成份额、"原创/抄录"题、体裁范畴错置、辑佚价值另账 | `references/commentary-source-composition-audit.md`、`cases/shuijing-zhu-source-composition.md`（著者确定、争"多少原创多少抄录"；份额假任务新变体＋体裁范畴错置＋三分框架（具名/未具名/自述）＋标示≠忠实＋零份额钉子＋价值重锚三禁令＋对象不纯净；与说文解字可靠轴/吕氏春秋集体份额/第欧根尼二手枢纽/竹书纪年今本≠古本钉死分界）；结论见 `debates/conclusions/shuijing-zhu-original-vs-copied.md` |
 | 隐匿、证据不对称、异常聚类 | `references/legacy-methodology.md`、`tools/checklist.md` |
 
 ## 反模式

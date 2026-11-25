@@ -1,0 +1,47 @@
+{
+  "workflow": "truth-discovery-debate",
+  "date": "2026-11-25",
+  "session": 54,
+  "topic": "《水经注》郦道元的注文有多少是原创，多少是抄录？",
+  "topic_slug": "shuijing-zhu-original-vs-copied",
+  "topic_line": 58,
+  "execution_mode": "single-process inline role embodiment",
+  "engine": "init-roles",
+  "concurrency": 6,
+  "debate_rounds": 3,
+  "exit_condition": "challenger: 无新问题，可结案",
+  "steps": [
+    {"n": 1, "id": "collector_search", "role": "collector", "status": "completed"},
+    {"n": 2, "id": "challenger_round_1", "role": "challenger", "status": "completed"},
+    {"n": 3, "id": "reasoner_round_1", "role": "reasoner", "status": "completed"},
+    {"n": 4, "id": "challenger_round", "role": "challenger", "status": "completed"},
+    {"n": 5, "id": "reasoner_round", "role": "reasoner", "status": "completed"},
+    {"n": 6, "id": "challenger_loop", "role": "challenger", "status": "completed"},
+    {"n": 7, "id": "judge_summary", "role": "judge", "status": "completed"},
+    {"n": 8, "id": "optimizer_parallel", "role": "optimizer", "status": "completed", "note": "6 parallel substeps aggregated"},
+    {"n": 9, "id": "optimizer_finalize", "role": "optimizer", "status": "completed"},
+    {"n": 10, "id": "debate_git_publish", "role": "git", "status": "pending"}
+  ],
+  "result": {
+    "core": "注疏体来源构成审计（份额假任务新变体＋体裁范畴错置）；三分框架；标示≠忠实；零正份额钉子；辑佚价值重锚三禁令；对象不纯净；否定式分层收口",
+    "confidence": 0.87,
+    "confidence_scope": "framework, not any original/copied ratio assertion",
+    "labels": ["注疏体来源构成审计", "份额假任务新变体", "体裁范畴错置", "否定式收口", "过度宣称", "标示≠忠实", "零正份额", "价值重锚三禁令", "对象不纯净", "对称零份额", "相容待核", "品牌化"]
+  },
+  "artifacts": {
+    "conclusion": "debates/conclusions/shuijing-zhu-original-vs-copied.md",
+    "reference": ".agents/skills/truth-discovery/references/commentary-source-composition-audit.md",
+    "case": ".agents/skills/truth-discovery/cases/shuijing-zhu-source-composition.md",
+    "case_number": 36,
+    "case_score": "24/25"
+  },
+  "closure": {
+    "topics": "53 -> 54 (line 58 ✅)",
+    "readme": "61 -> 62 cases",
+    "inquiry_log": "+1 entry"
+  },
+  "skill_sync": ["SKILL.md +2 red flags +1 reference entry", "collector", "challenger", "reasoner", "judge", "optimizer"],
+  "methodology_increment": "首建注疏体来源构成审计范式（与来源可靠轴正交、与集体份额轴异变体）：份额假任务新变体（单作者文本内构成）＋体裁范畴错置（原创/抄录谓词部分失效）＋三分框架（具名标示≠忠实/未具名原创零份额/自述归属≠正确）＋辑佚价值重锚三禁令＋对称零份额＋对象不纯净收窄",
+  "reasoner_corrections": ["M1 具名引书撤回已确认证书重标标示≠忠实·相容≠核对", "M2 未具名层对原创零正份额钉子＋用途限辑佚/主题/接受史（教科书级）", "M3 辑佚价值三禁令防高价值故原创软着陆（教科书级）", "M4 南方描写亲历对称零份额", "M5 经注混淆对象不纯净作用域收窄"],
+  "boundary": "与说文解字来源可靠轴/吕氏春秋集体份额/第欧根尼二手枢纽/竹书纪年今本≠古本/修昔底德价值重锚钉死分界"
+}
