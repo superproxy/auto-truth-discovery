@@ -1,0 +1,53 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "topic": "老普林尼《自然史》中的知识有多少是亲身观察，多少是道听途说？",
+  "topic_index": 65,
+  "session_number": 61,
+  "date": "2026-11-26",
+  "automation_id": "4a6fcce1-04f3-4552-a2ef-fefc8363ab49",
+  "engine": "init-roles (upstream superproxy-skills) + .agents/debate-workflow.yaml (14步拓扑)",
+  "status": "completed",
+  "topology": [
+    "L1 collector_search + challenger_round_1 (parallel)",
+    "L2 reasoner_round_1",
+    "L3 challenger_round",
+    "L4 reasoner_round",
+    "L5 challenger_loop (exit: 无新问题)",
+    "L6 judge_summary",
+    "L7 optimizer 6-way parallel + finalize",
+    "L8 落盘闭环 (topics/README/inquiry-log)",
+    "L9 git publish"
+  ],
+  "debate_rounds": 3,
+  "exit_condition_met": "无新问题，可结案",
+  "steps": [
+    "1-collector_search.md",
+    "2-challenger_round_1.md",
+    "3-reasoner_round_1.md",
+    "4-challenger_round.md",
+    "5-reasoner_round.md",
+    "6-challenger_loop.md",
+    "7-judge_summary.md",
+    "8-optimizer_finalize.md"
+  ],
+  "deliverables": {
+    "conclusion": "debates/conclusions/pliny-autopsy-vs-hearsay.md",
+    "reference": ".agents/skills/truth-discovery/references/autopsy-claim-audit.md",
+    "case": ".agents/skills/truth-discovery/cases/pliny-autopsy-vs-hearsay.md"
+  },
+  "axis_position": "来源大轴·取向轴第四变体判据簇（亲历署名审计）— 抽掉测试零残余新轴，非新轴、非新桶",
+  "confidence": 0.86,
+  "confidence_scope": "框架，非任何比例断言",
+  "key_corrections": [
+    "M1' 撤回亲历反相关聚类（反例2/3）→ 框架奇闻化·内核多为真或相容",
+    "M2 具名转述净份额分层（取消半可信中间层）",
+    "M3 轴位二选一：取向轴判据簇，零残余新轴",
+    "M4 幸存偏差断言修正：回查反向批判清单，(c)弱可测但真"
+  ],
+  "closed_loop": {
+    "topics_count": "60→61",
+    "readme_conclusions": "68→69",
+    "inquiry_log": "+1"
+  },
+  "role_sync": ["collector", "challenger", "reasoner", "judge", "optimizer"]
+}
