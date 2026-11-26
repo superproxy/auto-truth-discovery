@@ -14,7 +14,7 @@
     {"n": 6, "id": "challenger_loop", "role": "challenger", "status": "completed", "file": "steps/6-challenger_loop.md", "note": "无新问题，结案"},
     {"n": 7, "id": "judge_summary", "role": "judge", "status": "completed", "file": "steps/7-judge_summary.md"},
     {"n": 8, "id": "optimizer_finalize", "role": "optimizer", "status": "completed", "file": "steps/8-optimizer_finalize.md", "note": "含L7六路并行子步"},
-    {"n": 9, "id": "debate_git_publish", "role": "git", "status": "pending", "note": "见 automation memory 记录"}
+    {"n": 9, "id": "debate_git_publish", "role": "git", "status": "completed", "note": "2528cef on main, pushed origin/main (24a70b6..2528cef)"}
   ],
   "debate_rounds": 3,
   "loop_exit": "challenger_output contains 无新问题",
