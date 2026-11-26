@@ -1,0 +1,20 @@
+{
+  "workflow": "truth-discovery-debate",
+  "topic": "美国载人登月是否真实发生？登月造假论的主要论点与反驳是什么？",
+  "date": "2026-11-26",
+  "steps": [
+    {"id": "collector_search", "status": "completed"},
+    {"id": "challenger_round_1", "status": "completed"},
+    {"id": "reasoner_round_1", "status": "completed"},
+    {"id": "challenger_round", "status": "completed"},
+    {"id": "reasoner_round", "status": "completed"},
+    {"id": "challenger_loop", "status": "completed", "exit": "无新问题，可结案"},
+    {"id": "judge_summary", "status": "completed"},
+    {"id": "optimizer_finalize", "status": "completed"}
+  ],
+  "conclusion_file": "debates/conclusions/moon-landing-real-or-hoax.md",
+  "case_file": ".agents/skills/truth-discovery/cases/moon-landing-real-or-hoax.md",
+  "reference_file": ".agents/skills/truth-discovery/references/conspiracy-hermetic-closure-audit.md",
+  "methodology": "阴谋论解释闭环审计（判据簇，非新轴）",
+  "core_tags": ["已确认", "已证伪", "不可证伪伪科学叙事", "品牌化", "解释闭环", "证据方向倒置", "强度不对称", "事实⊥包装分层"]
+}
