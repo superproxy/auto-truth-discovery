@@ -1,0 +1,24 @@
+{
+  "topic": "盖伦的医学著作有多少是基于实际解剖，多少是基于动物类推？",
+  "date": "2026-11-26",
+  "session": 59,
+  "slug": "galen-anatomy-vs-analogy",
+  "workflow": "truth-discovery-debate",
+  "engine": "init-roles (upstream, read-only; inline role embodiment)",
+  "topology": "L1(collector+challenger_1 parallel) -> L2 reasoner_1 -> L3 challenger_round -> L4 reasoner_round -> L5 challenger_loop(no new issues) -> L6 judge -> L7 six optimizers parallel -> L8 finalize -> L9 git",
+  "steps": ["1-collector_search", "2-challenger_round_1", "3-reasoner_round_1", "4-challenger_round", "5-reasoner_round", "6-challenger_loop", "7-judge_summary", "8-optimizer_finalize"],
+  "debate_rounds": 3,
+  "corrections": "M1-M11 (textbook grade: M3 observation-vs-extrapolation orthogonal dual-question; M4->M10 species-conservatism criterion and honest downgrade; M8 observation-text R1-R4 isolation)",
+  "conclusion_file": "debates/conclusions/galen-anatomy-vs-analogy.md",
+  "new_axis": "source cognitive-operation axis (observation fidelity vs extrapolation validity)",
+  "new_reference": ".agents/skills/truth-discovery/references/cognitive-operation-observation-extrapolation-audit.md",
+  "new_case": ".agents/skills/truth-discovery/cases/galen-observation-vs-extrapolation.md (case 41, 24/25)",
+  "case_score": "24/25",
+  "confidence": 0.86,
+  "verdict": "three-layer mixed object: reliable observation layer + stratified extrapolation failure + independent theoretical framework",
+  "closure": {
+    "topics": "58 -> 59 (galen ✅, line 63)",
+    "readme": "66 -> 67 concluded",
+    "inquiry_log": "+1 entry"
+  }
+}
