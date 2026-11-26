@@ -2,6 +2,8 @@
 
 > 首建案例：《梦溪笔谈》"沈括的科学观察是否被后世夸大？"（2026-11-25，第56场）
 > 定位：来源大轴三轴（可靠轴 `source-claim-audit`／份额轴 `commentary-source-composition-audit`／取向轴 `source-orientation-experience-vs-compilation`）全在**生产端**——问"作者的知识从哪来、可不可靠、构成如何、取向为何"。本轴把求真对象移到**接受端**——问"后世如何评价、是否放大、靠什么机制、证据多强"。两轴正交，禁匀质套用。
+>
+> **轴名精确化（2026-11-26 第58场补充）**：本案（帕拉塞尔苏斯）暴露加冕不只发生在后世接受端，也可发生在**当事人端**（自命名"超越 Celsus"／门徒追封）。第四轴据此正式命名为**评价放大轴（evaluative amplification axis）**——区分依据是**命题属性**（评价谓词发生在评价层）而非发生位置；接受端是主要但非唯一发生位置。本首案（纯后世加冕）结论不变。新增三机制（自加冕／称号分占／概念回灌）＋来源等级≠条目等级＋功过互相供养见 `references/evaluative-coronation-mechanisms.md`（案例 `cases/paracelsus-evaluative-amplification.md`）。轴线总数为"来源生产端三轴＋评价放大一轴"不变，三机制归为同一轴深化，不新设独立轴桶。
 
 ## 一、核心契约
 

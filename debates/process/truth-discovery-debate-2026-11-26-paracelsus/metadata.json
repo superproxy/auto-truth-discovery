@@ -1,0 +1,40 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "engine": "init-roles",
+  "topic": "帕拉塞尔苏斯的医学贡献是否被后世夸大？",
+  "topic_source": "debates/topics.md#62",
+  "date": "2026-11-26",
+  "mode": "single-process inline role embodiment",
+  "steps": [
+    {"n": 1, "id": "collector_search", "role": "collector", "status": "completed", "file": "steps/1-collector_search.md"},
+    {"n": 2, "id": "challenger_round_1", "role": "challenger", "status": "completed", "file": "steps/2-challenger_round_1.md"},
+    {"n": 3, "id": "reasoner_round_1", "role": "reasoner", "status": "completed", "file": "steps/3-reasoner_round_1.md", "note": "M1-M5"},
+    {"n": 4, "id": "challenger_round", "role": "challenger", "status": "completed", "file": "steps/4-challenger_round.md"},
+    {"n": 5, "id": "reasoner_round", "role": "reasoner", "status": "completed", "file": "steps/5-reasoner_round.md", "note": "M6-M9, 可结案"},
+    {"n": 6, "id": "challenger_loop", "role": "challenger", "status": "completed", "file": "steps/6-challenger_loop.md", "note": "无新问题，结案"},
+    {"n": 7, "id": "judge_summary", "role": "judge", "status": "completed", "file": "steps/7-judge_summary.md"},
+    {"n": 8, "id": "optimizer_finalize", "role": "optimizer", "status": "completed", "file": "steps/8-optimizer_finalize.md", "note": "含L7六路并行子步"},
+    {"n": 9, "id": "debate_git_publish", "role": "git", "status": "pending", "note": "见 automation memory 记录"}
+  ],
+  "debate_rounds": 3,
+  "loop_exit": "challenger_output contains 无新问题",
+  "conclusion": {
+    "verdict": "事实内核坚实＋评价多路径放大混合对象；评价/宣称层夸大成立、事实层不成立",
+    "confidence": 0.85,
+    "confidence_scope": "framework",
+    "labels": ["评价放大轴", "自加冕零正份额", "称号分占", "维度偷渡式过度宣称", "概念回灌三阀", "来源等级≠条目等级", "功过互相供养", "混合对象"]
+  },
+  "corrections": ["M1", "M2", "M3", "M4", "M5", "M6(textbook)", "M7", "M8", "M9(textbook)"],
+  "methodology_increment": {
+    "axis_rename": "接受端评价放大轴 → 评价放大轴（按属性非位置）",
+    "new_mechanisms": ["自加冕（producer-side）", "称号分占＋维度偷渡", "概念回灌（三阀）"],
+    "supporting_judges": ["来源等级≠条目等级", "功过双端互相供养", "反向对称陷阱禁令"],
+    "reference": ".agents/skills/truth-discovery/references/evaluative-coronation-mechanisms.md",
+    "case": ".agents/skills/truth-discovery/cases/paracelsus-evaluative-amplification.md"
+  },
+  "closure": {
+    "topics": "57→58",
+    "readme_cases": "65→66",
+    "inquiry_log": "+1"
+  }
+}
