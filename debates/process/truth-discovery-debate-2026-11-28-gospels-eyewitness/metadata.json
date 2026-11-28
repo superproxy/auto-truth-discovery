@@ -1,0 +1,49 @@
+{
+  "workflow": "求真辨伪：全流程辩论工作流",
+  "topic": "福音书是目击者记录还是后世共同体的神学建构？",
+  "topic_index": 73,
+  "debate_number": 67,
+  "domain": "宗教文本与人物",
+  "date": "2026-11-28",
+  "execution_mode": "单进程内联化身角色（L1搜集+质疑并行→L2-L5辩论链→L6裁判→L7六路优化并行→L8汇总→L9 git）",
+  "steps": [
+    {"n": 1, "id": "collector_search", "role": "collector", "status": "completed"},
+    {"n": 2, "id": "challenger_round_1", "role": "challenger", "status": "completed"},
+    {"n": 3, "id": "reasoner_round_1", "role": "reasoner", "status": "completed"},
+    {"n": 4, "id": "challenger_round", "role": "challenger", "status": "completed"},
+    {"n": 5, "id": "reasoner_round", "role": "reasoner", "status": "completed"},
+    {"n": 6, "id": "challenger_loop", "role": "challenger", "status": "completed", "exit": "无新问题，可结案"},
+    {"n": 7, "id": "judge_summary", "role": "judge", "status": "completed"},
+    {"n": 8, "id": "optimizer_skill_review", "role": "optimizer", "status": "completed", "parallel_group": "optimizer_post_judge"},
+    {"n": 9, "id": "optimizer_sync_collector", "role": "optimizer", "status": "completed", "parallel_group": "optimizer_post_judge"},
+    {"n": 10, "id": "optimizer_sync_challenger", "role": "optimizer", "status": "completed", "parallel_group": "optimizer_post_judge"},
+    {"n": 11, "id": "optimizer_sync_reasoner", "role": "optimizer", "status": "completed", "parallel_group": "optimizer_post_judge"},
+    {"n": 12, "id": "optimizer_sync_judge", "role": "optimizer", "status": "completed", "parallel_group": "optimizer_post_judge"},
+    {"n": 13, "id": "optimizer_sync_optimizer_self", "role": "optimizer", "status": "completed", "parallel_group": "optimizer_post_judge"},
+    {"n": 14, "id": "optimizer_finalize", "role": "optimizer", "status": "completed"}
+  ],
+  "debate_rounds": 4,
+  "conclusion_file": "debates/conclusions/gospels-eyewitness-vs-community-construction.md",
+  "axial_decision": "宗教文本体裁/归属题；人物层复用案例47不重开；抽掉测试第三次非零残差（三处残余降判据簇不新轴、禁两头占、禁吞没）",
+  "core_conclusion": "假二分拆八层；四福音＝古代传记/匿名/2世纪附加名/口传神学塑形；Bauckham/Ehrman 源头窄兼容⊕文本层竞争；整体0.86（框架）",
+  "methodology_increments": [
+    "宗教文本体裁与身份声明审计判据簇（第三次非零残差）",
+    "源头目击射程钉死 eyewitness-source-scope-zero-share",
+    "窄兼容⊕文本层竞争（跨品牌兼容性判定边界）",
+    "文学依赖双向射程纪律",
+    "共识回流的元文本等级分层"
+  ],
+  "artifacts": {
+    "reference": ".agents/skills/truth-discovery/references/gospel-genre-identity-claim-audit.md",
+    "case": ".agents/skills/truth-discovery/cases/gospels-eyewitness-vs-community-construction.md",
+    "case_number": 48,
+    "case_score": "24/25"
+  },
+  "role_sync": ["collector", "challenger", "reasoner", "judge", "optimizer", "SKILL.md"],
+  "closure": {
+    "topics_mark": "66→67",
+    "readme_count": "74→75",
+    "inquiry_log": "+1"
+  },
+  "git": {"status": "pending_L9"}
+}
