@@ -1,0 +1,43 @@
+{
+  "topic": "《摩西五经》是否确为摩西所写，还是多源编纂（JEDP假说）？",
+  "date": "2026-11-28",
+  "workflow": "debate-workflow.yaml",
+  "engine": "init-roles (upstream, read-only)",
+  "execution_mode": "single-process inline role embodiment",
+  "debate_rounds": 3,
+  "exit_condition": "challenger_output contains 无新问题",
+  "steps": [
+    {"n": 1, "id": "collector_search", "role": "collector", "layer": "L1", "status": "completed"},
+    {"n": 2, "id": "challenger_round_1", "role": "challenger", "layer": "L1", "status": "completed"},
+    {"n": 3, "id": "reasoner_round_1", "role": "reasoner", "layer": "L2", "status": "completed"},
+    {"n": 4, "id": "challenger_round", "role": "challenger", "layer": "L3", "status": "completed"},
+    {"n": 5, "id": "reasoner_round", "role": "reasoner", "layer": "L4", "status": "completed"},
+    {"n": 6, "id": "challenger_loop", "role": "challenger", "layer": "L5", "status": "completed"},
+    {"n": 7, "id": "judge_summary", "role": "judge", "layer": "L6", "status": "completed"},
+    {"n": 8, "id": "optimizer_skill_review", "role": "optimizer", "layer": "L7", "status": "completed"},
+    {"n": 9, "id": "optimizer_sync_collector", "role": "optimizer", "layer": "L7", "status": "completed"},
+    {"n": 10, "id": "optimizer_sync_challenger", "role": "optimizer", "layer": "L7", "status": "completed"},
+    {"n": 11, "id": "optimizer_sync_reasoner", "role": "optimizer", "layer": "L7", "status": "completed"},
+    {"n": 12, "id": "optimizer_sync_judge", "role": "optimizer", "layer": "L7", "status": "completed"},
+    {"n": 13, "id": "optimizer_sync_optimizer_self", "role": "optimizer", "layer": "L7", "status": "completed"},
+    {"n": 14, "id": "optimizer_finalize", "role": "optimizer", "layer": "L8", "status": "completed"},
+    {"n": 15, "id": "debate_git_publish", "role": "git", "layer": "L9", "status": "pending"}
+  ],
+  "conclusion": {
+    "file": "debates/conclusions/pentateuch-jedp-authorship.md",
+    "framework_confidence": 0.86,
+    "layered_confidence": {
+      "mosaic_verbatim_authorship": 0.10,
+      "not-single-verbatim-redaction": 0.85,
+      "jedp_paradigm": "0.55-0.65"
+    },
+    "new_methodology": "academic-paradigm-audit (判据簇·非新轴·抽掉测试连续四场零残余后首次非零残差)"
+  },
+  "case": {"file": ".agents/skills/truth-discovery/cases/pentateuch-jedp-authorship.md", "number": 46, "score": "24/25"},
+  "reference": ".agents/skills/truth-discovery/references/academic-paradigm-audit.md",
+  "closure": {
+    "topics": "64→65",
+    "readme_conclusions": "72→73",
+    "inquiry_log": "+1"
+  }
+}
