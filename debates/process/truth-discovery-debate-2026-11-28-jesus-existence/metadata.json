@@ -1,0 +1,36 @@
+{
+  "workflow": "truth-discovery-debate",
+  "topic": "耶稣是否真实存在？非基督教史料中关于耶稣的记载是否可靠？",
+  "date": "2026-11-28",
+  "slug": "jesus-existence-nonchristian-sources",
+  "debate_rounds": 3,
+  "conclusion": "双问分裁：历史个体高度可能（跨范式硬核，保留弱于护照残余）／被彼拉多处死窄锚高度可能~接近已确认；非基督教史料拆文本真实性·来源独立性·内容射程三轴；神话论主张层高度不可能（可证伪且已反证）、论证层弱否定充电；信仰层另账；整体 0.87（框架非具体断言）",
+  "confidence": 0.87,
+  "methodology_increment": "敌意旁证分账（第二型旁证）／可证伪性分层（主张层⊥论证层）／射程分层双向闸门／跨范式硬核复用／尴尬标准降级；抽掉测试第二次非零残差，两处真实残余均降判据簇·不新设轴桶",
+  "case_score": "24/25",
+  "files": {
+    "conclusion": "debates/conclusions/jesus-existence-nonchristian-sources.md",
+    "references": [
+      ".agents/skills/truth-discovery/references/religious-origin-narrative-dual-track-audit.md",
+      ".agents/skills/truth-discovery/references/conspiracy-hermetic-closure-audit.md"
+    ],
+    "case": ".agents/skills/truth-discovery/cases/jesus-existence-nonchristian-sources.md",
+    "process_dir": "debates/process/truth-discovery-debate-2026-11-28-jesus-existence/"
+  },
+  "closure": {
+    "topics": "65→66",
+    "readme": "73→74",
+    "inquiry_log": "+1"
+  },
+  "steps_completed": [1, 2, 3, 4, 5, 6, 7, 8],
+  "steps_files": [
+    "1-collector_search.md",
+    "2-challenger_round_1.md",
+    "3-reasoner_round_1.md",
+    "4-challenger_round.md",
+    "5-reasoner_round.md",
+    "6-challenger_loop.md",
+    "8-13-optimizer-parallel.md",
+    "14-optimizer_finalize.md"
+  ]
+}
