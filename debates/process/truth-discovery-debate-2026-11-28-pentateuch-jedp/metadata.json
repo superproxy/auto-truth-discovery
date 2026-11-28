@@ -21,7 +21,7 @@
     {"n": 12, "id": "optimizer_sync_judge", "role": "optimizer", "layer": "L7", "status": "completed"},
     {"n": 13, "id": "optimizer_sync_optimizer_self", "role": "optimizer", "layer": "L7", "status": "completed"},
     {"n": 14, "id": "optimizer_finalize", "role": "optimizer", "layer": "L8", "status": "completed"},
-    {"n": 15, "id": "debate_git_publish", "role": "git", "layer": "L9", "status": "pending"}
+    {"n": 15, "id": "debate_git_publish", "role": "git", "layer": "L9", "status": "completed", "commit": "4f9ef51", "push": "origin/main 50f02ca..4f9ef51"}
   ],
   "conclusion": {
     "file": "debates/conclusions/pentateuch-jedp-authorship.md",
