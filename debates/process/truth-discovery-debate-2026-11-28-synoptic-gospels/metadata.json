@@ -1,0 +1,21 @@
+{
+  "topic": "对观福音问题——马太、马可、路加之间的文本依赖关系如何？",
+  "debate_number": 68,
+  "domain": "宗教文本与人物",
+  "date": "2026-11-28",
+  "workflow": "truth-discovery",
+  "steps_total": 13,
+  "debate_rounds": 4,
+  "topology": "L1(collector+challenger_1) -> L2-L5(chain) -> L6(judge) -> L7(6-way optimizer) -> L8(finalize) -> L9(git)",
+  "execution_mode": "single-process inline role embodiment",
+  "framework_confidence": 0.86,
+  "direction_model_confidence": "0.70-0.78",
+  "axis": "judgment-cluster: textual-genealogy-directionality-audit (4th non-zero residual, non-new-axis)",
+  "new_subcriteria": ["directional-evidence double-edge", "hypothetical-entity ontology", "evidence-domain accounting"],
+  "reasoner_corrections": ["M1 core wording narrowed", "M2 (load-bearing) per-length double-edge + confidence downgrade", "M3 Q circularity cut", "M4 external evidence limited role"],
+  "conclusion_file": "debates/conclusions/synoptic-gospels-literary-dependence.md",
+  "case": "cases/synoptic-gospels-literary-dependence.md (case 49, 24/25)",
+  "reference": "references/textual-genealogy-directionality-audit.md",
+  "status": "complete",
+  "l9_git": "pending"
+}
